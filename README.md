@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sai Subhash Yeniganti — Personal Website
 
-## Getting Started
+Personal portfolio site. Showcases independent AI-first builds alongside professional experience.
 
-First, run the development server:
+## Quick Start
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Next.js 16 (App Router)
+- TypeScript (strict)
+- Tailwind CSS v4
+- Framer Motion 12
+- Playfair Display + Geist Mono (via next/font/google)
 
-## Learn More
+## Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/
+│   ├── layout.tsx              # Root layout, nav, metadata
+│   ├── page.tsx                # Homepage (hero, builds, about, principles, footer)
+│   ├── experience/page.tsx     # Professional experience narrative
+│   └── builds/
+│       ├── pragna/page.tsx
+│       ├── arthm/page.tsx
+│       ├── blockpulse/page.tsx
+│       ├── gita-project/page.tsx
+│       ├── the-unbecoming/page.tsx
+│       └── job-hunter/page.tsx
+├── components/                 # Unused legacy components (nav, footer, catalog-entry)
+└── lib/
+    └── data.ts                 # Build catalog data (keep in sync with pages)
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Docs
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+docs/
+├── 00-sai-profile.md          # WHO IS SAI. Read this first. Full career, voice rules, content guide.
+├── 00-design-philosophy.md     # Conceptual design north star
+├── 01-brand-system.md          # Actual colors, fonts, tokens as implemented
+├── 01-site-structure.md        # What's built, route map, section breakdown, known issues
+└── 03-experience-narrative.md  # Source copy for all site content
+```
 
-## Deploy on Vercel
+## For AI Agents
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Start with `docs/00-sai-profile.md`. It has everything: career history, voice rules, content guidelines, and reference examples of how Sai describes his work. The voice rules are non-negotiable.
