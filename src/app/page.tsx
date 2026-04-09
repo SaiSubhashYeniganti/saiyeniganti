@@ -114,7 +114,7 @@ export default function Home() {
               type: "WEBSITE",
               status: "LIVE",
               statusColor: "bg-[#4ade80]",
-              image: "/images/builds/pragna.jpg"
+              image: "/images/Home%20page%202nd%20section/pragna.jpg"
             },
             {
               id: "gita-project",
@@ -124,7 +124,7 @@ export default function Home() {
               type: "FULL PRODUCT",
               status: "IN PROGRESS",
               statusColor: "bg-[#fbbf24]",
-              image: "/images/builds/gita-project.jpg"
+              image: "/images/Home%20page%202nd%20section/gita-project.jpg"
             },
             {
               id: "arthm",
@@ -134,7 +134,7 @@ export default function Home() {
               type: "WEBSITE",
               status: "LIVE",
               statusColor: "bg-[#4ade80]",
-              image: "/images/builds/arthm.jpg"
+              image: "/images/Home%20page%202nd%20section/arthm.jpg"
             },
             {
               id: "blockpulse",
@@ -144,7 +144,7 @@ export default function Home() {
               type: "MOBILE APP",
               status: "SHIPPED",
               statusColor: "bg-[#9ca3af]",
-              image: "/images/builds/blockpulse.jpg"
+              image: "/images/Home%20page%202nd%20section/blockpulse.jpg"
             },
             {
               id: "job-hunter",
@@ -153,7 +153,8 @@ export default function Home() {
               href: "/builds/job-hunter",
               type: "AI PIPELINE",
               status: "INTERNAL",
-              statusColor: "bg-[#9ca3af]"
+              statusColor: "bg-[#9ca3af]",
+              image: "/images/Home%20page%202nd%20section/job-hunter.jpg"
             },
             {
               id: "the-unbecoming",
@@ -163,7 +164,7 @@ export default function Home() {
               type: "WEBSITE",
               status: "LIVE",
               statusColor: "bg-[#4ade80]",
-              image: "/images/builds/the-unbecoming.jpg"
+              image: "/images/Home%20page%202nd%20section/the-unbecoming.jpg"
             }
           ].map((build, index) => (
             <motion.div 
