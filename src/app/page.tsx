@@ -354,28 +354,106 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* 4. THE ARCHIVE */}
-      <section id="archive" className="py-32 px-6 md:px-12 lg:px-24 bg-canvas-alt">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-5xl md:text-7xl tracking-tight mb-16">How I think.</h2>
+      {/* 4. HOW I THINK */}
+      <section id="thinking" className="py-20 md:py-24 px-6 md:px-12 lg:px-24 bg-canvas-alt">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <h2 className="text-5xl md:text-7xl tracking-tight mb-6">Writing out loud.</h2>
+            <p className="text-ink-muted font-sans text-base md:text-lg max-w-xl mb-10 leading-relaxed">
+              I write about AI, Web3, and product. What's real, what's hype, and what it looks like when you actually build things.
+            </p>
+          </motion.div>
 
-          <div className="space-y-0 border-t border-ink/10">
+          {/* Featured LinkedIn Posts */}
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10"
+          >
             {[
-              { num: "001", title: "Rough v1 in a week beats a perfect spec in a month", date: "PRINCIPLE" },
-              { num: "002", title: "First principles everything, whether it's engineering, marketing, or fundraising", date: "PRINCIPLE" },
-              { num: "003", title: "Build systems that work without you, not because of you", date: "PRINCIPLE" },
-              { num: "004", title: "Best product teams: every person can explain what we're building and why in 2 minutes", date: "PRINCIPLE" }
-            ].map((post) => (
-              <div key={post.num} className="flex flex-col md:flex-row md:items-center justify-between py-10 border-b border-ink/10 px-6 -mx-6">
-                <div className="flex items-center gap-8 md:gap-16 mb-4 md:mb-0">
-                  <span className="blueprint text-xs text-ink-muted">{post.num}</span>
-                  <h3 className="text-2xl md:text-4xl text-ink">{post.title}</h3>
+              {
+                id: "post-4",
+                hook: "I've never written a line of code. But right now, I don't see anything I can't build with AI.",
+                topic: "3.7 billion tokens across 14,000+ sessions. That's about 2.6 million pages of conversation. If you stack those pages, it would be taller than the Burj Khalifa. Twice.",
+                label: "3.7B TOKENS, ZERO LINES OF CODE",
+                url: "https://linkedin.com/in/subhashyeniganti/recent-activity/all/"
+              },
+              {
+                id: "post-1",
+                hook: "Everyone's been talking about autonomous agents. I spent the last few weeks building a dermatology website.",
+                topic: "10 unique designs, 86 pages, 65,000+ words. Not a developer. Never written a line of production code. Product skills matter more than ever.",
+                label: "WHY PRODUCT SKILLS STILL WIN",
+                url: "https://linkedin.com/in/subhashyeniganti/recent-activity/all/"
+              },
+              {
+                id: "post-2",
+                hook: "I've lived through three waves of \"this changes everything.\" Crypto in 2017. NFTs in 2021. And now AI.",
+                topic: "You cannot keep up, and that's okay. But not trying isn't an option. Hype fades. Infrastructure remains. Builders compound.",
+                label: "SURVIVING THREE HYPE CYCLES",
+                url: "https://linkedin.com/in/subhashyeniganti/recent-activity/all/"
+              },
+              {
+                id: "post-3",
+                hook: "What if we've already achieved AGI but just refuse to call it that?",
+                topic: "Whether AI is \"just next-token prediction\" or something different doesn't really matter. What matters is what it can do.",
+                label: "THE AGI WE WON'T ADMIT TO",
+                url: "https://linkedin.com/in/subhashyeniganti/recent-activity/all/"
+              },
+              {
+                id: "post-5",
+                hook: "I built an AI system to find my next job. It found 76 in a month.",
+                topic: "Connected Telegram channels to an LLM, built a classification pipeline, put a dashboard on top. AI doesn't have to be about building the next big thing.",
+                label: "AUTOMATING MY OWN JOB SEARCH",
+                url: "https://linkedin.com/in/subhashyeniganti/recent-activity/all/"
+              }
+            ].map((post, index) => (
+              <motion.a
+                key={post.id}
+                variants={revealUp}
+                href={post.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`group flex flex-col justify-between p-8 rounded-2xl border border-ink/8 bg-canvas hover:border-ink/20 transition-all duration-500 min-h-[320px] ${
+                  index >= 3 ? "lg:col-span-1 md:col-span-1" : ""
+                }`}
+              >
+                <div>
+                  <span className="blueprint text-[10px] text-ink-muted mb-6 block">{post.label}</span>
+                  <h3 className="text-xl md:text-2xl tracking-tight leading-[1.25] mb-4 text-ink group-hover:text-accent transition-colors duration-500">
+                    {post.hook}
+                  </h3>
+                  <p className="text-sm font-sans text-ink-muted leading-relaxed">
+                    {post.topic}
+                  </p>
                 </div>
-                <div className="flex items-center gap-6">
-                  <span className="blueprint text-xs text-ink-muted">{post.date}</span>
+                <div className="flex items-center gap-2 mt-8 blueprint text-[11px] text-ink-muted group-hover:text-accent transition-colors duration-500">
+                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                  <span>READ ON LINKEDIN</span>
+                  <ArrowUpRight strokeWidth={1.5} className="w-3 h-3 ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
-              </div>
+              </motion.a>
             ))}
+          </motion.div>
+
+          {/* More on LinkedIn link */}
+          <div className="flex justify-start">
+            <a
+              href="https://linkedin.com/in/subhashyeniganti"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 group"
+            >
+              <span className="blueprint text-xs border border-ink/20 px-8 py-4 rounded-full group-hover:bg-accent group-hover:text-canvas group-hover:border-accent transition-all duration-500">
+                MORE ON LINKEDIN ↗
+              </span>
+            </a>
           </div>
         </div>
       </section>
