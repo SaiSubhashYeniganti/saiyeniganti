@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist_Mono, Playfair_Display } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
+import { Footer } from "@/components/footer";
 
 const blueprint = Geist_Mono({
   subsets: ["latin"],
@@ -45,6 +46,7 @@ export default function RootLayout({
         </nav>
 
         {children}
+        <Footer />
       </body>
     </html>
   );

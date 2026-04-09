@@ -458,37 +458,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. THE HANDSHAKE */}
-      <footer id="contact" className="h-[80vh] bg-ink text-canvas flex flex-col justify-between px-6 md:px-12 lg:px-24 py-12 md:py-24">
-        <div className="flex justify-end items-start">
-          <div className="hidden md:flex flex-col gap-2 items-end blueprint text-[10px] text-canvas/40 tracking-widest">
-            <span>AVAILABLE FOR:</span>
-            <span className="text-canvas/60">HEAD OF PRODUCT / DIRECTOR OF PRODUCT / SENIOR PM</span>
-          </div>
-        </div>
-
-        <div className="flex flex-col items-center justify-center text-center -mt-16">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-[clamp(4rem,10vw,12rem)] leading-[0.8] tracking-tight mb-8"
-          >
-            Let's Talk.
-          </motion.h2>
-          <a href="mailto:saisubhash.yeniganti@gmail.com" className="text-lg md:text-2xl font-sans text-canvas/60 hover:text-accent transition-colors">
-            saisubhash.yeniganti@gmail.com
-          </a>
-        </div>
-
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6 border-t border-canvas/10 pt-8 blueprint text-xs text-canvas/50">
-          <div>© {new Date().getFullYear()} SAI SUBHASH YENIGANTI</div>
-          <div className="flex gap-8 uppercase tracking-widest">
-            <a href="https://linkedin.com/in/subhashyeniganti" target="_blank" rel="noopener noreferrer" className="hover:text-canvas transition-colors">LinkedIn</a>
-          </div>
-          <div>HYDERABAD / GLOBAL</div>
-        </div>
-      </footer>
 
     </main>
   );
