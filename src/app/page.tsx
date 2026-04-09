@@ -79,109 +79,177 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* 2. THE BUILDS (HORIZONTAL SCROLL) */}
-      <section id="builds" className="relative w-full bg-ink text-canvas py-32 overflow-hidden">
-        <div className="px-6 md:px-12 lg:px-24 mb-16 flex items-end justify-between">
-          <h2 className="text-5xl md:text-7xl tracking-tight">Recent Builds.</h2>
-          <div className="hidden md:block blueprint text-xs tracking-widest text-canvas/50">
-            SCROLL HORIZONTALLY →
-          </div>
+      {/* 2. THE BUILDS (GRID) */}
+      <section id="builds" className="relative w-full bg-ink text-canvas py-20 md:py-20">
+        <div className="px-6 md:px-12 lg:px-24 mb-16 md:mb-24">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="flex flex-col items-center text-center max-w-4xl mx-auto"
+          >
+            <h2 className="text-5xl md:text-7xl lg:text-[5.5rem] tracking-tight leading-[1.05] mb-6">
+              One person. <span className="italic text-canvas/50">End to end.</span>
+            </h2>
+            <p className="text-canvas/50 font-sans text-base md:text-lg max-w-2xl leading-relaxed">
+              A collection of products, platforms, and experiments built entirely solo. From brand and design to code and deployment, all executed using AI-first workflows.
+            </p>
+          </motion.div>
         </div>
 
-        <div className="flex overflow-x-auto snap-x snap-mandatory no-scrollbar gap-8 md:gap-16 px-6 md:px-12 lg:px-24 pb-12">
+        <motion.div 
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 lg:gap-x-10 gap-y-16 md:gap-y-20 px-6 md:px-12 lg:px-24"
+        >
+          {[
+            {
+              id: "pragna",
+              title: "Pragna Skin Clinic",
+              desc: "Dermatology clinic. 86 pages, 65,000 words of content, 10 unique designs. Wanted to see how far AI can stretch on a single project. Did brand, content, design, development.",
+              href: "/builds/pragna",
+              type: "WEBSITE",
+              status: "LIVE",
+              statusColor: "bg-[#4ade80]",
+              image: "/images/builds/pragna.jpg"
+            },
+            {
+              id: "gita-project",
+              title: "The Gita Project",
+              desc: "Bhagavad Gita reimagined as a modern consumer app. Can one person build an entire company with AI? App, website, brand, infrastructure. Finding out.",
+              href: "/builds/gita-project",
+              type: "FULL PRODUCT",
+              status: "IN PROGRESS",
+              statusColor: "bg-[#fbbf24]",
+              image: "/images/builds/gita-project.jpg"
+            },
+            {
+              id: "arthm",
+              title: "ARTHM",
+              desc: "India's first mic-less concert hall. Proving AI can produce world-class, intentional design. Client call to production in a month.",
+              href: "/builds/arthm",
+              type: "WEBSITE",
+              status: "LIVE",
+              statusColor: "bg-[#4ade80]",
+              image: "/images/builds/arthm.jpg"
+            },
+            {
+              id: "blockpulse",
+              title: "BlockPulse",
+              desc: "Web3 news aggregator. Built an autonomous pipeline that monitors, filters, and pushes to a mobile app. Shipped to Play Store.",
+              href: "/builds/blockpulse",
+              type: "MOBILE APP",
+              status: "SHIPPED",
+              statusColor: "bg-[#9ca3af]",
+              image: "/images/builds/blockpulse.jpg"
+            },
+            {
+              id: "job-hunter",
+              title: "Job Hunter",
+              desc: "Built AI to find me a job. Scans Telegram channels, classifies roles, surfaces matches. 80+ relevant roles in month one.",
+              href: "/builds/job-hunter",
+              type: "AI PIPELINE",
+              status: "INTERNAL",
+              statusColor: "bg-[#9ca3af]"
+            },
+            {
+              id: "the-unbecoming",
+              title: "The Unbecoming",
+              desc: "Client work. Author's website for a book on ego dissolution.",
+              href: "/builds/the-unbecoming",
+              type: "WEBSITE",
+              status: "LIVE",
+              statusColor: "bg-[#4ade80]",
+              image: "/images/builds/the-unbecoming.jpg"
+            }
+          ].map((build, index) => (
+            <motion.div 
+              key={build.id} 
+              variants={revealUp}
+              className="flex flex-col group relative"
+            >
+              <Link href={build.href} className="flex flex-col gap-6 cursor-pointer">
+                {/* Image Container with Integrated Badges */}
+                <div className="w-full aspect-[16/10] overflow-hidden rounded-2xl bg-ink relative border border-canvas/5 shadow-sm">
+                  {build.image ? (
+                    <>
+                      <Image 
+                        src={build.image} 
+                        alt={build.title} 
+                        fill
+                        className="object-cover grayscale opacity-60 contrast-[1.1] transition-all duration-[1.2s] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-105 group-hover:grayscale-0 group-hover:opacity-100"
+                      />
+                      {/* Very subtle noise overlay for the editorial feel */}
+                      <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay pointer-events-none bg-[url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E')]"></div>
+                      <div className="absolute inset-0 bg-canvas/5 mix-blend-overlay pointer-events-none group-hover:bg-transparent transition-colors duration-700"></div>
+                      
+                      {/* Top gradient for text readability */}
+                      <div className="absolute inset-x-0 top-0 z-[5] h-28 bg-gradient-to-b from-ink/60 to-transparent pointer-events-none"></div>
+                      
+                      {/* Type (Top Left) — raw text, no container */}
+                      <div className="absolute top-5 left-5 z-10">
+                        <span className="blueprint text-[11px] text-canvas font-semibold tracking-widest [text-shadow:0_1px_4px_rgba(0,0,0,0.6)]">
+                          {build.type}
+                        </span>
+                      </div>
 
-          <Link href="/builds/pragna" className="min-w-[85vw] md:min-w-[60vw] snap-center flex flex-col gap-6 group cursor-pointer relative">
-            <div className="w-full aspect-[4/3] md:aspect-[16/10] overflow-hidden bg-ink-light relative">
-              <GradientPlaceholder className="group-hover:scale-105 transition-transform duration-1000" />
-            </div>
-            <div className="flex justify-between items-start pt-4 border-t border-canvas/10">
-              <div>
-                <h3 className="text-3xl md:text-5xl tracking-tight mb-2">Pragna Skin Clinic</h3>
-                <p className="text-canvas/60 font-sans text-sm md:text-base max-w-md">86 pages, 65,000 words of content. Experiment in design and content at scale. One of the best dermatology websites in India.</p>
-              </div>
-              <div className="w-12 h-12 rounded-full border border-canvas/20 flex items-center justify-center group-hover:bg-accent group-hover:border-accent transition-colors">
-                <ArrowUpRight strokeWidth={1} />
-              </div>
-            </div>
-          </Link>
+                      {/* Status (Top Right) — dot + label, no container */}
+                      <div className="absolute top-5 right-5 z-10 flex items-center gap-2">
+                        <span className={`w-2 h-2 rounded-full ${build.statusColor} shadow-[0_0_8px_currentColor]`}></span>
+                        <span className="blueprint text-[11px] text-canvas font-semibold tracking-widest [text-shadow:0_1px_4px_rgba(0,0,0,0.6)]">
+                          {build.status}
+                        </span>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <GradientPlaceholder className="group-hover:scale-105 transition-transform duration-[1.2s] ease-[cubic-bezier(0.25,1,0.5,1)]" />
+                      
+                      {/* Top gradient for text readability */}
+                      <div className="absolute inset-x-0 top-0 z-[5] h-28 bg-gradient-to-b from-ink/60 to-transparent pointer-events-none"></div>
+                      
+                      {/* Type (Top Left) — raw text, no container */}
+                      <div className="absolute top-5 left-5 z-10">
+                        <span className="blueprint text-[11px] text-canvas font-semibold tracking-widest [text-shadow:0_1px_4px_rgba(0,0,0,0.6)]">
+                          {build.type}
+                        </span>
+                      </div>
 
-          <Link href="/builds/arthm" className="min-w-[85vw] md:min-w-[60vw] snap-center flex flex-col gap-6 group cursor-pointer relative">
-            <div className="w-full aspect-[4/3] md:aspect-[16/10] overflow-hidden bg-ink-light relative">
-              <GradientPlaceholder className="group-hover:scale-105 transition-transform duration-1000" />
-            </div>
-            <div className="flex justify-between items-start pt-4 border-t border-canvas/10">
-              <div>
-                <h3 className="text-3xl md:text-5xl tracking-tight mb-2">ARTHM</h3>
-                <p className="text-canvas/60 font-sans text-sm md:text-base max-w-md">Experiment in proving AI-driven design can be intentional and world-class. Client call to production in a month.</p>
-              </div>
-              <div className="w-12 h-12 rounded-full border border-canvas/20 flex items-center justify-center group-hover:bg-accent group-hover:border-accent transition-colors">
-                <ArrowUpRight strokeWidth={1} />
-              </div>
-            </div>
-          </Link>
-
-          <Link href="/builds/blockpulse" className="min-w-[85vw] md:min-w-[60vw] snap-center flex flex-col gap-6 group cursor-pointer relative">
-            <div className="w-full aspect-[4/3] md:aspect-[16/10] overflow-hidden bg-ink-light relative">
-              <GradientPlaceholder className="group-hover:scale-105 transition-transform duration-1000" />
-            </div>
-            <div className="flex justify-between items-start pt-4 border-t border-canvas/10">
-              <div>
-                <h3 className="text-3xl md:text-5xl tracking-tight mb-2">BlockPulse</h3>
-                <p className="text-canvas/60 font-sans text-sm md:text-base max-w-md">Experiment in automation. Web3 news app, shipped to Play Store.</p>
-              </div>
-              <div className="w-12 h-12 rounded-full border border-canvas/20 flex items-center justify-center group-hover:bg-accent group-hover:border-accent transition-colors">
-                <ArrowUpRight strokeWidth={1} />
-              </div>
-            </div>
-          </Link>
-
-          <Link href="/builds/gita-project" className="min-w-[85vw] md:min-w-[60vw] snap-center flex flex-col gap-6 group cursor-pointer relative">
-            <div className="w-full aspect-[4/3] md:aspect-[16/10] overflow-hidden bg-ink-light relative">
-              <GradientPlaceholder className="group-hover:scale-105 transition-transform duration-1000" />
-            </div>
-            <div className="flex justify-between items-start pt-4 border-t border-canvas/10">
-              <div>
-                <h3 className="text-3xl md:text-5xl tracking-tight mb-2">The Gita Project</h3>
-                <p className="text-canvas/60 font-sans text-sm md:text-base max-w-md">Challenge of building a company solo. App, website, brand, infrastructure.</p>
-              </div>
-              <div className="w-12 h-12 rounded-full border border-canvas/20 flex items-center justify-center group-hover:bg-accent group-hover:border-accent transition-colors">
-                <ArrowUpRight strokeWidth={1} />
-              </div>
-            </div>
-          </Link>
-
-          <Link href="/builds/the-unbecoming" className="min-w-[85vw] md:min-w-[60vw] snap-center flex flex-col gap-6 group cursor-pointer relative">
-            <div className="w-full aspect-[4/3] md:aspect-[16/10] overflow-hidden bg-ink-light relative">
-              <GradientPlaceholder className="group-hover:scale-105 transition-transform duration-1000" />
-            </div>
-            <div className="flex justify-between items-start pt-4 border-t border-canvas/10">
-              <div>
-                <h3 className="text-3xl md:text-5xl tracking-tight mb-2">The Unbecoming</h3>
-                <p className="text-canvas/60 font-sans text-sm md:text-base max-w-md">Client work. Author's website for a book on ego dissolution. Shipped.</p>
-              </div>
-              <div className="w-12 h-12 rounded-full border border-canvas/20 flex items-center justify-center group-hover:bg-accent group-hover:border-accent transition-colors">
-                <ArrowUpRight strokeWidth={1} />
-              </div>
-            </div>
-          </Link>
-
-          <Link href="/builds/job-hunter" className="min-w-[85vw] md:min-w-[60vw] snap-center flex flex-col gap-6 group cursor-pointer relative">
-            <div className="w-full aspect-[4/3] md:aspect-[16/10] overflow-hidden bg-ink-light relative">
-              <GradientPlaceholder className="group-hover:scale-105 transition-transform duration-1000" />
-            </div>
-            <div className="flex justify-between items-start pt-4 border-t border-canvas/10">
-              <div>
-                <h3 className="text-3xl md:text-5xl tracking-tight mb-2">Job Hunter</h3>
-                <p className="text-canvas/60 font-sans text-sm md:text-base max-w-md">Personal AI system. Telegram channels to LLM classification to dashboard. 76 relevant roles surfaced in a month.</p>
-              </div>
-              <div className="w-12 h-12 rounded-full border border-canvas/20 flex items-center justify-center group-hover:bg-accent group-hover:border-accent transition-colors">
-                <ArrowUpRight strokeWidth={1} />
-              </div>
-            </div>
-          </Link>
-
-          <div className="min-w-[10vw]"></div>
-        </div>
+                      {/* Status (Top Right) — dot + label, no container */}
+                      <div className="absolute top-5 right-5 z-10 flex items-center gap-2">
+                        <span className={`w-2 h-2 rounded-full ${build.statusColor} shadow-[0_0_8px_currentColor]`}></span>
+                        <span className="blueprint text-[11px] text-canvas font-semibold tracking-widest [text-shadow:0_1px_4px_rgba(0,0,0,0.6)]">
+                          {build.status}
+                        </span>
+                      </div>
+                    </>
+                  )}
+                </div>
+                
+                <div className="flex flex-col gap-4 mt-3">
+                  {/* Title & Description */}
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <h3 className="text-3xl lg:text-4xl tracking-tight mb-3 text-canvas group-hover:text-accent transition-colors duration-500">
+                        {build.title}
+                      </h3>
+                      <p className="text-canvas/60 font-sans text-sm md:text-base leading-relaxed max-w-[90%]">
+                        {build.desc}
+                      </p>
+                    </div>
+                    {/* Arrow Icon */}
+                    <div className="w-10 h-10 rounded-full border border-canvas/20 flex items-center justify-center group-hover:bg-accent group-hover:border-accent group-hover:text-canvas transition-all duration-500 shrink-0 mt-1">
+                      <ArrowUpRight strokeWidth={1.5} className="w-4 h-4" />
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
+        </motion.div>
       </section>
 
       {/* 3. THE MIND */}
