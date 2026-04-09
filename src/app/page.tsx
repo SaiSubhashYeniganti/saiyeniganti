@@ -60,7 +60,7 @@ export default function Home() {
               <div className="flex flex-col gap-4 text-[16px] lg:text-[18px] text-ink/75 leading-[1.7] font-sans mb-10 max-w-[480px]">
                 <p>I'm Sai Subhash Yeniganti.</p>
                 <p>Over the last decade, I built a product division from scratch at a US startup and shipped $8M+ in revenue. Then I ran product strategy and GTM for 25+ startups at a Dubai accelerator. Now I build and ship full products solo with AI.</p>
-                <p>This is where all of it lives.</p>
+                <p>This is where all of it lives. Thanks for stopping by.</p>
               </div>
 
               <Link href="#builds" className="inline-flex items-center gap-2 group">
@@ -258,11 +258,17 @@ export default function Home() {
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-32">
 
           <div className="w-full lg:w-5/12 order-2 lg:order-1">
-            <div className="aspect-[3/4] w-full bg-ink relative overflow-hidden flex items-center justify-center">
-              <div className="absolute inset-0 bg-canvas-alt shadow-inner">
-                <div className="w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjRkZGRkZGIiBmaWxsLW9wYWNpdHk9IjAiLz4KPHBhdGggZD0iTTAgMEw4IDhaTTggMEwwIDhaIiBzdHJva2U9IiNEOEQ4RDgiIHN0cm9rZS13aWR0aD0iMC41Ii8+Cjwvc3ZnPg==')] opacity-60 mix-blend-multiply"></div>
-              </div>
-              <span className="blueprint text-ink-muted tracking-widest z-10 relative">PORTRAIT PLACEHOLDER</span>
+            <div className="aspect-[9/10] w-full bg-canvas-alt rounded-3xl relative overflow-hidden flex items-center justify-center">
+              <Image 
+                src="/images/sai-portrait-cropped.webp" 
+                alt="Portrait of Sai Subhash Yeniganti"
+                fill
+                className="object-cover object-top mix-blend-multiply contrast-[1.05] grayscale-[0.2]"
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                quality={100}
+                priority
+              />
+              <div className="absolute inset-0 rounded-3xl shadow-[inset_0_0_0_1px_rgba(0,0,0,0.05)] pointer-events-none"></div>
             </div>
           </div>
 
