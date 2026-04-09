@@ -9,10 +9,18 @@ import { HeroAtmosphere } from "@/components/HeroAtmosphere";
 
 // --- ANIMATION VARIANTS ---
 const revealUp = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 40 },
   visible: {
     opacity: 1,
     y: 0,
+    transition: { duration: 1.2, ease: "easeOut" as const }
+  }
+};
+
+const revealFade = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
     transition: { duration: 1.2, ease: "easeOut" as const }
   }
 };
@@ -375,7 +383,7 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10"
           >
             {[
               {
@@ -416,7 +424,7 @@ export default function Home() {
             ].map((post, index) => (
               <motion.a
                 key={post.id}
-                variants={revealUp}
+                variants={revealFade}
                 href={post.url}
                 target="_blank"
                 rel="noopener noreferrer"
