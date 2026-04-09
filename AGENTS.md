@@ -20,3 +20,7 @@
 ## Next.js specifics
 
 This uses Next.js 16 with breaking changes. Read `node_modules/next/dist/docs/` before writing framework code.
+
+## Workflow rules (non-negotiable)
+
+- **NEVER use the `browser-use` subagent to take screenshots unless explicitly requested by the user.** The user will provide screenshots if they want visual feedback. Do not proactively spin up browser agents just to look at the UI.

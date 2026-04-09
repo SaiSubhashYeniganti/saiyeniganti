@@ -254,66 +254,104 @@ export default function Home() {
       </section>
 
       {/* 3. THE MIND */}
-      <section id="mind" className="relative py-32 md:py-48 px-6 md:px-12 lg:px-24">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-32">
+      <section id="mind" className="relative pt-16 md:pt-24 pb-12 md:pb-16 overflow-hidden">
 
-          <div className="w-full lg:w-5/12 order-2 lg:order-1">
-            <div className="aspect-[9/10] w-full bg-canvas-alt rounded-3xl relative overflow-hidden flex items-center justify-center">
-              <Image 
-                src="/images/sai-portrait-cropped.webp" 
-                alt="Portrait of Sai Subhash Yeniganti"
-                fill
-                className="object-cover object-top mix-blend-multiply contrast-[1.05] grayscale-[0.2]"
-                sizes="(max-width: 1024px) 100vw, 40vw"
-                quality={100}
-                priority
-              />
-              <div className="absolute inset-0 rounded-3xl shadow-[inset_0_0_0_1px_rgba(0,0,0,0.05)] pointer-events-none"></div>
-            </div>
-          </div>
+        <div className="px-6 md:px-12 lg:px-24">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
-          <div className="w-full lg:w-7/12 order-1 lg:order-2 flex flex-col justify-center">
-            <h2 className="text-4xl md:text-6xl tracking-tight mb-12">
-              Before the solo builds,<br /><span className="italic text-ink-muted">there was this.</span>
-            </h2>
+            {/* Left: Image */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              className="relative"
+            >
+              <div className="aspect-[4/5] w-full max-w-[440px] mx-auto lg:ml-auto lg:mr-0 bg-canvas-alt rounded-3xl relative overflow-hidden">
+                <Image 
+                  src="/images/sai-portrait-cropped.webp" 
+                  alt="Portrait of Sai Subhash Yeniganti"
+                  fill
+                  className="object-cover object-top mix-blend-multiply contrast-[1.05] grayscale-[0.2]"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  quality={100}
+                  priority
+                />
+                <div className="absolute inset-0 rounded-3xl shadow-[inset_0_0_0_1px_rgba(0,0,0,0.05)] pointer-events-none" />
+              </div>
+            </motion.div>
 
-            <div className="space-y-8 text-lg font-sans text-ink-muted max-w-2xl">
-              <p>
-                I started as an engineer at National Instruments, building test and measurement solutions used by Qualcomm and Verizon. Did an MBA at ISB. Moved into product at HCL, where I owned a B2B SaaS platform that managed 9M+ devices across 10+ countries for AT&amp;T and Vodafone. Then joined a blockchain gaming startup as founding team, built the product division from zero, led 20+ people, shipped $8M in revenue.
-              </p>
-              <p>
-                Most recently, I ran product strategy and GTM across 25+ startups at a Dubai-based accelerator. Somewhere along the way, I started building things on my own using AI workflows. Websites, mobile apps, brands, infrastructure. Turns out a product leader who can also write the code ships a lot faster.
-              </p>
-            </div>
+            {/* Right: Story */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 1, delay: 0.15, ease: "easeOut" }}
+              className="flex flex-col"
+            >
+              <h2 className="text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.1] mb-8 mt-[-6px]">
+                The backstory,<br /><span className="italic text-ink-muted">in short.</span>
+              </h2>
 
-            <div className="mt-16 pt-16 border-t border-ink/10 flex flex-col gap-8">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div>
-                  <div className="blueprint text-xs text-ink-muted mb-2">REVENUE SHIPPED</div>
-                  <div className="text-3xl">$8M+</div>
-                </div>
-                <div>
-                  <div className="blueprint text-xs text-ink-muted mb-2">STARTUPS LED</div>
-                  <div className="text-3xl">25+</div>
-                </div>
-                <div>
-                  <div className="blueprint text-xs text-ink-muted mb-2">SOLO BUILDS</div>
-                  <div className="text-3xl">5+</div>
-                </div>
-                <div>
-                  <div className="blueprint text-xs text-ink-muted mb-2">EDUCATION</div>
-                  <div className="text-3xl">ISB &middot; BITS</div>
-                </div>
+              <div className="space-y-5 text-[17px] md:text-lg font-sans text-ink-muted max-w-lg leading-relaxed">
+                <p>
+                  I started as an engineer at National Instruments, building signal processing systems for companies like Qualcomm and Verizon. Did an MBA at ISB, then moved into product at HCL where I owned a $3.5M B2B SaaS platform serving AT&T and Vodafone.
+                </p>
+                <p>
+                  Then I helped build a blockchain gaming startup from zero. Built the product division, led 20+ people, and generated $8M in revenue.
+                </p>
+                <p>
+                  Most recently, I ran product strategy and GTM across 25+ startups at a Dubai-based accelerator. Somewhere in between, I started building and shipping full products on my own.
+                </p>
               </div>
 
-              <Link href="/experience" className="flex items-center gap-2 group w-fit mt-8">
-                <span className="blueprint text-xs border border-ink/20 px-6 py-3 rounded-full group-hover:bg-accent group-hover:text-canvas group-hover:border-accent transition-all duration-500">
-                  FULL EXPERIENCE ↗
+              <Link href="/experience" className="flex items-center gap-2 group w-fit mt-10">
+                <span className="blueprint text-xs border border-ink/20 px-8 py-4 rounded-full group-hover:bg-accent group-hover:text-canvas group-hover:border-accent transition-all duration-500">
+                  THE FULL STORY ↗
                 </span>
               </Link>
-            </div>
+            </motion.div>
+
           </div>
         </div>
+
+        {/* Footnote Metrics Bar (Bottom) */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="px-6 md:px-12 lg:px-24 mt-6 md:mt-10"
+        >
+          <div className="max-w-5xl mx-auto border-t border-ink/10 pt-8">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-y-8 gap-x-6 text-center">
+              <div className="flex flex-col items-center justify-end">
+                <div className="text-2xl md:text-3xl tracking-tight mb-2">10+</div>
+                <div className="blueprint text-[10px] text-ink-muted">YEARS EXPERIENCE</div>
+              </div>
+              <div className="flex flex-col items-center justify-end">
+                <div className="text-2xl md:text-3xl tracking-tight mb-2">$8M+</div>
+                <div className="blueprint text-[10px] text-ink-muted">REVENUE SHIPPED</div>
+              </div>
+              <div className="flex flex-col items-center justify-end">
+                <div className="text-2xl md:text-3xl tracking-tight mb-2">25+</div>
+                <div className="blueprint text-[10px] text-ink-muted">STARTUPS ADVISED</div>
+              </div>
+              <div className="flex flex-col items-center justify-end">
+                <div className="text-2xl md:text-3xl tracking-tight mb-2">5+</div>
+                <div className="blueprint text-[10px] text-ink-muted">SOLO BUILDS</div>
+              </div>
+              <div className="flex flex-col items-center justify-end col-span-2 md:col-span-1 mt-2 md:mt-0">
+                <div className="text-lg md:text-xl tracking-tight leading-tight mb-2 text-center w-full">
+                  ISB <span className="text-ink-muted text-[10px] md:text-xs">(MBA)</span>
+                  <br />
+                  <span className="text-sm md:text-base">BITS Pilani</span>
+                </div>
+                <div className="blueprint text-[10px] text-ink-muted">EDUCATION</div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </section>
 
       {/* 4. THE ARCHIVE */}
