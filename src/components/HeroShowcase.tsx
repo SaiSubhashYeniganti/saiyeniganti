@@ -58,7 +58,7 @@ export function HeroShowcase() {
     timerRef.current = setInterval(() => {
       pendingIndex.current = (pendingIndex.current + 1) % IMAGES.length;
       advanceIfReady(pendingIndex.current);
-    }, 3000);
+    }, 4500);
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
@@ -73,20 +73,20 @@ export function HeroShowcase() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-gradient-to-tr from-accent/10 to-ink/5 rounded-full blur-[100px] pointer-events-none z-0" />
 
       <div className="relative z-10 w-full h-full flex items-center justify-center overflow-visible">
-        <AnimatePresence mode="wait">
+        <AnimatePresence>
           {firstImageReady && (
             <motion.div
               key={currentImage.src}
               initial={{ opacity: 0, x: 80, rotateY: -12, scale: 0.85 }}
               animate={{ opacity: 1, x: 0, rotateY: -4, scale: 1 }}
               exit={{ opacity: 0, x: -80, rotateY: 4, scale: 0.85 }}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className={`absolute overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] bg-canvas ${
                 isMobile
                   ? 'h-[85%] max-h-[520px] aspect-[9/19.5] rounded-[2.5rem] ring-4 ring-ink/5'
                   : 'w-[95%] aspect-[16/10] rounded-xl lg:rounded-[1.25rem] ring-1 ring-ink/10'
               }`}
-              style={{ transformStyle: 'preserve-3d' }}
+              style={{ transformStyle: 'preserve-3d', willChange: 'transform, opacity' }}
             >
               <Image
                 src={currentImage.src}
