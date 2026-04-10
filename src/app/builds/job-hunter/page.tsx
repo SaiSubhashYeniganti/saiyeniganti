@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { IMAGE_BLUR_DATA_URL } from "@/lib/image";
 
 const revealUp = {
   hidden: { opacity: 0, y: 40 },
@@ -14,7 +15,7 @@ const revealUp = {
 };
 
 const imageReveal = {
-  hidden: { opacity: 0, y: 50 },
+  hidden: { opacity: 0, y: 40 },
   visible: { 
     opacity: 1, 
     y: 0,
@@ -93,11 +94,16 @@ export default function JobHunterBuildPage() {
               <Image 
                 src="/images/builds/job-hunter/Job board.webp" 
                 alt="Job Hunter Web3 Dashboard" 
-                width={1800}
-                height={1000}
+                width={1200}
+                height={455}
                 className="w-full h-auto"
                 sizes="(max-width: 1024px) 100vw, 900px"
-                quality={100}
+                quality={75}
+                priority
+                loading="eager"
+                fetchPriority="high"
+                placeholder="blur"
+                blurDataURL={IMAGE_BLUR_DATA_URL}
               />
             </motion.div>
 
@@ -113,11 +119,13 @@ export default function JobHunterBuildPage() {
                 <Image 
                   src="/images/builds/job-hunter/TG.webp" 
                   alt="Job Hunter Telegram Sourcing" 
-                  width={473}
-                  height={1024}
+                  width={640}
+                  height={1385}
                   className="w-full h-auto"
                   sizes="(max-width: 640px) 100vw, 300px"
-                  quality={100}
+                  quality={75}
+                  placeholder="blur"
+                  blurDataURL={IMAGE_BLUR_DATA_URL}
                 />
               </motion.div>
 
@@ -132,11 +140,13 @@ export default function JobHunterBuildPage() {
                 <Image 
                   src="/images/builds/job-hunter/Process.webp" 
                   alt="Job Hunter Ingestion Terminal" 
-                  width={1400}
-                  height={800}
+                  width={1200}
+                  height={685}
                   className="w-full h-auto"
                   sizes="(max-width: 1024px) 100vw, 600px"
-                  quality={100}
+                  quality={75}
+                  placeholder="blur"
+                  blurDataURL={IMAGE_BLUR_DATA_URL}
                 />
               </motion.div>
             </div>

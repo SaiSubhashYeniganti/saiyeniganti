@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { IMAGE_BLUR_DATA_URL } from "@/lib/image";
 
 const revealUp = {
   hidden: { opacity: 0, y: 40 },
@@ -15,7 +16,7 @@ const revealUp = {
 
 // Subtle animation for each phone screen revealing
 const phoneReveal = {
-  hidden: { opacity: 0, y: 50 },
+  hidden: { opacity: 0, y: 40 },
   visible: { 
     opacity: 1, 
     y: 0,
@@ -98,11 +99,16 @@ export default function BlockPulseBuildPage() {
                   <Image 
                     src="/images/builds/BlockPulse/2.webp" 
                     alt="BlockPulse screen 2" 
-                    width={1284}
-                    height={2778}
+                    width={640}
+                    height={983}
                     className="w-full h-auto object-cover"
                     sizes="(max-width: 640px) 100vw, 400px"
-                    quality={100}
+                    quality={75}
+                    priority
+                    loading="eager"
+                    fetchPriority="high"
+                    placeholder="blur"
+                    blurDataURL={IMAGE_BLUR_DATA_URL}
                   />
                 </motion.div>
 
@@ -116,11 +122,13 @@ export default function BlockPulseBuildPage() {
                   <Image 
                     src="/images/builds/BlockPulse/4.webp" 
                     alt="BlockPulse screen 4" 
-                    width={1284}
-                    height={2778}
+                    width={640}
+                    height={965}
                     className="w-full h-auto object-cover"
                     sizes="(max-width: 640px) 100vw, 400px"
-                    quality={100}
+                    quality={75}
+                    placeholder="blur"
+                    blurDataURL={IMAGE_BLUR_DATA_URL}
                   />
                 </motion.div>
 
@@ -134,11 +142,13 @@ export default function BlockPulseBuildPage() {
                   <Image 
                     src="/images/builds/BlockPulse/8.webp" 
                     alt="BlockPulse screen 8" 
-                    width={1284}
-                    height={2778}
+                    width={640}
+                    height={1264}
                     className="w-full h-auto object-cover"
                     sizes="(max-width: 640px) 100vw, 400px"
-                    quality={100}
+                    quality={75}
+                    placeholder="blur"
+                    blurDataURL={IMAGE_BLUR_DATA_URL}
                   />
                 </motion.div>
               </div>
@@ -155,11 +165,13 @@ export default function BlockPulseBuildPage() {
                   <Image 
                     src="/images/builds/BlockPulse/3.webp" 
                     alt="BlockPulse screen 3" 
-                    width={1284}
-                    height={2778}
+                    width={640}
+                    height={995}
                     className="w-full h-auto object-cover"
                     sizes="(max-width: 640px) 100vw, 400px"
-                    quality={100}
+                    quality={75}
+                    placeholder="blur"
+                    blurDataURL={IMAGE_BLUR_DATA_URL}
                   />
                 </motion.div>
 
@@ -173,11 +185,13 @@ export default function BlockPulseBuildPage() {
                   <Image 
                     src="/images/builds/BlockPulse/6.webp" 
                     alt="BlockPulse screen 6" 
-                    width={1284}
-                    height={2582}
+                    width={640}
+                    height={1287}
                     className="w-full h-auto object-cover"
                     sizes="(max-width: 640px) 100vw, 400px"
-                    quality={100}
+                    quality={75}
+                    placeholder="blur"
+                    blurDataURL={IMAGE_BLUR_DATA_URL}
                   />
                 </motion.div>
 
@@ -191,11 +205,13 @@ export default function BlockPulseBuildPage() {
                   <Image 
                     src="/images/builds/BlockPulse/7.webp" 
                     alt="BlockPulse screen 7" 
-                    width={1284}
-                    height={2542}
+                    width={640}
+                    height={1268}
                     className="w-full h-auto object-cover"
                     sizes="(max-width: 640px) 100vw, 400px"
-                    quality={100}
+                    quality={75}
+                    placeholder="blur"
+                    blurDataURL={IMAGE_BLUR_DATA_URL}
                   />
                 </motion.div>
               </div>

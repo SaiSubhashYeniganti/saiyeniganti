@@ -7,6 +7,7 @@ import Image from "next/image";
 import { type MouseEvent } from "react";
 import { HeroShowcase } from "@/components/HeroShowcase";
 import { HeroAtmosphere } from "@/components/HeroAtmosphere";
+import { IMAGE_BLUR_DATA_URL } from "@/lib/image";
 
 // --- ANIMATION VARIANTS ---
 const revealUp = {
@@ -202,7 +203,12 @@ export default function Home() {
                         alt={build.title} 
                         fill
                         sizes="(max-width: 768px) 92vw, (max-width: 1200px) 46vw, 30vw"
-                        quality={80}
+                        quality={75}
+                        priority={index < 2}
+                        loading={index < 2 ? "eager" : "lazy"}
+                        fetchPriority={index < 2 ? "high" : "auto"}
+                        placeholder="blur"
+                        blurDataURL={IMAGE_BLUR_DATA_URL}
                         className="object-cover grayscale opacity-60 contrast-[1.1] transition-all duration-[1.2s] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-105 group-hover:grayscale-0 group-hover:opacity-100"
                       />
                       {/* Very subtle noise overlay for the editorial feel */}
@@ -296,8 +302,10 @@ export default function Home() {
                   fill
                   className="object-cover object-top mix-blend-multiply contrast-[1.05] grayscale-[0.2]"
                   sizes="(max-width: 1024px) 100vw, 40vw"
-                  quality={80}
+                  quality={75}
                   priority
+                  placeholder="blur"
+                  blurDataURL={IMAGE_BLUR_DATA_URL}
                 />
                 <div className="absolute inset-0 rounded-3xl shadow-[inset_0_0_0_1px_rgba(0,0,0,0.05)] pointer-events-none" />
               </div>
@@ -405,35 +413,35 @@ export default function Home() {
                 hook: "I've never written a line of code. But right now, I don't see anything I can't build with AI.",
                 topic: "3.7 billion tokens across 14,000+ sessions. That's about 2.6 million pages of conversation. If you stack those pages, it would be taller than the Burj Khalifa. Twice.",
                 label: "3.7B TOKENS, ZERO LINES OF CODE",
-                url: "https://linkedin.com/in/subhashyeniganti/recent-activity/all/"
+                url: "https://www.linkedin.com/posts/subhashyeniganti_%F0%9D%97%9C%F0%9D%98%83%F0%9D%97%B2-%F0%9D%97%BB%F0%9D%97%B2%F0%9D%98%83%F0%9D%97%B2%F0%9D%97%BF-%F0%9D%98%84%F0%9D%97%BF%F0%9D%97%B6%F0%9D%98%81%F0%9D%98%81%F0%9D%97%B2%F0%9D%97%BB-%F0%9D%97%AE-%F0%9D%97%B9%F0%9D%97%B6-ugcPost-7442202652144377858-GC5T"
               },
               {
                 id: "post-1",
                 hook: "Everyone's been talking about autonomous agents. I spent the last few weeks building a dermatology website.",
                 topic: "10 unique designs, 86 pages, 65,000+ words. Not a developer. Never written a line of production code. Product skills matter more than ever.",
                 label: "WHY PRODUCT SKILLS STILL WIN",
-                url: "https://linkedin.com/in/subhashyeniganti/recent-activity/all/"
+                url: "https://www.linkedin.com/posts/subhashyeniganti_everyones-been-talking-about-autonomous-ugcPost-7425101343272472577-Hh5q"
               },
               {
                 id: "post-2",
                 hook: "I've lived through three waves of \"this changes everything.\" Crypto in 2017. NFTs in 2021. And now AI.",
                 topic: "You cannot keep up, and that's okay. But not trying isn't an option. Hype fades. Infrastructure remains. Builders compound.",
                 label: "SURVIVING THREE HYPE CYCLES",
-                url: "https://linkedin.com/in/subhashyeniganti/recent-activity/all/"
+                url: "https://www.linkedin.com/posts/subhashyeniganti_ai-crypto-technology-share-7432020960482066432-BpIu"
               },
               {
                 id: "post-3",
                 hook: "What if we've already achieved AGI but just refuse to call it that?",
                 topic: "Whether AI is \"just next-token prediction\" or something different doesn't really matter. What matters is what it can do.",
                 label: "THE AGI WE WON'T ADMIT TO",
-                url: "https://linkedin.com/in/subhashyeniganti/recent-activity/all/"
+                url: "https://www.linkedin.com/posts/subhashyeniganti_ai-agi-share-7434540185134080000-rt7q"
               },
               {
                 id: "post-5",
                 hook: "I built an AI system to find my next job. It found 80+ in a month.",
                 topic: "Connected Telegram channels to an LLM, built a classification pipeline, put a dashboard on top. AI doesn't have to be about building the next big thing.",
                 label: "AUTOMATING MY OWN JOB SEARCH",
-                url: "https://linkedin.com/in/subhashyeniganti/recent-activity/all/"
+                url: "https://www.linkedin.com/posts/subhashyeniganti_%F0%9D%97%9C-%F0%9D%97%AF%F0%9D%98%82%F0%9D%97%B6%F0%9D%97%B9%F0%9D%98%81-%F0%9D%97%AE%F0%9D%97%BB-%F0%9D%97%94%F0%9D%97%9C-%F0%9D%98%80%F0%9D%98%86%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B2%F0%9D%97%BA-%F0%9D%98%81%F0%9D%97%BC-share-7445592784117420032-RBS-"
               }
             ].map((post, index) => (
               <motion.a

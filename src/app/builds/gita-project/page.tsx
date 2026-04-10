@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { IMAGE_BLUR_DATA_URL } from "@/lib/image";
 
 const revealUp = {
   hidden: { opacity: 0, y: 40 },
@@ -15,7 +16,7 @@ const revealUp = {
 
 // Subtle animation for each phone screen revealing
 const phoneReveal = {
-  hidden: { opacity: 0, y: 50 },
+  hidden: { opacity: 0, y: 40 },
   visible: { 
     opacity: 1, 
     y: 0,
@@ -103,11 +104,16 @@ export default function GitaProjectBuildPage() {
                   <Image 
                     src="/images/builds/The Gita Project/home_screen.webp" 
                     alt="The Gita Project Home Screen" 
-                    width={473}
-                    height={1024}
+                    width={640}
+                    height={1385}
                     className="w-full h-auto object-cover"
                     sizes="(max-width: 640px) 100vw, 400px"
-                    quality={100}
+                    quality={75}
+                    priority
+                    loading="eager"
+                    fetchPriority="high"
+                    placeholder="blur"
+                    blurDataURL={IMAGE_BLUR_DATA_URL}
                   />
                 </motion.div>
 
@@ -121,11 +127,13 @@ export default function GitaProjectBuildPage() {
                   <Image 
                     src="/images/builds/The Gita Project/chapter_detail_screen.webp" 
                     alt="The Gita Project Chapter Detail" 
-                    width={473}
-                    height={1024}
+                    width={640}
+                    height={1385}
                     className="w-full h-auto object-cover"
                     sizes="(max-width: 640px) 100vw, 400px"
-                    quality={100}
+                    quality={75}
+                    placeholder="blur"
+                    blurDataURL={IMAGE_BLUR_DATA_URL}
                   />
                 </motion.div>
 
@@ -139,11 +147,13 @@ export default function GitaProjectBuildPage() {
                   <Image 
                     src="/images/builds/The Gita Project/india_gita_screen.webp" 
                     alt="The Gita Project Context Content" 
-                    width={473}
-                    height={1024}
+                    width={640}
+                    height={1385}
                     className="w-full h-auto object-cover"
                     sizes="(max-width: 640px) 100vw, 400px"
-                    quality={100}
+                    quality={75}
+                    placeholder="blur"
+                    blurDataURL={IMAGE_BLUR_DATA_URL}
                   />
                 </motion.div>
               </div>
@@ -160,11 +170,13 @@ export default function GitaProjectBuildPage() {
                   <Image 
                     src="/images/builds/The Gita Project/chapters_screen.webp" 
                     alt="The Gita Project Chapters Index" 
-                    width={473}
-                    height={1024}
+                    width={640}
+                    height={1385}
                     className="w-full h-auto object-cover"
                     sizes="(max-width: 640px) 100vw, 400px"
-                    quality={100}
+                    quality={75}
+                    placeholder="blur"
+                    blurDataURL={IMAGE_BLUR_DATA_URL}
                   />
                 </motion.div>
 
@@ -178,11 +190,13 @@ export default function GitaProjectBuildPage() {
                   <Image 
                     src="/images/builds/The Gita Project/verse_screen.webp" 
                     alt="The Gita Project Verse Detail" 
-                    width={473}
-                    height={1024}
+                    width={640}
+                    height={1385}
                     className="w-full h-auto object-cover"
                     sizes="(max-width: 640px) 100vw, 400px"
-                    quality={100}
+                    quality={75}
+                    placeholder="blur"
+                    blurDataURL={IMAGE_BLUR_DATA_URL}
                   />
                 </motion.div>
 
@@ -196,11 +210,13 @@ export default function GitaProjectBuildPage() {
                   <Image 
                     src="/images/builds/The Gita Project/gita_world_screen.webp" 
                     alt="The Gita Project Global Influence" 
-                    width={473}
-                    height={1024}
+                    width={640}
+                    height={1385}
                     className="w-full h-auto object-cover"
                     sizes="(max-width: 640px) 100vw, 400px"
-                    quality={100}
+                    quality={75}
+                    placeholder="blur"
+                    blurDataURL={IMAGE_BLUR_DATA_URL}
                   />
                 </motion.div>
               </div>
