@@ -58,7 +58,7 @@ export function HeroShowcase() {
     timerRef.current = setInterval(() => {
       pendingIndex.current = (pendingIndex.current + 1) % IMAGES.length;
       advanceIfReady(pendingIndex.current);
-    }, 4500);
+    }, 2500);
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
