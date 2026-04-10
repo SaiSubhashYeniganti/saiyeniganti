@@ -122,7 +122,7 @@ export default function Home() {
               type: "WEBSITE",
               status: "LIVE",
               statusColor: "bg-[#4ade80]",
-              image: "/images/Home%20page%202nd%20section/pragna.jpg"
+              image: "/images/build-cards/pragna.webp"
             },
             {
               id: "gita-project",
@@ -132,7 +132,7 @@ export default function Home() {
               type: "FULL PRODUCT",
               status: "IN PROGRESS",
               statusColor: "bg-[#fbbf24]",
-              image: "/images/Home%20page%202nd%20section/gita-project.jpg"
+              image: "/images/build-cards/gita-project.webp"
             },
             {
               id: "arthm",
@@ -142,7 +142,7 @@ export default function Home() {
               type: "WEBSITE",
               status: "LIVE",
               statusColor: "bg-[#4ade80]",
-              image: "/images/Home%20page%202nd%20section/arthm.jpg"
+              image: "/images/build-cards/arthm.webp"
             },
             {
               id: "blockpulse",
@@ -152,7 +152,7 @@ export default function Home() {
               type: "MOBILE APP",
               status: "SHIPPED",
               statusColor: "bg-[#9ca3af]",
-              image: "/images/Home%20page%202nd%20section/blockpulse.jpg"
+              image: "/images/build-cards/blockpulse.webp"
             },
             {
               id: "job-hunter",
@@ -162,7 +162,7 @@ export default function Home() {
               type: "AI PIPELINE",
               status: "INTERNAL",
               statusColor: "bg-[#9ca3af]",
-              image: "/images/Home%20page%202nd%20section/job-hunter.jpg"
+              image: "/images/build-cards/job-hunter.webp"
             },
             {
               id: "the-unbecoming",
@@ -172,7 +172,7 @@ export default function Home() {
               type: "WEBSITE",
               status: "LIVE",
               statusColor: "bg-[#4ade80]",
-              image: "/images/Home%20page%202nd%20section/the-unbecoming.jpg"
+              image: "/images/build-cards/the-unbecoming.webp"
             }
           ].map((build, index) => (
             <motion.div 
@@ -189,6 +189,8 @@ export default function Home() {
                         src={build.image} 
                         alt={build.title} 
                         fill
+                        sizes="(max-width: 768px) 92vw, (max-width: 1200px) 46vw, 30vw"
+                        quality={80}
                         className="object-cover grayscale opacity-60 contrast-[1.1] transition-all duration-[1.2s] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-105 group-hover:grayscale-0 group-hover:opacity-100"
                       />
                       {/* Very subtle noise overlay for the editorial feel */}
@@ -282,7 +284,7 @@ export default function Home() {
                   fill
                   className="object-cover object-top mix-blend-multiply contrast-[1.05] grayscale-[0.2]"
                   sizes="(max-width: 1024px) 100vw, 40vw"
-                  quality={100}
+                  quality={80}
                   priority
                 />
                 <div className="absolute inset-0 rounded-3xl shadow-[inset_0_0_0_1px_rgba(0,0,0,0.05)] pointer-events-none" />

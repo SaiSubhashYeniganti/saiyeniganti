@@ -5,28 +5,45 @@ import Image from 'next/image';
 import { useState, useEffect } from 'react';
 
 const IMAGES = [
-  { src: '/images/Hero/Mobile%20References/TGP%201.png', alt: 'The Gita Project Mobile', type: 'mobile' },
-  { src: '/images/Hero/Desktop%20References/ARTHM.png', alt: 'ARTHM Foundation', type: 'desktop' },
-  { src: '/images/Hero/Mobile%20References/Arthm.png', alt: 'ARTHM Foundation Mobile', type: 'mobile' },
-  { src: '/images/Hero/Desktop%20References/BlockPulse.png', alt: 'BlockPulse Desktop', type: 'desktop' },
-  { src: '/images/Hero/Mobile%20References/BP%201.png', alt: 'BlockPulse Mobile', type: 'mobile' },
-  { src: '/images/Hero/Desktop%20References/KV.png', alt: 'KarmaV Desktop', type: 'desktop' },
-  { src: '/images/Hero/Mobile%20References/KV.png', alt: 'KarmaV Mobile', type: 'mobile' },
-  { src: '/images/Hero/Desktop%20References/PSC.png', alt: 'Pragna Skin Clinic', type: 'desktop' },
-  { src: '/images/Hero/Mobile%20References/PSC%201.png', alt: 'Pragna Skin Clinic Mobile', type: 'mobile' },
-  { src: '/images/Hero/Mobile%20References/BP%202.png', alt: 'BlockPulse News', type: 'mobile' },
-  { src: '/images/Hero/Mobile%20References/TGP%202.png', alt: 'The Gita Project App', type: 'mobile' },
-  { src: '/images/Hero/Mobile%20References/PSC%202.png', alt: 'Pragna Skin Clinic Detail', type: 'mobile' }
+  { src: '/images/hero-showcase/mobile/tgp-1.webp', alt: 'The Gita Project Mobile', type: 'mobile' },
+  { src: '/images/hero-showcase/desktop/arthm.webp', alt: 'ARTHM Foundation', type: 'desktop' },
+  { src: '/images/hero-showcase/mobile/arthm.webp', alt: 'ARTHM Foundation Mobile', type: 'mobile' },
+  { src: '/images/hero-showcase/desktop/blockpulse.webp', alt: 'BlockPulse Desktop', type: 'desktop' },
+  { src: '/images/hero-showcase/mobile/bp-1.webp', alt: 'BlockPulse Mobile', type: 'mobile' },
+  { src: '/images/hero-showcase/desktop/kv.webp', alt: 'KarmaV Desktop', type: 'desktop' },
+  { src: '/images/hero-showcase/mobile/kv.webp', alt: 'KarmaV Mobile', type: 'mobile' },
+  { src: '/images/hero-showcase/desktop/psc.webp', alt: 'Pragna Skin Clinic', type: 'desktop' },
+  { src: '/images/hero-showcase/mobile/psc-1.webp', alt: 'Pragna Skin Clinic Mobile', type: 'mobile' },
+  { src: '/images/hero-showcase/mobile/bp-2.webp', alt: 'BlockPulse News', type: 'mobile' },
+  { src: '/images/hero-showcase/mobile/tgp-2.webp', alt: 'The Gita Project App', type: 'mobile' },
+  { src: '/images/hero-showcase/mobile/psc-2.webp', alt: 'Pragna Skin Clinic Detail', type: 'mobile' }
 ];
 
 export function HeroShowcase() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [loadedImages, setLoadedImages] = useState<Set<string>>(
+    () => new Set([IMAGES[0].src])
+  );
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % IMAGES.length);
     }, 3000);
     return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    IMAGES.forEach((image) => {
+      const preloadImage = new window.Image();
+      preloadImage.src = image.src;
+      preloadImage.onload = () => {
+        setLoadedImages((prev) => {
+          const next = new Set(prev);
+          next.add(image.src);
+          return next;
+        });
+      };
+    });
   }, []);
 
   const currentImage = IMAGES[currentIndex];
@@ -58,8 +75,23 @@ export function HeroShowcase() {
               alt={currentImage.alt}
               fill
               className="object-cover object-top"
-              priority
+              priority={currentIndex === 0}
+              loading={currentIndex === 0 ? 'eager' : 'lazy'}
+              sizes={isMobile ? '(max-width: 768px) 60vw, 24vw' : '(max-width: 1024px) 92vw, 46vw'}
+              quality={80}
+              placeholder="blur"
+              blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'%3E%3Crect width='4' height='4' fill='%23ede9e2'/%3E%3C/svg%3E"
+              onLoad={() => {
+                setLoadedImages((prev) => {
+                  const next = new Set(prev);
+                  next.add(currentImage.src);
+                  return next;
+                });
+              }}
             />
+            {!loadedImages.has(currentImage.src) && (
+              <div className="absolute inset-0 bg-canvas-alt animate-pulse" />
+            )}
             <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent pointer-events-none" />
           </motion.div>
         </AnimatePresence>
