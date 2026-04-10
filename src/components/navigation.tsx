@@ -222,7 +222,7 @@ export function Navigation() {
             onClick={(event) => scrollToSection(event, "contact", "/#contact")}
             className={`text-4xl tracking-tight transition-all duration-500 delay-500 flex items-center gap-4 ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} ${isLetsTalkActive ? "text-accent" : ""}`}
           >
-            Let&apos;s Talk ↗
+            Let&apos;s Talk.
           </Link>
         </div>
       </div>

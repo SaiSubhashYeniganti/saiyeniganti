@@ -87,7 +87,8 @@ export default function Home() {
         <div className="px-6 md:px-12 lg:px-24 mb-16 md:mb-24">
           <RevealUp className="flex flex-col items-center text-center max-w-4xl mx-auto">
             <h2 className="text-5xl md:text-7xl lg:text-[5.5rem] tracking-tight leading-[1.05] mb-6">
-              One person. <span className="italic text-canvas/50">End to end.</span>
+              <span className="block">One person.</span>
+              <span className="block italic text-canvas/50">End to end.</span>
             </h2>
             <p className="text-canvas/50 font-sans text-base md:text-lg max-w-2xl leading-relaxed">
               A collection of products, platforms, and experiments built entirely solo. From brand and design to code and deployment, all executed using AI-first workflows.
