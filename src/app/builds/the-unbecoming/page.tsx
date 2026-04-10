@@ -31,7 +31,7 @@ export default function TheUnbecomingBuildPage() {
                 The Unbecoming
               </h1>
               <p className="text-lg md:text-xl text-ink-muted font-sans leading-[1.6] mb-8">
-                Client work. Author's website for a book on ego dissolution. Shipped.
+                Client work. Author&apos;s website for a book on ego dissolution. Shipped.
               </p>
 
               <div className="flex flex-wrap gap-x-4 gap-y-2 blueprint text-[10px] tracking-widest text-ink-muted border-y border-ink/10 py-5 w-full mb-8">

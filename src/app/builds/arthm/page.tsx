@@ -46,7 +46,7 @@ export default function ArthmBuildPage() {
 
               <div className="text-base md:text-lg font-sans text-ink-muted leading-relaxed space-y-5">
                 <p>
-                  ARTHM is India's first mic-less concert hall. The client wanted a website that felt like the space itself. 
+                  ARTHM is India&apos;s first mic-less concert hall. The client wanted a website that felt like the space itself. 
                   No templates, no generic layouts. The kind of thing where every scroll, every transition, every 
                   piece of typography has to feel deliberate.
                 </p>

@@ -12,7 +12,7 @@ export function Footer() {
           ref={ref as React.RefObject<HTMLHeadingElement>}
           className={`text-[clamp(3.5rem,7vw,7.5rem)] leading-[0.8] tracking-tight mb-6 reveal-up ${isRevealed ? 'in-view' : ''}`}
         >
-          Let's Talk.
+          Let&apos;s Talk.
         </h2>
         <div className="flex items-center gap-6 md:gap-8 mt-4">
           <a href="mailto:saisubhash.yeniganti@gmail.com" className="text-lg md:text-xl font-sans text-canvas/60 hover:text-accent transition-colors">

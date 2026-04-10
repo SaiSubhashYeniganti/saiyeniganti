@@ -55,18 +55,18 @@ export default function JobHunterBuildPage() {
 
               <div className="text-base md:text-lg font-sans text-ink-muted leading-relaxed space-y-5">
                 <p>
-                  The Web3 job market is fragmented. There's no single board that covers it well, and most 
+                  The Web3 job market is fragmented. There&apos;s no single board that covers it well, and most 
                   real leads end up scattered across Telegram channels that get hundreds of messages every day. 
-                  Scrolling through all of that manually wasn't working.
+                  Scrolling through all of that manually wasn&apos;t working.
                 </p>
                 <p>
                   So I built an automation around it. Connected my Telegram channels to an LLM, built a 
                   classification pipeline to filter for PM roles, and put a dashboard on top that shows only 
-                  what's relevant to me. It surfaced 80+ relevant roles in the first month. Jobs I would 
-                  have never found scrolling. It's still running. Every morning there's new stuff waiting.
+                  what&apos;s relevant to me. It surfaced 80+ relevant roles in the first month. Jobs I would 
+                  have never found scrolling. It&apos;s still running. Every morning there&apos;s new stuff waiting.
                 </p>
                 <p>
-                  AI doesn't have to be about building the next big thing. Sometimes it's just about fixing 
+                  AI doesn&apos;t have to be about building the next big thing. Sometimes it&apos;s just about fixing 
                   something broken in your day-to-day.
                 </p>
               </div>

@@ -55,7 +55,7 @@ export default function GitaProjectBuildPage() {
 
               <div className="text-base md:text-lg font-sans text-ink-muted leading-relaxed space-y-5">
                 <p>
-                  The Bhagavad Gita is one of the world's oldest philosophical texts. But every way to access 
+                  The Bhagavad Gita is one of the world&apos;s oldest philosophical texts. But every way to access 
                   it today feels like it was designed 20 years ago. I wanted to build a product that gives this 
                   text the same design and UX treatment as any modern consumer app.
                 </p>

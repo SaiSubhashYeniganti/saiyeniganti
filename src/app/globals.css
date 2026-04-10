@@ -89,6 +89,15 @@ body {
   /* Child elements within a stagger-container are expected to define their own inline transition-delay */
 }
 
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
 /* Custom Hide Scrollbar for Horizontal Exhibition */
 .no-scrollbar::-webkit-scrollbar {
   display: none;

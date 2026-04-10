@@ -56,7 +56,7 @@ export default function BlockPulseBuildPage() {
               <div className="text-base md:text-lg font-sans text-ink-muted leading-relaxed space-y-5">
                 <p>
                   While running product strategy at Key Difference, I noticed an AI capability gap across 
-                  the org. Nobody was building with AI, and the company's vision needed it. Rather than 
+                  the org. Nobody was building with AI, and the company&apos;s vision needed it. Rather than 
                   write a proposal, I decided to prove the point by shipping something real.
                 </p>
                 <p>

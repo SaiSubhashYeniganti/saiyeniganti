@@ -80,7 +80,7 @@ export default function ExperiencePage() {
             </div>
             <div className="w-full md:w-2/3 text-lg font-sans text-ink-muted leading-relaxed">
               <p>
-                Then the opposite of enterprise. Bulls and Apes Project was a US-based blockchain gaming startup. I joined as founding team and built the product division from nothing. I led a 20+ person cross-functional team, designed a gaming ecosystem around 23,000+ digital assets, and shipped Ethereum's first customizable 3D avatar platform. The whole thing did $8M in cumulative revenue. No playbook for any of it.
+                Then the opposite of enterprise. Bulls and Apes Project was a US-based blockchain gaming startup. I joined as founding team and built the product division from nothing. I led a 20+ person cross-functional team, designed a gaming ecosystem around 23,000+ digital assets, and shipped Ethereum&apos;s first customizable 3D avatar platform. The whole thing did $8M in cumulative revenue. No playbook for any of it.
               </p>
             </div>
           </div>
