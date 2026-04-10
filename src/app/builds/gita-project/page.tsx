@@ -24,9 +24,120 @@ function RevealPhone({ children, className = '', delay = 0 }: { children: React.
 
 export default function GitaProjectBuildPage() {
   return (
-    <main className="min-h-screen bg-canvas text-ink pt-32 md:pt-40 pb-24 selection:bg-accent selection:text-canvas">
+    <main className="min-h-screen bg-canvas text-ink pt-24 md:pt-40 pb-24 selection:bg-accent selection:text-canvas">
       
-      <div className="w-full px-6 md:px-12 lg:px-24 mx-auto max-w-[1400px]">
+      {/* --- MOBILE LAYOUT --- */}
+      <div className="flex md:hidden flex-col w-full overflow-hidden">
+        <div className="px-6">
+          <Link href="/#builds" className="inline-flex items-center gap-2 text-ink-muted hover:text-ink transition-colors mb-8 blueprint text-[10px] tracking-[0.2em]">
+            ← GO BACK TO SOLO BUILDS
+          </Link>
+          
+          <RevealUp>
+            <h1 className="text-4xl tracking-tight leading-[0.95] text-ink mb-4">
+              The Gita Project
+            </h1>
+            <p className="text-[17px] text-ink-muted font-sans leading-[1.6] mb-8">
+              Starting with the Gita. Building toward something much bigger.
+            </p>
+          </RevealUp>
+        </div>
+
+        {/* Horizontal Carousel */}
+        <RevealUp className="w-full mb-8">
+          <div 
+            className="flex overflow-x-auto snap-x snap-mandatory px-6 pb-8 pt-4 gap-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]" 
+            style={{ scrollPaddingLeft: '1.5rem' }}
+          >
+            <div className="snap-start shrink-0 w-[60vw] relative rounded-[2rem] border border-ink/10 overflow-hidden shadow-sm bg-ink/5">
+              <Image 
+                src="/images/builds/The Gita Project/home_screen.webp" 
+                alt="The Gita Project Home Screen" 
+                width={640} height={1385} className="w-full h-auto object-cover" sizes="(max-width: 640px) 60vw, 400px" 
+              />
+            </div>
+            <div className="snap-start shrink-0 w-[60vw] relative rounded-[2rem] border border-ink/10 overflow-hidden shadow-sm bg-ink/5">
+              <Image 
+                src="/images/builds/The Gita Project/chapter_detail_screen.webp" 
+                alt="The Gita Project Chapter Detail" 
+                width={640} height={1385} className="w-full h-auto object-cover" sizes="(max-width: 640px) 60vw, 400px" 
+              />
+            </div>
+            <div className="snap-start shrink-0 w-[60vw] relative rounded-[2rem] border border-ink/10 overflow-hidden shadow-sm bg-ink/5">
+              <Image 
+                src="/images/builds/The Gita Project/chapters_screen.webp" 
+                alt="The Gita Project Chapters Index" 
+                width={640} height={1385} className="w-full h-auto object-cover" sizes="(max-width: 640px) 60vw, 400px" 
+              />
+            </div>
+            <div className="snap-start shrink-0 w-[60vw] relative rounded-[2rem] border border-ink/10 overflow-hidden shadow-sm bg-ink/5">
+              <Image 
+                src="/images/builds/The Gita Project/verse_screen.webp" 
+                alt="The Gita Project Verse Detail" 
+                width={640} height={1385} className="w-full h-auto object-cover" sizes="(max-width: 640px) 60vw, 400px" 
+              />
+            </div>
+            <div className="snap-start shrink-0 w-[60vw] relative rounded-[2rem] border border-ink/10 overflow-hidden shadow-sm bg-ink/5">
+              <Image 
+                src="/images/builds/The Gita Project/india_gita_screen.webp" 
+                alt="The Gita Project Context Content" 
+                width={640} height={1385} className="w-full h-auto object-cover" sizes="(max-width: 640px) 60vw, 400px" 
+              />
+            </div>
+            <div className="snap-start shrink-0 w-[60vw] relative rounded-[2rem] border border-ink/10 overflow-hidden shadow-sm bg-ink/5">
+              <Image 
+                src="/images/builds/The Gita Project/gita_world_screen.webp" 
+                alt="The Gita Project Global Influence" 
+                width={640} height={1385} className="w-full h-auto object-cover" sizes="(max-width: 640px) 60vw, 400px" 
+              />
+            </div>
+            {/* Empty element for right padding */}
+            <div className="shrink-0 w-2" />
+          </div>
+        </RevealUp>
+
+        <div className="px-6">
+          <RevealUp className="flex flex-col items-start">
+            <div className="flex flex-wrap gap-x-3 gap-y-2 blueprint text-[10px] tracking-widest text-ink-muted border-y border-ink/10 py-4 w-full mb-8">
+              <span>FLUTTER</span>
+              <span className="text-ink/20">•</span>
+              <span>RIVERPOD</span>
+              <span className="text-ink/20">•</span>
+              <span>SUPABASE</span>
+              <span className="text-ink/20">•</span>
+              <span>NEXT.JS</span>
+            </div>
+
+            <div className="text-[17px] font-sans text-ink-muted leading-relaxed space-y-5 mb-10">
+              <p>
+                The Bhagavad Gita is one of the world&apos;s oldest philosophical texts. But every way to access 
+                it today feels like it was designed 20 years ago. I wanted to build a product that gives this 
+                text the same design and UX treatment as any modern consumer app.
+              </p>
+              <p>
+                The first problem was scale: 700+ verses, each needing structured metadata, categorization, 
+                and commentary. I built custom AI pipelines to process the entire corpus. Then the mobile app, 
+                the marketing website, the brand identity.
+              </p>
+              <p>
+                But the Gita is just the starting point. The long-term vision goes beyond the text itself, 
+                into the stories around it, practical ways to apply its teachings, meditation, yoga. A 
+                platform for living the philosophy, not just reading it. This is the closest thing I have 
+                to building a company solo from scratch.
+              </p>
+            </div>
+
+            <a href="https://thegitaproject.world" target="_blank" rel="noreferrer" className="w-full group">
+              <span className="blueprint text-xs block w-full text-center border border-ink/20 bg-ink text-canvas px-6 py-4 rounded-full">
+                VIEW LIVE SITE ↗
+              </span>
+            </a>
+          </RevealUp>
+        </div>
+      </div>
+
+      {/* --- DESKTOP LAYOUT --- */}
+      <div className="hidden md:block w-full px-6 md:px-12 lg:px-24 mx-auto max-w-[1400px]">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
           
           {/* LEFT: CONTEXT (STICKY ON DESKTOP) */}
@@ -95,8 +206,6 @@ export default function GitaProjectBuildPage() {
                     height={1385}
                     className="w-full h-auto object-cover"
                     sizes="(max-width: 640px) 100vw, 400px"
-                    priority
-                    loading="eager"
                   />
                 </RevealPhone>
 

@@ -24,9 +24,115 @@ function RevealPhone({ children, className = '', delay = 0 }: { children: React.
 
 export default function BlockPulseBuildPage() {
   return (
-    <main className="min-h-screen bg-canvas text-ink pt-32 md:pt-40 pb-24 selection:bg-accent selection:text-canvas">
+    <main className="min-h-screen bg-canvas text-ink pt-24 md:pt-40 pb-24 selection:bg-accent selection:text-canvas">
       
-      <div className="w-full px-6 md:px-12 lg:px-24 mx-auto max-w-[1400px]">
+      {/* --- MOBILE LAYOUT --- */}
+      <div className="flex md:hidden flex-col w-full overflow-hidden">
+        <div className="px-6">
+          <Link href="/#builds" className="inline-flex items-center gap-2 text-ink-muted hover:text-ink transition-colors mb-8 blueprint text-[10px] tracking-[0.2em]">
+            ← GO BACK TO SOLO BUILDS
+          </Link>
+          
+          <RevealUp>
+            <h1 className="text-4xl tracking-tight leading-[0.95] text-ink mb-4">
+              BlockPulse
+            </h1>
+            <p className="text-[17px] text-ink-muted font-sans leading-[1.6] mb-8">
+              Proof of concept that AI can build real products. Built solo, shipped to Play Store.
+            </p>
+          </RevealUp>
+        </div>
+
+        {/* Horizontal Carousel */}
+        <RevealUp className="w-full mb-8">
+          <div 
+            className="flex overflow-x-auto snap-x snap-mandatory px-6 pb-8 pt-4 gap-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]" 
+            style={{ scrollPaddingLeft: '1.5rem' }}
+          >
+            <div className="snap-start shrink-0 w-[60vw] relative rounded-[2rem] border border-ink/10 overflow-hidden shadow-sm bg-ink/5">
+              <Image 
+                src="/images/builds/BlockPulse/2.webp" 
+                alt="BlockPulse screen 2" 
+                width={640} height={983} className="w-full h-auto object-cover" sizes="(max-width: 640px) 60vw, 400px" 
+              />
+            </div>
+            <div className="snap-start shrink-0 w-[60vw] relative rounded-[2rem] border border-ink/10 overflow-hidden shadow-sm bg-ink/5">
+              <Image 
+                src="/images/builds/BlockPulse/4.webp" 
+                alt="BlockPulse screen 4" 
+                width={640} height={965} className="w-full h-auto object-cover" sizes="(max-width: 640px) 60vw, 400px" 
+              />
+            </div>
+            <div className="snap-start shrink-0 w-[60vw] relative rounded-[2rem] border border-ink/10 overflow-hidden shadow-sm bg-ink/5">
+              <Image 
+                src="/images/builds/BlockPulse/8.webp" 
+                alt="BlockPulse screen 8" 
+                width={640} height={1264} className="w-full h-auto object-cover" sizes="(max-width: 640px) 60vw, 400px" 
+              />
+            </div>
+            <div className="snap-start shrink-0 w-[60vw] relative rounded-[2rem] border border-ink/10 overflow-hidden shadow-sm bg-ink/5">
+              <Image 
+                src="/images/builds/BlockPulse/3.webp" 
+                alt="BlockPulse screen 3" 
+                width={640} height={995} className="w-full h-auto object-cover" sizes="(max-width: 640px) 60vw, 400px" 
+              />
+            </div>
+            <div className="snap-start shrink-0 w-[60vw] relative rounded-[2rem] border border-ink/10 overflow-hidden shadow-sm bg-ink/5">
+              <Image 
+                src="/images/builds/BlockPulse/6.webp" 
+                alt="BlockPulse screen 6" 
+                width={640} height={1287} className="w-full h-auto object-cover" sizes="(max-width: 640px) 60vw, 400px" 
+              />
+            </div>
+            <div className="snap-start shrink-0 w-[60vw] relative rounded-[2rem] border border-ink/10 overflow-hidden shadow-sm bg-ink/5">
+              <Image 
+                src="/images/builds/BlockPulse/7.webp" 
+                alt="BlockPulse screen 7" 
+                width={640} height={1268} className="w-full h-auto object-cover" sizes="(max-width: 640px) 60vw, 400px" 
+              />
+            </div>
+            {/* Empty element for right padding */}
+            <div className="shrink-0 w-2" />
+          </div>
+        </RevealUp>
+
+        <div className="px-6">
+          <RevealUp className="flex flex-col items-start">
+            <div className="flex flex-wrap gap-x-3 gap-y-2 blueprint text-[10px] tracking-widest text-ink-muted border-y border-ink/10 py-4 w-full mb-8">
+              <span>FLUTTER</span>
+              <span className="text-ink/20">•</span>
+              <span>SUPABASE</span>
+              <span className="text-ink/20">•</span>
+              <span>OPENAI API</span>
+              <span className="text-ink/20">•</span>
+              <span>CURSOR</span>
+            </div>
+
+            <div className="text-[17px] font-sans text-ink-muted leading-relaxed space-y-5 mb-10">
+              <p>
+                While running product strategy at Key Difference, I noticed an AI capability gap across 
+                the org. Nobody was building with AI, and the company&apos;s vision needed it. Rather than 
+                write a proposal, I decided to prove the point by shipping something real.
+              </p>
+              <p>
+                BlockPulse was the proof of concept. A Web3 news aggregator with an AI pipeline that 
+                monitors sources, filters signal from noise, and pushes curated content to a Flutter 
+                mobile app. Built solo, shipped to the Play Store. It became the starting point for an 
+                AI-first transformation at the company.
+              </p>
+            </div>
+
+            <a href="https://getblockpulse.app" target="_blank" rel="noreferrer" className="w-full group">
+              <span className="blueprint text-xs block w-full text-center border border-ink/20 bg-ink text-canvas px-6 py-4 rounded-full">
+                VIEW PLAY STORE ↗
+              </span>
+            </a>
+          </RevealUp>
+        </div>
+      </div>
+
+      {/* --- DESKTOP LAYOUT --- */}
+      <div className="hidden md:block w-full px-6 md:px-12 lg:px-24 mx-auto max-w-[1400px]">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
           
           {/* LEFT: CONTEXT (STICKY ON DESKTOP) */}
@@ -90,8 +196,6 @@ export default function BlockPulseBuildPage() {
                     height={983}
                     className="w-full h-auto object-cover"
                     sizes="(max-width: 640px) 100vw, 400px"
-                    priority
-                    loading="eager"
                   />
                 </RevealPhone>
 

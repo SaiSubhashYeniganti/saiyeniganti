@@ -15,9 +15,74 @@ function RevealUp({ children, className = '', delay = 0 }: { children: React.Rea
 
 export default function PragnaBuildPage() {
   return (
-    <main className="min-h-screen bg-canvas text-ink pt-32 md:pt-40 pb-24 selection:bg-accent selection:text-canvas">
+    <main className="min-h-screen bg-canvas text-ink pt-24 md:pt-40 pb-24 selection:bg-accent selection:text-canvas">
       
-      <div className="w-full px-6 md:px-12 lg:px-24 mx-auto max-w-[1400px]">
+      {/* --- MOBILE LAYOUT --- */}
+      <div className="flex md:hidden flex-col w-full px-6 mx-auto">
+        <Link href="/#builds" className="inline-flex items-center gap-2 text-ink-muted hover:text-ink transition-colors mb-8 blueprint text-[10px] tracking-[0.2em]">
+          ← GO BACK TO SOLO BUILDS
+        </Link>
+        
+        <RevealUp className="w-full mb-8">
+          <div className="relative w-full rounded-2xl border border-ink/10 overflow-hidden shadow-sm bg-ink/5">
+            <div className="h-6 w-full bg-ink/5 border-b border-ink/10 flex items-center px-3 gap-1.5">
+              <div className="w-1.5 h-1.5 rounded-full bg-ink/20" />
+              <div className="w-1.5 h-1.5 rounded-full bg-ink/20" />
+              <div className="w-1.5 h-1.5 rounded-full bg-ink/20" />
+            </div>
+            <Image 
+              src="/images/builds/pragna/full-page.webp" 
+              alt="Pragna Skin Clinic Full Page" 
+              width={1200}
+              height={5249}
+              className="w-full h-auto"
+              sizes="100vw"
+            />
+          </div>
+        </RevealUp>
+
+        <RevealUp className="flex flex-col items-start">
+          <h1 className="text-4xl tracking-tight leading-[0.95] text-ink mb-4">
+            Pragna Skin Clinic
+          </h1>
+          <p className="text-[17px] text-ink-muted font-sans leading-[1.6] mb-6">
+            86 pages, 65,000 words of content. Experiment in design and content at scale. One of the best dermatology websites in India.
+          </p>
+
+          <div className="flex flex-wrap gap-x-3 gap-y-2 blueprint text-[10px] tracking-widest text-ink-muted border-y border-ink/10 py-4 w-full mb-8">
+            <span>NEXT.JS</span>
+            <span className="text-ink/20">•</span>
+            <span>TAILWIND CSS</span>
+            <span className="text-ink/20">•</span>
+            <span>CLAUDE / CURSOR</span>
+            <span className="text-ink/20">•</span>
+            <span>VERCEL</span>
+          </div>
+
+          <div className="text-[17px] font-sans text-ink-muted leading-relaxed space-y-5 mb-10">
+            <p>
+              A dermatologist needed a website. What I ended up building was closer to a clinical 
+              encyclopedia. 86 pages of structured, medically accurate content designed to dominate 
+              local search. 10 unique page designs across the site. 65,000 words of on-page SEO content.
+            </p>
+            <p>
+              I did everything on this one. Brand positioning, colors, logo, information architecture, 
+              the patient funnel, all the content, every page design, and the full engineering and 
+              deployment pipeline. The design system was built from scratch to feel warm and clinical 
+              at the same time. This was the project that showed me what AI-first workflows can really do at scale.
+            </p>
+          </div>
+
+          <a href="https://pragnaskinclinic.com" target="_blank" rel="noreferrer" className="w-full group">
+            <span className="blueprint text-xs block w-full text-center border border-ink/20 bg-ink text-canvas px-6 py-4 rounded-full">
+              VIEW LIVE SITE ↗
+            </span>
+          </a>
+        </RevealUp>
+      </div>
+
+      {/* --- DESKTOP LAYOUT --- */}
+      <div className="hidden md:block w-full px-6 md:px-12 lg:px-24 mx-auto max-w-[1400px]">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
           
           {/* LEFT: CONTEXT (STICKY ON DESKTOP) */}
@@ -78,8 +143,6 @@ export default function PragnaBuildPage() {
                 height={5249}
                 className="w-full h-auto transition-transform duration-[1.5s] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-[1.02]"
                 sizes="(max-width: 1024px) 100vw, 800px"
-                priority
-                loading="eager"
               />
             </div>
 
