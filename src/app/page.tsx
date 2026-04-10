@@ -18,6 +18,16 @@ const revealUp = {
   }
 };
 
+const cardReveal = {
+  hidden: { opacity: 0, y: 40, scale: 0.96 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as any }
+  }
+};
+
 const revealFade = {
   hidden: { opacity: 0 },
   visible: {
@@ -189,7 +199,7 @@ export default function Home() {
           ].map((build, index) => (
             <motion.div 
               key={build.id} 
-              variants={revealUp}
+              variants={cardReveal}
               className="flex flex-col group relative"
             >
               <Link href={build.href} className="flex flex-col gap-6 cursor-pointer">
@@ -204,7 +214,7 @@ export default function Home() {
                         sizes="(max-width: 768px) 92vw, (max-width: 1200px) 46vw, 30vw"
                         priority={index < 2}
                         loading={index < 2 ? "eager" : "lazy"}
-                        className="object-cover grayscale opacity-60 contrast-[1.1] transition-[transform,filter,opacity] duration-[1.2s] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-105 group-hover:grayscale-0 group-hover:opacity-100"
+                        className="object-cover grayscale opacity-[0.65] contrast-[1.15] brightness-[0.85] transition-[transform,filter,opacity] duration-[1.2s] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-[1.03] group-hover:grayscale-0 group-hover:opacity-100 group-hover:contrast-100 group-hover:brightness-100"
                       />
                       
                       {/* Top gradient for text readability */}

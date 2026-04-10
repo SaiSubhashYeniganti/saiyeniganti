@@ -14,11 +14,12 @@ const revealUp = {
 };
 
 const imageReveal = {
-  hidden: { opacity: 1, y: 20 },
+  hidden: { opacity: 0, y: 40, scale: 0.96 },
   visible: { 
     opacity: 1, 
     y: 0,
-    transition: { duration: 0.6, ease: [0.25, 1, 0.5, 1] as any } 
+    scale: 1,
+    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as any } 
   }
 };
 
@@ -86,7 +87,7 @@ export default function JobHunterBuildPage() {
             <motion.div 
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: true, margin: "-40px" }}
               variants={imageReveal}
               className="relative w-full lg:-mr-12 xl:-mr-20 rounded-2xl border border-ink/10 overflow-hidden shadow-sm bg-ink/5"
             >
@@ -107,7 +108,7 @@ export default function JobHunterBuildPage() {
               <motion.div 
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: true, margin: "-40px" }}
                 variants={imageReveal}
                 className="relative w-full max-w-[220px] shrink-0 rounded-[2rem] border border-ink/10 overflow-hidden shadow-sm bg-ink/5"
               >
@@ -125,7 +126,7 @@ export default function JobHunterBuildPage() {
               <motion.div 
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: true, margin: "-40px" }}
                 variants={imageReveal}
                 className="relative w-full rounded-xl border border-ink/10 overflow-hidden shadow-sm bg-ink/5 mt-0 md:mt-16"
               >
