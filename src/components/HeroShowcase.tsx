@@ -69,43 +69,26 @@ export function HeroShowcase() {
 
       <div className="relative z-10 w-full h-full flex items-center justify-center overflow-visible">
 
-        {/* Static base layer: always visible, never animated, guarantees no empty frame */}
-        <div
-          className={`absolute overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] bg-canvas-alt ${frameClasses(FIRST_IMAGE.type)}`}
-          style={{ transform: 'rotateY(-4deg)', transformStyle: 'preserve-3d' }}
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={FIRST_IMAGE.src}
-            alt={FIRST_IMAGE.alt}
-            className="absolute inset-0 w-full h-full object-cover object-top"
-            fetchPriority="high"
-            decoding="async"
-          />
-        </div>
-
-        {/* Animated slideshow layer on top */}
         <AnimatePresence initial={false}>
-          {!isFirstSlide && (
-            <motion.div
-              key={currentImage.src}
-              initial={{ opacity: 0, x: 80, rotateY: -12, scale: 0.85 }}
-              animate={{ opacity: 1, x: 0, rotateY: -4, scale: 1 }}
-              exit={{ opacity: 0, x: -80, rotateY: 4, scale: 0.85 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className={`absolute overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] bg-canvas-alt ${frameClasses(currentImage.type)}`}
-              style={{ transformStyle: 'preserve-3d', willChange: 'transform, opacity' }}
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={currentImage.src}
-                alt={currentImage.alt}
-                className="absolute inset-0 w-full h-full object-cover object-top"
-                decoding="async"
-              />
-              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent pointer-events-none" />
-            </motion.div>
-          )}
+          <motion.div
+            key={currentImage.src}
+            initial={{ opacity: 0, x: 80, rotateY: -12, scale: 0.85 }}
+            animate={{ opacity: 1, x: 0, rotateY: -4, scale: 1 }}
+            exit={{ opacity: 0, x: -80, rotateY: 4, scale: 0.85 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className={`absolute overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] bg-canvas-alt ${frameClasses(currentImage.type)}`}
+            style={{ transformStyle: 'preserve-3d', willChange: 'transform, opacity' }}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={currentImage.src}
+              alt={currentImage.alt}
+              className="absolute inset-0 w-full h-full object-cover object-top"
+              fetchPriority={isFirstSlide ? "high" : "auto"}
+              decoding="async"
+            />
+            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent pointer-events-none" />
+          </motion.div>
         </AnimatePresence>
       </div>
 
