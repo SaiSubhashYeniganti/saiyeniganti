@@ -1,19 +1,19 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 export function Footer() {
+  const { ref, isRevealed } = useScrollReveal();
+  
   return (
     <footer id="contact" className="bg-ink text-canvas flex flex-col justify-between px-6 md:px-12 lg:px-24 py-10 md:py-14">
       <div className="flex flex-col items-center justify-center text-center mb-12 md:mb-16">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-[clamp(3.5rem,7vw,7.5rem)] leading-[0.8] tracking-tight mb-6"
+        <h2
+          ref={ref as React.RefObject<HTMLHeadingElement>}
+          className={`text-[clamp(3.5rem,7vw,7.5rem)] leading-[0.8] tracking-tight mb-6 reveal-up ${isRevealed ? 'in-view' : ''}`}
         >
           Let's Talk.
-        </motion.h2>
+        </h2>
         <div className="flex items-center gap-6 md:gap-8 mt-4">
           <a href="mailto:saisubhash.yeniganti@gmail.com" className="text-lg md:text-xl font-sans text-canvas/60 hover:text-accent transition-colors">
             saisubhash.yeniganti@gmail.com

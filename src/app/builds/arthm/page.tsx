@@ -1,17 +1,17 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
-import Link from "next/link";
-import Image from "next/image";
+import Link from 'next/link';
+import Image from 'next/image';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
-const revealUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 1.2, ease: "easeOut" as const }
-  }
-};
+function RevealUp({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
+  const { ref, isRevealed } = useScrollReveal();
+  return (
+    <div ref={ref as React.RefObject<HTMLDivElement>} className={`reveal-up ${isRevealed ? 'in-view' : ''} ${className}`} style={{ transitionDelay: `${delay}s` }}>
+      {children}
+    </div>
+  );
+}
 
 export default function ArthmBuildPage() {
   return (
@@ -22,12 +22,7 @@ export default function ArthmBuildPage() {
           
           {/* LEFT: CONTEXT (STICKY ON DESKTOP) */}
           <div className="w-full lg:w-[40%] lg:sticky lg:top-40 flex flex-col">
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={revealUp}
-              className="flex flex-col items-start"
-            >
+            <RevealUp className="flex flex-col items-start">
               <Link href="/#builds" className="inline-flex items-center gap-2 text-ink-muted hover:text-ink transition-colors mb-10 blueprint text-[10px] tracking-[0.2em]">
                 ← GO BACK TO SOLO BUILDS
               </Link>
@@ -68,20 +63,14 @@ export default function ArthmBuildPage() {
                   VIEW LIVE SITE ↗
                 </span>
               </a>
-            </motion.div>
+            </RevealUp>
           </div>
 
           {/* RIGHT: THE GALLERY */}
           <div className="w-full lg:w-[60%] flex flex-col gap-12 md:gap-20">
             
             {/* Full Page Capture */}
-            <motion.div
-              initial={false}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 1, ease: "easeOut" }}
-              className="relative w-full group cursor-crosshair overflow-hidden rounded-xl border border-ink/10"
-            >
+            <div className="relative w-full group cursor-crosshair overflow-hidden rounded-xl border border-ink/10">
               <Image 
                 src="/images/builds/Arthm/full-page.webp" 
                 alt="ARTHM Foundation Full Page" 
@@ -92,7 +81,7 @@ export default function ArthmBuildPage() {
                 priority
                 loading="eager"
               />
-            </motion.div>
+            </div>
 
           </div>
         </div>

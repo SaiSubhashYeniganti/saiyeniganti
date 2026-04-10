@@ -1,21 +1,37 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
+import { useScrollReveal } from '@/hooks/useScrollReveal';
+
+function RevealUp({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
+  const { ref, isRevealed } = useScrollReveal();
+  return (
+    <div ref={ref as React.RefObject<HTMLDivElement>} className={`reveal-up ${isRevealed ? 'in-view' : ''} ${className}`} style={{ transitionDelay: `${delay}s` }}>
+      {children}
+    </div>
+  );
+}
+
+function RevealFade({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
+  const { ref, isRevealed } = useScrollReveal();
+  return (
+    <div ref={ref as React.RefObject<HTMLDivElement>} className={`reveal-fade ${isRevealed ? 'in-view' : ''} ${className}`} style={{ transitionDelay: `${delay}s` }}>
+      {children}
+    </div>
+  );
+}
+
 export default function ExperiencePage() {
   return (
     <main className="min-h-screen bg-canvas text-ink pt-48 pb-24 px-6 md:px-12 lg:px-24">
       <div className="max-w-4xl mx-auto">
-        <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0, transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] } }}>
+        <RevealUp>
           <h1 className="text-5xl md:text-8xl tracking-tight leading-[0.9] text-ink mb-16">
             10+ years of<br/>
             <span className="italic text-ink-muted">building</span> things.
           </h1>
-        </motion.div>
+        </RevealUp>
 
-        <motion.div initial="hidden" animate="visible" variants={{
-          hidden: { opacity: 0 },
-          visible: { opacity: 1, transition: { delay: 0.3, duration: 1 } }
-        }} className="space-y-32">
+        <RevealFade delay={0.3} className="space-y-32">
           
           <div className="border-t border-ink/10 pt-16 flex flex-col md:flex-row gap-8 md:gap-16">
             <div className="w-full md:w-1/3">
@@ -85,7 +101,7 @@ export default function ExperiencePage() {
             </div>
           </div>
 
-        </motion.div>
+        </RevealFade>
       </div>
     </main>
   );

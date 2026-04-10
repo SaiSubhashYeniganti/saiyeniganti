@@ -1,48 +1,40 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
-import Link from "next/link";
-import Image from "next/image";
-import { type MouseEvent } from "react";
-import { HeroShowcase } from "@/components/HeroShowcase";
-import { HeroAtmosphere } from "@/components/HeroAtmosphere";
+import { ArrowUpRight } from 'lucide-react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { type MouseEvent } from 'react';
+import { HeroShowcase } from '@/components/HeroShowcase';
+import { HeroAtmosphere } from '@/components/HeroAtmosphere';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
-// --- ANIMATION VARIANTS ---
-const revealUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 1.2, ease: "easeOut" as const }
-  }
-};
+// --- ANIMATION COMPONENTS ---
+function RevealUp({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
+  const { ref, isRevealed } = useScrollReveal();
+  return (
+    <div ref={ref as React.RefObject<HTMLDivElement>} className={`reveal-up ${isRevealed ? 'in-view' : ''} ${className}`} style={{ transitionDelay: `${delay}s` }}>
+      {children}
+    </div>
+  );
+}
 
-const cardReveal = {
-  hidden: { opacity: 0, y: 40, scale: 0.96 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as any }
-  }
-};
+function RevealCard({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
+  const { ref, isRevealed } = useScrollReveal();
+  return (
+    <div ref={ref as React.RefObject<HTMLDivElement>} className={`reveal-card ${isRevealed ? 'in-view' : ''} ${className}`} style={{ transitionDelay: `${delay}s` }}>
+      {children}
+    </div>
+  );
+}
 
-const revealFade = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { duration: 1.2, ease: "easeOut" as const }
-  }
-};
-
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.2 }
-  }
-};
+function RevealFade({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
+  const { ref, isRevealed } = useScrollReveal();
+  return (
+    <div ref={ref as React.RefObject<HTMLDivElement>} className={`reveal-fade ${isRevealed ? 'in-view' : ''} ${className}`} style={{ transitionDelay: `${delay}s` }}>
+      {children}
+    </div>
+  );
+}
 
 // --- PLACEHOLDER COMPONENTS ---
 const GradientPlaceholder = ({ className }: { className?: string }) => (
@@ -72,17 +64,12 @@ export default function Home() {
         {/* Subtle Ambient Lighting */}
         <HeroAtmosphere />
 
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          animate="visible"
-          className="w-full max-w-[1200px] mx-auto px-6 md:px-12 z-10 flex flex-col"
-        >
+        <div className="w-full max-w-[1200px] mx-auto px-6 md:px-12 z-10 flex flex-col">
           {/* Two-column layout: Text left, Image right */}
           <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-y-12 gap-x-8 lg:gap-x-12 items-center">
 
             {/* LEFT: Title + Proof + CTA */}
-            <motion.div variants={revealUp} className="lg:col-span-6 flex flex-col items-start text-left">
+            <RevealUp className="lg:col-span-6 flex flex-col items-start text-left">
               <h1 className="text-[clamp(3.5rem,6vw,7rem)] leading-[1.05] tracking-tight text-ink mb-6">
                 From Zero to Scale.
               </h1>
@@ -98,43 +85,31 @@ export default function Home() {
                   SEE THE WORK
                 </span>
               </Link>
-            </motion.div>
+            </RevealUp>
 
             {/* RIGHT: Dynamic Showcase */}
-            <motion.div variants={revealUp} className="lg:col-span-6 relative w-full">
+            <RevealUp className="lg:col-span-6 relative w-full" delay={0.2}>
               <HeroShowcase />
-            </motion.div>
+            </RevealUp>
 
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* 2. THE BUILDS (GRID) */}
       <section id="builds" className="relative w-full bg-ink text-canvas py-20 md:py-20">
         <div className="px-6 md:px-12 lg:px-24 mb-16 md:mb-24">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex flex-col items-center text-center max-w-4xl mx-auto"
-          >
+          <RevealUp className="flex flex-col items-center text-center max-w-4xl mx-auto">
             <h2 className="text-5xl md:text-7xl lg:text-[5.5rem] tracking-tight leading-[1.05] mb-6">
               One person. <span className="italic text-canvas/50">End to end.</span>
             </h2>
             <p className="text-canvas/50 font-sans text-base md:text-lg max-w-2xl leading-relaxed">
               A collection of products, platforms, and experiments built entirely solo. From brand and design to code and deployment, all executed using AI-first workflows.
             </p>
-          </motion.div>
+          </RevealUp>
         </div>
 
-        <motion.div 
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 lg:gap-x-10 gap-y-16 md:gap-y-20 px-6 md:px-12 lg:px-24"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 lg:gap-x-10 gap-y-16 md:gap-y-20 px-6 md:px-12 lg:px-24">
           {[
             {
               id: "pragna",
@@ -197,10 +172,10 @@ export default function Home() {
               image: "/images/build-cards/the-unbecoming.webp"
             }
           ].map((build, index) => (
-            <motion.div 
+            <RevealCard 
               key={build.id} 
-              variants={cardReveal}
               className="flex flex-col group relative"
+              delay={index * 0.15}
             >
               <Link href={build.href} className="flex flex-col gap-6 cursor-pointer">
                 {/* Image Container with Integrated Badges */}
@@ -278,9 +253,9 @@ export default function Home() {
                   </div>
                 </div>
               </Link>
-            </motion.div>
+            </RevealCard>
           ))}
-        </motion.div>
+        </div>
       </section>
 
       {/* 3. THE MIND */}
@@ -290,13 +265,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
             {/* Left: Image */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 1, ease: "easeOut" }}
-              className="relative"
-            >
+            <RevealUp className="relative">
               <div className="aspect-[4/5] w-full max-w-[440px] mx-auto lg:ml-auto lg:mr-0 bg-canvas-alt rounded-3xl relative overflow-hidden">
                 <Image 
                   src="/images/sai-portrait-cropped.webp" 
@@ -308,16 +277,10 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 rounded-3xl shadow-[inset_0_0_0_1px_rgba(0,0,0,0.05)] pointer-events-none" />
               </div>
-            </motion.div>
+            </RevealUp>
 
             {/* Right: Story */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 1, delay: 0.15, ease: "easeOut" }}
-              className="flex flex-col"
-            >
+            <RevealUp className="flex flex-col" delay={0.15}>
               <h2 className="text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.1] mb-8 mt-[-6px]">
                 The backstory,<br /><span className="italic text-ink-muted">in short.</span>
               </h2>
@@ -339,19 +302,13 @@ export default function Home() {
                   CAREER ARC ↗
                 </span>
               </Link>
-            </motion.div>
+            </RevealUp>
 
           </div>
         </div>
 
         {/* Footnote Metrics Bar (Bottom) */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="px-6 md:px-12 lg:px-24 mt-6 md:mt-10"
-        >
+        <RevealUp className="px-6 md:px-12 lg:px-24 mt-6 md:mt-10">
           <div className="max-w-5xl mx-auto border-t border-ink/10 pt-8">
             <div className="grid grid-cols-2 md:grid-cols-5 gap-y-8 gap-x-6 text-center">
               <div className="flex flex-col items-center justify-end">
@@ -380,32 +337,21 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </RevealUp>
       </section>
 
       {/* 4. HOW I THINK */}
       <section id="thinking" className="py-20 md:py-24 px-6 md:px-12 lg:px-24 bg-canvas-alt">
         <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
+          <RevealUp>
             <h2 className="text-5xl md:text-7xl tracking-tight mb-6">Writing out loud.</h2>
             <p className="text-ink-muted font-sans text-base md:text-lg max-w-xl mb-10 leading-relaxed">
               I write about AI, Web3, and product. What's real, what's hype, and what it looks like when you actually build things.
             </p>
-          </motion.div>
+          </RevealUp>
 
           {/* Featured LinkedIn Posts */}
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10"
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
             {[
               {
                 id: "post-4",
@@ -443,16 +389,19 @@ export default function Home() {
                 url: "https://www.linkedin.com/posts/subhashyeniganti_%F0%9D%97%9C-%F0%9D%97%AF%F0%9D%98%82%F0%9D%97%B6%F0%9D%97%B9%F0%9D%98%81-%F0%9D%97%AE%F0%9D%97%BB-%F0%9D%97%94%F0%9D%97%9C-%F0%9D%98%80%F0%9D%98%86%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B2%F0%9D%97%BA-%F0%9D%98%81%F0%9D%97%BC-share-7445592784117420032-RBS-"
               }
             ].map((post, index) => (
-              <motion.a
+              <RevealFade
                 key={post.id}
-                variants={revealFade}
-                href={post.url}
-                target="_blank"
-                rel="noopener noreferrer"
+                delay={index * 0.15}
                 className={`group flex flex-col justify-between p-8 rounded-2xl border border-ink/8 bg-canvas hover:border-ink/20 transition-all duration-500 min-h-[320px] ${
                   index >= 3 ? "lg:col-span-1 md:col-span-1" : ""
                 }`}
               >
+                <a
+                  href={post.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col h-full justify-between"
+                >
                 <div>
                   <span className="blueprint text-[10px] text-ink-muted mb-6 block">{post.label}</span>
                   <h3 className="text-xl md:text-2xl tracking-tight leading-[1.25] mb-4 text-ink group-hover:text-accent transition-colors duration-500">
@@ -467,9 +416,10 @@ export default function Home() {
                   <span>READ ON LINKEDIN</span>
                   <ArrowUpRight strokeWidth={1.5} className="w-3 h-3 ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
-              </motion.a>
+                </a>
+              </RevealFade>
             ))}
-          </motion.div>
+          </div>
 
           {/* More on LinkedIn link */}
           <div className="flex justify-start">

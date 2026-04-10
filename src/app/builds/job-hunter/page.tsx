@@ -1,27 +1,26 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
-import Link from "next/link";
-import Image from "next/image";
+import Link from 'next/link';
+import Image from 'next/image';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
-const revealUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 1.2, ease: "easeOut" as const }
-  }
-};
+function RevealUp({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
+  const { ref, isRevealed } = useScrollReveal();
+  return (
+    <div ref={ref as React.RefObject<HTMLDivElement>} className={`reveal-up ${isRevealed ? 'in-view' : ''} ${className}`} style={{ transitionDelay: `${delay}s` }}>
+      {children}
+    </div>
+  );
+}
 
-const imageReveal = {
-  hidden: { opacity: 0, y: 40, scale: 0.96 },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    scale: 1,
-    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as any } 
-  }
-};
+function RevealCard({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
+  const { ref, isRevealed } = useScrollReveal();
+  return (
+    <div ref={ref as React.RefObject<HTMLDivElement>} className={`reveal-card ${isRevealed ? 'in-view' : ''} ${className}`} style={{ transitionDelay: `${delay}s` }}>
+      {children}
+    </div>
+  );
+}
 
 export default function JobHunterBuildPage() {
   return (
@@ -32,12 +31,7 @@ export default function JobHunterBuildPage() {
           
           {/* LEFT: CONTEXT (STICKY ON DESKTOP) */}
           <div className="w-full lg:w-[40%] lg:sticky lg:top-40 flex flex-col">
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={revealUp}
-              className="flex flex-col items-start"
-            >
+            <RevealUp className="flex flex-col items-start">
               <Link href="/#builds" className="inline-flex items-center gap-2 text-ink-muted hover:text-ink transition-colors mb-10 blueprint text-[10px] tracking-[0.2em]">
                 ← GO BACK TO SOLO BUILDS
               </Link>
@@ -77,20 +71,14 @@ export default function JobHunterBuildPage() {
                 </p>
               </div>
 
-            </motion.div>
+            </RevealUp>
           </div>
 
           {/* RIGHT: THE EDITORIAL STACK */}
           <div className="w-full lg:w-[60%] flex flex-col gap-12 md:gap-20">
             
             {/* 1. The Output (Dashboard) - Wide Shot */}
-            <motion.div 
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-40px" }}
-              variants={imageReveal}
-              className="relative w-full lg:-mr-12 xl:-mr-20 rounded-2xl border border-ink/10 overflow-hidden shadow-sm bg-ink/5"
-            >
+            <RevealCard className="relative w-full lg:-mr-12 xl:-mr-20 rounded-2xl border border-ink/10 overflow-hidden shadow-sm bg-ink/5">
               <Image 
                 src="/images/builds/job-hunter/Job board.webp" 
                 alt="Job Hunter Web3 Dashboard" 
@@ -101,17 +89,11 @@ export default function JobHunterBuildPage() {
                 priority
                 loading="eager"
               />
-            </motion.div>
+            </RevealCard>
 
             <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center md:items-start w-full">
               {/* 2. The Source (Telegram) - Mobile Shot */}
-              <motion.div 
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-40px" }}
-                variants={imageReveal}
-                className="relative w-full max-w-[220px] shrink-0 rounded-[2rem] border border-ink/10 overflow-hidden shadow-sm bg-ink/5"
-              >
+              <RevealCard className="relative w-full max-w-[220px] shrink-0 rounded-[2rem] border border-ink/10 overflow-hidden shadow-sm bg-ink/5">
                 <Image 
                   src="/images/builds/job-hunter/TG.webp" 
                   alt="Job Hunter Telegram Sourcing" 
@@ -120,16 +102,10 @@ export default function JobHunterBuildPage() {
                   className="w-full h-auto"
                   sizes="(max-width: 640px) 100vw, 300px"
                 />
-              </motion.div>
+              </RevealCard>
 
               {/* 3. The Engine (Synthesis) - Wide Terminal Shot */}
-              <motion.div 
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-40px" }}
-                variants={imageReveal}
-                className="relative w-full rounded-xl border border-ink/10 overflow-hidden shadow-sm bg-ink/5 mt-0 md:mt-16"
-              >
+              <RevealCard className="relative w-full rounded-xl border border-ink/10 overflow-hidden shadow-sm bg-ink/5 mt-0 md:mt-16">
                 <Image 
                   src="/images/builds/job-hunter/Process.webp" 
                   alt="Job Hunter Ingestion Terminal" 
@@ -138,7 +114,7 @@ export default function JobHunterBuildPage() {
                   className="w-full h-auto"
                   sizes="(max-width: 1024px) 100vw, 600px"
                 />
-              </motion.div>
+              </RevealCard>
             </div>
 
           </div>

@@ -31,23 +31,62 @@ body {
   color: var(--color-canvas);
 }
 
-/* Grain Overlay — pre-baked PNG tile, no blend mode */
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url('/images/grain.png');
-  background-repeat: repeat;
-  pointer-events: none;
-  z-index: 50;
-  opacity: 0.5;
-}
 
 /* Blueprint / Metadata text style generic class */
 .blueprint {
   font-family: var(--font-blueprint);
   text-transform: uppercase;
   letter-spacing: 0.1em;
+}
+
+/* Hero atmosphere blob drift — runs on compositor, not JS */
+@keyframes blob-drift-1 {
+  0%   { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(5%, -5%) scale(1.05); }
+  66%  { transform: translate(-5%, 5%) scale(0.95); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+@keyframes blob-drift-2 {
+  0%   { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(-8%, 6%) scale(0.9); }
+  66%  { transform: translate(5%, -4%) scale(1.1); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+/* Native CSS Scroll Reveals */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+  will-change: opacity, transform;
+}
+.reveal-up.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-card {
+  opacity: 0;
+  transform: translateY(40px) scale(0.96);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.reveal-card.in-view {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.reveal-fade {
+  opacity: 0;
+  transition: opacity 1.2s ease-out;
+  will-change: opacity;
+}
+.reveal-fade.in-view {
+  opacity: 1;
+}
+
+.stagger-container.in-view > * {
+  /* Child elements within a stagger-container are expected to define their own inline transition-delay */
 }
 
 /* Custom Hide Scrollbar for Horizontal Exhibition */

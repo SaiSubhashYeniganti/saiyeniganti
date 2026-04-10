@@ -1,27 +1,26 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
-import Link from "next/link";
-import Image from "next/image";
+import Link from 'next/link';
+import Image from 'next/image';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
-const revealUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 1.2, ease: "easeOut" as const }
-  }
-};
+function RevealUp({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
+  const { ref, isRevealed } = useScrollReveal();
+  return (
+    <div ref={ref as React.RefObject<HTMLDivElement>} className={`reveal-up ${isRevealed ? 'in-view' : ''} ${className}`} style={{ transitionDelay: `${delay}s` }}>
+      {children}
+    </div>
+  );
+}
 
-const phoneReveal = {
-  hidden: { opacity: 0, y: 40, scale: 0.96 },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    scale: 1,
-    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as any } 
-  }
-};
+function RevealPhone({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
+  const { ref, isRevealed } = useScrollReveal();
+  return (
+    <div ref={ref as React.RefObject<HTMLDivElement>} className={`reveal-card ${isRevealed ? 'in-view' : ''} ${className}`} style={{ transitionDelay: `${delay}s` }}>
+      {children}
+    </div>
+  );
+}
 
 export default function GitaProjectBuildPage() {
   return (
@@ -32,12 +31,7 @@ export default function GitaProjectBuildPage() {
           
           {/* LEFT: CONTEXT (STICKY ON DESKTOP) */}
           <div className="w-full lg:w-[40%] lg:sticky lg:top-40 flex flex-col">
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={revealUp}
-              className="flex flex-col items-start"
-            >
+            <RevealUp className="flex flex-col items-start">
               <Link href="/#builds" className="inline-flex items-center gap-2 text-ink-muted hover:text-ink transition-colors mb-10 blueprint text-[10px] tracking-[0.2em]">
                 ← GO BACK TO SOLO BUILDS
               </Link>
@@ -83,7 +77,7 @@ export default function GitaProjectBuildPage() {
                   VIEW LIVE SITE ↗
                 </span>
               </a>
-            </motion.div>
+            </RevealUp>
           </div>
 
           {/* RIGHT: THE MOBILE CASCADE */}
@@ -93,13 +87,7 @@ export default function GitaProjectBuildPage() {
               
               {/* LEFT COLUMN (Normal Flow) */}
               <div className="flex flex-col gap-6 md:gap-10">
-                <motion.div 
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, margin: "-40px" }}
-                  variants={phoneReveal}
-                  className="relative w-full rounded-[2rem] border border-ink/10 overflow-hidden shadow-sm bg-ink/5"
-                >
+                <RevealPhone className="relative w-full rounded-[2rem] border border-ink/10 overflow-hidden shadow-sm bg-ink/5">
                   <Image 
                     src="/images/builds/The Gita Project/home_screen.webp" 
                     alt="The Gita Project Home Screen" 
@@ -110,15 +98,9 @@ export default function GitaProjectBuildPage() {
                     priority
                     loading="eager"
                   />
-                </motion.div>
+                </RevealPhone>
 
-                <motion.div 
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, margin: "-40px" }}
-                  variants={phoneReveal}
-                  className="relative w-full rounded-[2rem] border border-ink/10 overflow-hidden shadow-sm bg-ink/5"
-                >
+                <RevealPhone className="relative w-full rounded-[2rem] border border-ink/10 overflow-hidden shadow-sm bg-ink/5">
                   <Image 
                     src="/images/builds/The Gita Project/chapter_detail_screen.webp" 
                     alt="The Gita Project Chapter Detail" 
@@ -127,15 +109,9 @@ export default function GitaProjectBuildPage() {
                     className="w-full h-auto object-cover"
                     sizes="(max-width: 640px) 100vw, 400px"
                   />
-                </motion.div>
+                </RevealPhone>
 
-                <motion.div 
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, margin: "-40px" }}
-                  variants={phoneReveal}
-                  className="relative w-full rounded-[2rem] border border-ink/10 overflow-hidden shadow-sm bg-ink/5"
-                >
+                <RevealPhone className="relative w-full rounded-[2rem] border border-ink/10 overflow-hidden shadow-sm bg-ink/5">
                   <Image 
                     src="/images/builds/The Gita Project/india_gita_screen.webp" 
                     alt="The Gita Project Context Content" 
@@ -144,18 +120,12 @@ export default function GitaProjectBuildPage() {
                     className="w-full h-auto object-cover"
                     sizes="(max-width: 640px) 100vw, 400px"
                   />
-                </motion.div>
+                </RevealPhone>
               </div>
 
               {/* RIGHT COLUMN (Staggered Offset) */}
               <div className="flex flex-col gap-6 md:gap-10 sm:mt-24">
-                <motion.div 
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, margin: "-40px" }}
-                  variants={phoneReveal}
-                  className="relative w-full rounded-[2rem] border border-ink/10 overflow-hidden shadow-sm bg-ink/5"
-                >
+                <RevealPhone className="relative w-full rounded-[2rem] border border-ink/10 overflow-hidden shadow-sm bg-ink/5">
                   <Image 
                     src="/images/builds/The Gita Project/chapters_screen.webp" 
                     alt="The Gita Project Chapters Index" 
@@ -164,15 +134,9 @@ export default function GitaProjectBuildPage() {
                     className="w-full h-auto object-cover"
                     sizes="(max-width: 640px) 100vw, 400px"
                   />
-                </motion.div>
+                </RevealPhone>
 
-                <motion.div 
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, margin: "-40px" }}
-                  variants={phoneReveal}
-                  className="relative w-full rounded-[2rem] border border-ink/10 overflow-hidden shadow-sm bg-ink/5"
-                >
+                <RevealPhone className="relative w-full rounded-[2rem] border border-ink/10 overflow-hidden shadow-sm bg-ink/5">
                   <Image 
                     src="/images/builds/The Gita Project/verse_screen.webp" 
                     alt="The Gita Project Verse Detail" 
@@ -181,15 +145,9 @@ export default function GitaProjectBuildPage() {
                     className="w-full h-auto object-cover"
                     sizes="(max-width: 640px) 100vw, 400px"
                   />
-                </motion.div>
+                </RevealPhone>
 
-                <motion.div 
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, margin: "-40px" }}
-                  variants={phoneReveal}
-                  className="relative w-full rounded-[2rem] border border-ink/10 overflow-hidden shadow-sm bg-ink/5"
-                >
+                <RevealPhone className="relative w-full rounded-[2rem] border border-ink/10 overflow-hidden shadow-sm bg-ink/5">
                   <Image 
                     src="/images/builds/The Gita Project/gita_world_screen.webp" 
                     alt="The Gita Project Global Influence" 
@@ -198,7 +156,7 @@ export default function GitaProjectBuildPage() {
                     className="w-full h-auto object-cover"
                     sizes="(max-width: 640px) 100vw, 400px"
                   />
-                </motion.div>
+                </RevealPhone>
               </div>
 
             </div>
