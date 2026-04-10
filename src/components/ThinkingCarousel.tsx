@@ -126,7 +126,6 @@ function PostCard({
   const [isFocused, setIsFocused] = useState(false);
   
   const cardRef = useRef<HTMLDivElement>(null);
-  const touchStartRef = useRef<{ x: number; y: number; time: number } | null>(null);
 
   useEffect(() => {
     const initialMobileMatch = window.matchMedia('(max-width: 767px)').matches;
@@ -170,51 +169,19 @@ function PostCard({
     return () => observer.disconnect();
   }, [isMobile, containerRef]);
 
-  useEffect(() => {
-    if (!isMobile) return;
-    const card = cardRef.current;
-    if (!card) return;
-
-    const onTouchStart = (e: TouchEvent) => {
-      const touch = e.touches[0];
-      touchStartRef.current = { x: touch.clientX, y: touch.clientY, time: Date.now() };
-    };
-
-    const onTouchEnd = (e: TouchEvent) => {
-      if (!touchStartRef.current) return;
-      const touch = e.changedTouches[0];
-      const dx = Math.abs(touch.clientX - touchStartRef.current.x);
-      const dy = Math.abs(touch.clientY - touchStartRef.current.y);
-      const dt = Date.now() - touchStartRef.current.time;
-      touchStartRef.current = null;
-
-      if (dx < 10 && dy < 10 && dt < 300) {
-        e.preventDefault();
-        window.open(post.url, '_blank', 'noopener,noreferrer');
-      }
-    };
-
-    card.addEventListener('touchstart', onTouchStart, { passive: true });
-    card.addEventListener('touchend', onTouchEnd);
-    return () => {
-      card.removeEventListener('touchstart', onTouchStart);
-      card.removeEventListener('touchend', onTouchEnd);
-    };
-  }, [isMobile, post.url]);
-
   const showHoverState = Boolean(isMobile && isFocused);
 
   return (
     <motion.div
       ref={cardRef}
-      style={isMobile ? { scale, touchAction: 'pan-x' } : undefined}
+      style={isMobile ? { scale } : undefined}
       className={`group relative min-w-[80vw] snap-center snap-always md:min-w-0 rounded-2xl will-change-transform ${showHoverState ? 'mobile-focused' : ''} ${index >= 3 ? "lg:col-span-1 md:col-span-1" : ""}`}
     >
       <a
         href={post.url}
         target="_blank"
         rel="noopener noreferrer"
-        className={`flex flex-col h-full justify-between p-8 rounded-2xl border bg-canvas transition-all duration-500 min-h-[320px] ${showHoverState ? 'border-ink/20 shadow-[0_8px_30px_rgba(0,0,0,0.08)]' : 'border-ink/8 hover:border-ink/20 hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)]'}`}
+        className={`flex flex-col h-full justify-between p-8 rounded-2xl border bg-canvas transition-all duration-500 min-h-[320px] touch-manipulation ${showHoverState ? 'border-ink/20 shadow-[0_8px_30px_rgba(0,0,0,0.08)]' : 'border-ink/8 hover:border-ink/20 hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)]'}`}
       >
         <div>
           <span className={`blueprint text-[10px] mb-6 block transition-colors duration-500 ${showHoverState ? 'text-ink' : 'text-ink-muted'}`}>{post.label}</span>
