@@ -29,7 +29,7 @@ export default function ArthmBuildPage() {
               className="flex flex-col items-start"
             >
               <Link href="/#builds" className="inline-flex items-center gap-2 text-ink-muted hover:text-ink transition-colors mb-10 blueprint text-[10px] tracking-[0.2em]">
-                ← BACK TO BUILDS
+                ← GO BACK TO SOLO BUILDS
               </Link>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[0.95] text-ink mb-6">

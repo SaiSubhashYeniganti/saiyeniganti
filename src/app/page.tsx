@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { type MouseEvent } from "react";
 import { HeroShowcase } from "@/components/HeroShowcase";
 import { HeroAtmosphere } from "@/components/HeroAtmosphere";
 
@@ -41,6 +42,17 @@ const GradientPlaceholder = ({ className }: { className?: string }) => (
 );
 
 export default function Home() {
+  const handleSeeWorkClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+    const buildsSection = document.getElementById("builds");
+    if (!buildsSection) {
+      return;
+    }
+    buildsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    const baseUrl = `${window.location.pathname}${window.location.search}`;
+    window.history.replaceState(null, "", `${baseUrl}#builds`);
+  };
+
   return (
     <main className="w-full">
 
@@ -71,7 +83,7 @@ export default function Home() {
                 <p>This is where all of it lives. Thanks for stopping by.</p>
               </div>
 
-              <Link href="#builds" className="inline-flex items-center gap-2 group">
+              <Link href="/#builds" onClick={handleSeeWorkClick} className="inline-flex items-center gap-2 group">
                 <span className="blueprint text-xs border border-ink/20 bg-canvas/50 backdrop-blur-sm px-8 py-4 rounded-full group-hover:bg-accent group-hover:text-canvas group-hover:border-accent transition-all duration-300 shadow-sm">
                   SEE THE WORK
                 </span>
@@ -317,7 +329,7 @@ export default function Home() {
 
               <Link href="/experience" className="flex items-center gap-2 group w-fit mt-10">
                 <span className="blueprint text-xs border border-ink/20 px-8 py-4 rounded-full group-hover:bg-accent group-hover:text-canvas group-hover:border-accent transition-all duration-500">
-                  THE FULL STORY ↗
+                  CAREER ARC ↗
                 </span>
               </Link>
             </motion.div>
