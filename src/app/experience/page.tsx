@@ -41,7 +41,7 @@ export default function ExperiencePage() {
             </div>
             <div className="w-full md:w-2/3 text-lg font-sans text-ink-muted leading-relaxed">
               <p>
-                I started by writing code. I spent three years at National Instruments building signal processing algorithms for 4G and 5G test and measurement systems. Companies like Qualcomm and Verizon used what I built to validate their chipsets. It taught me how complex systems actually work under the surface, and that turned out to be the most useful thing I could have learned before moving into product.
+                I started as an engineer at National Instruments. I spent three years there building signal processing algorithms for 4G and 5G test and measurement systems. Companies like Qualcomm and Verizon used what I built to validate their chipsets. It taught me how complex systems actually work under the surface, and that turned out to be the most useful thing I could have learned before moving into product.
               </p>
             </div>
           </div>
