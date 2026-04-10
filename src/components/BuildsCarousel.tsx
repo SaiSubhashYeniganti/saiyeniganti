@@ -100,7 +100,7 @@ export function BuildsCarousel() {
     >
       <div 
         ref={scrollContainerRef}
-        className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-8 px-6 scrollbar-hide md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-x-6 lg:gap-x-10 md:gap-y-16 md:pb-0 md:px-12 lg:px-24 relative"
+        className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-8 px-6 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-x-6 lg:gap-x-10 md:gap-y-16 md:pb-0 md:px-12 lg:px-24 relative"
       >
         {buildsData.map((build, index) => (
           <BuildCard 
@@ -146,7 +146,7 @@ function PaginationDot({ index, containerRef, total }: { index: number; containe
 
   return (
     <div 
-      className={`h-1.5 rounded-full transition-all duration-300 ${isActive ? 'w-4 bg-ink/80' : 'w-1.5 bg-ink/20'}`}
+      className={`h-1.5 rounded-full transition-all duration-300 ${isActive ? 'w-4 bg-accent' : 'w-1.5 bg-accent/20'}`}
     />
   );
 }
@@ -211,7 +211,7 @@ function BuildCard({
     <motion.div
       ref={cardRef}
       style={isMobile ? { scale } : undefined}
-      className={`group flex flex-col relative min-w-[85vw] snap-center snap-always md:min-w-0 rounded-2xl cursor-pointer will-change-transform ${isFocused ? 'mobile-focused' : ''}`}
+      className={`group flex flex-col relative min-w-[80vw] snap-center snap-always md:min-w-0 rounded-2xl cursor-pointer will-change-transform ${isFocused ? 'mobile-focused' : ''}`}
     >
       <Link href={build.href} className="flex flex-col gap-5 md:gap-6 cursor-pointer w-full h-full">
         {/* Image Container with Integrated Badges */}

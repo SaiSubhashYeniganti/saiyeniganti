@@ -58,9 +58,9 @@ export default function Home() {
                 <HeroArtifactsMobile />
               </div>
 
-              <div className="flex flex-col gap-4 text-[17px] lg:text-[18px] text-ink/75 leading-[1.6] lg:leading-[1.7] font-sans mb-10 max-w-[480px] mt-6 md:mt-8 relative pl-5 before:absolute before:left-0 before:top-1.5 before:bottom-1.5 before:w-px before:bg-ink/10">
-                <div className="absolute -left-[3px] top-0 w-1.5 h-px bg-ink/20" />
-                <div className="absolute -left-[3px] bottom-0 w-1.5 h-px bg-ink/20" />
+              <div className="flex flex-col gap-4 text-[17px] lg:text-[18px] text-ink/75 leading-[1.6] lg:leading-[1.7] font-sans mb-10 max-w-[480px] mt-8 md:mt-8 relative md:pl-5 md:before:absolute md:before:left-0 md:before:top-1.5 md:before:bottom-1.5 md:before:w-px md:before:bg-ink/10">
+                <div className="hidden md:block absolute -left-[3px] top-0 w-1.5 h-px bg-ink/20" />
+                <div className="hidden md:block absolute -left-[3px] bottom-0 w-1.5 h-px bg-ink/20" />
                 <p>I&apos;m Sai Subhash Yeniganti.</p>
                 <p>Over the last decade, I built a product division from scratch at a US startup and shipped $8M+ in revenue. Then I ran product strategy and GTM for 25+ startups at a Dubai accelerator. Now I build and ship full products solo with AI.</p>
                 <p>This is where all of it lives. Thanks for stopping by.</p>
@@ -101,75 +101,70 @@ export default function Home() {
       {/* 3. THE MIND */}
       <section id="mind" className="relative pt-16 md:pt-24 pb-12 md:pb-16 overflow-hidden">
 
-        {/* Mobile Only: Header & Full Bleed Image */}
-        <div className="flex md:hidden flex-col mb-12 relative w-full -mx-6 px-6">
-          <div className="w-[100vw] h-[60vh] relative -mx-6 mb-8 overflow-hidden">
+        {/* --- MOBILE LAYOUT --- */}
+        <div className="flex md:hidden flex-col w-full px-6 pt-10 pb-8 bg-canvas">
+          <div className="w-full aspect-[4/5] max-w-[440px] mx-auto rounded-[2rem] overflow-hidden bg-canvas-alt shadow-sm border border-ink/5 mb-10 relative">
             <Image 
               src="/images/sai-portrait-cropped.webp" 
               alt="Portrait of Sai Subhash Yeniganti"
               fill
               className="object-cover object-top contrast-[1.05] grayscale-[0.2]"
-              sizes="100vw"
+              sizes="(max-width: 768px) 100vw, 50vw"
               priority
             />
-            {/* Cinematic bottom fade */}
-            <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-canvas to-transparent" />
           </div>
           
-          {/* Typographic Drop Cap & Story */}
-          <div className="relative z-10 -mt-16 bg-canvas/80 backdrop-blur-sm p-6 rounded-2xl border border-ink/5 mx-4">
-            <div className="font-sans text-[17px] text-ink-muted leading-relaxed">
-              <span className="float-left text-[5.5rem] font-display leading-[0.75] pr-3 pt-2 text-ink">I</span>
-              <span className="font-medium text-ink text-[18px]">started as an engineer at National Instruments,</span> building signal processing systems for companies like Qualcomm and Verizon. Did an MBA at ISB, then moved into product at HCL where I owned a $3.5M B2B SaaS platform serving AT&T and Vodafone.
-              
-              <p className="mt-5">
+          <RevealUp className="flex flex-col">
+            <h2 className="text-4xl tracking-tight leading-[1.1] mb-8">
+              The backstory,<br /><span className="italic text-ink-muted">in short.</span>
+            </h2>
+
+            <div className="space-y-6 text-[17px] font-sans text-ink-muted leading-relaxed max-w-lg">
+              <p>
+                I started as an engineer at National Instruments, building signal processing systems for companies like Qualcomm and Verizon. Did an MBA at ISB, then moved into product at HCL where I owned a $3.5M B2B SaaS platform serving AT&T and Vodafone.
+              </p>
+              <p>
                 Then I helped build a blockchain gaming startup from zero. Built the product division, led 20+ people, and generated $8M in revenue.
               </p>
-              
-              <p className="mt-5">
+              <p>
                 Most recently, I ran product strategy and GTM across 25+ startups at a Dubai-based accelerator. Somewhere in between, I started building and shipping full products on my own.
               </p>
             </div>
 
-            {/* Integrated Metrics (Mobile) */}
-            <div className="mt-10 pt-8 flex flex-col gap-4 relative">
-              {/* Subtle accent gradient line at the top */}
-              <div className="absolute top-0 left-0 w-12 h-[1px] bg-accent/50" />
-              
-              <div className="flex items-baseline gap-4">
-                <span className="text-3xl tracking-tight text-ink font-display w-16">10+</span>
+            <div className="grid grid-cols-2 gap-x-6 gap-y-10 mt-12 pt-10 border-t border-ink/10 w-full">
+              <div className="flex flex-col gap-1.5">
+                <span className="text-3xl tracking-tight text-ink font-display">10+</span>
                 <span className="blueprint text-[10px] text-ink-muted">YEARS EXPERIENCE</span>
               </div>
-              <div className="h-px w-full bg-gradient-to-r from-ink/10 to-transparent" />
-              <div className="flex items-baseline gap-4">
-                <span className="text-3xl tracking-tight text-ink font-display w-16">$8M+</span>
+              <div className="flex flex-col gap-1.5">
+                <span className="text-3xl tracking-tight text-ink font-display">$8M+</span>
                 <span className="blueprint text-[10px] text-ink-muted">REVENUE SHIPPED</span>
               </div>
-              <div className="h-px w-full bg-gradient-to-r from-ink/10 to-transparent" />
-              <div className="flex items-baseline gap-4">
-                <span className="text-3xl tracking-tight text-ink font-display w-16">25+</span>
+              <div className="flex flex-col gap-1.5">
+                <span className="text-3xl tracking-tight text-ink font-display">25+</span>
                 <span className="blueprint text-[10px] text-ink-muted">STARTUPS ADVISED</span>
               </div>
-              <div className="h-px w-full bg-gradient-to-r from-ink/10 to-transparent" />
-              <div className="flex items-baseline gap-4">
-                <span className="text-3xl tracking-tight text-ink font-display w-16">5+</span>
+              <div className="flex flex-col gap-1.5">
+                <span className="text-3xl tracking-tight text-ink font-display">5+</span>
                 <span className="blueprint text-[10px] text-ink-muted">SOLO BUILDS</span>
               </div>
             </div>
 
-            <Link href="/experience" className="flex items-center justify-between group w-full mt-10 bg-ink text-canvas border border-ink px-6 py-4 rounded-full transition-all duration-500">
-              <span className="blueprint text-xs tracking-widest pl-2">CAREER ARC</span>
-              <ArrowUpRight strokeWidth={1.5} className="w-4 h-4 text-canvas/50 group-hover:text-canvas transition-colors" />
+            <Link href="/experience" className="inline-flex items-center gap-2 group w-full mt-12">
+              <span className="blueprint text-xs w-full text-center border border-ink/20 bg-canvas/50 backdrop-blur-sm px-8 py-4 rounded-full group-hover:bg-accent group-hover:text-canvas group-hover:border-accent transition-all duration-300 shadow-[0_2px_10px_rgba(0,0,0,0.02)]">
+                FULL CAREER ARC
+              </span>
             </Link>
-          </div>
+          </RevealUp>
         </div>
 
-        <div className="px-6 md:px-12 lg:px-24">
+        {/* --- DESKTOP LAYOUT --- */}
+        <div className="hidden md:block px-6 md:px-12 lg:px-24">
 
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-start">
 
             {/* Left: Image (Desktop only) */}
-            <RevealUp className="hidden md:block relative">
+            <RevealUp className="relative">
               <div className="aspect-[4/5] w-full max-w-[440px] mx-auto lg:ml-auto lg:mr-0 bg-canvas-alt rounded-3xl relative overflow-hidden">
                 <Image 
                   src="/images/sai-portrait-cropped.webp" 
@@ -185,7 +180,7 @@ export default function Home() {
 
             {/* Right: Story */}
             <RevealUp className="flex flex-col" delay={0.15}>
-              <h2 className="hidden md:block text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.1] mb-8 mt-[-6px]">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.1] mb-8 mt-[-6px]">
                 The backstory,<br /><span className="italic text-ink-muted">in short.</span>
               </h2>
 
@@ -238,46 +233,6 @@ export default function Home() {
                 </div>
                 <div className="blueprint text-[10px] text-ink-muted">EDUCATION</div>
               </div>
-            </div>
-          </div>
-        </RevealUp>
-
-        {/* Marquee (Mobile Only) */}
-        <RevealUp className="block md:hidden mt-12 overflow-hidden relative">
-          <div className="flex whitespace-nowrap animate-marquee border-y border-ink/10 py-5 w-max">
-            <div className="flex gap-8 px-4 items-center shrink-0">
-              <span className="blueprint text-[11px] tracking-widest flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-ink/20 rounded-full"></span> 10+ YEARS EXPERIENCE
-              </span>
-              <span className="blueprint text-[11px] tracking-widest flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-ink/20 rounded-full"></span> $8M+ REVENUE SHIPPED
-              </span>
-              <span className="blueprint text-[11px] tracking-widest flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-ink/20 rounded-full"></span> 25+ STARTUPS ADVISED
-              </span>
-              <span className="blueprint text-[11px] tracking-widest flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-ink/20 rounded-full"></span> 5+ SOLO BUILDS
-              </span>
-              <span className="blueprint text-[11px] tracking-widest flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-ink/20 rounded-full"></span> ISB MBA / BITS PILANI
-              </span>
-            </div>
-            <div className="flex gap-8 px-4 items-center shrink-0" aria-hidden="true">
-              <span className="blueprint text-[11px] tracking-widest flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-ink/20 rounded-full"></span> 10+ YEARS EXPERIENCE
-              </span>
-              <span className="blueprint text-[11px] tracking-widest flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-ink/20 rounded-full"></span> $8M+ REVENUE SHIPPED
-              </span>
-              <span className="blueprint text-[11px] tracking-widest flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-ink/20 rounded-full"></span> 25+ STARTUPS ADVISED
-              </span>
-              <span className="blueprint text-[11px] tracking-widest flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-ink/20 rounded-full"></span> 5+ SOLO BUILDS
-              </span>
-              <span className="blueprint text-[11px] tracking-widest flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-ink/20 rounded-full"></span> ISB MBA / BITS PILANI
-              </span>
             </div>
           </div>
         </RevealUp>

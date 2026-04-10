@@ -52,7 +52,6 @@ const posts = [
 ];
 
 export function ThinkingCarousel() {
-  const containerRef = useRef<HTMLDivElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const { ref: revealRef, isRevealed } = useScrollReveal();
 
@@ -63,7 +62,7 @@ export function ThinkingCarousel() {
     >
       <div 
         ref={scrollContainerRef}
-        className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-8 px-6 scrollbar-hide md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-6 md:pb-0 md:px-0 relative"
+        className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-8 px-6 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-6 md:pb-0 md:px-0 relative"
       >
         {posts.map((post, index) => (
           <PostCard 
@@ -109,7 +108,7 @@ function PaginationDot({ index, containerRef, total }: { index: number; containe
 
   return (
     <div 
-      className={`h-1.5 rounded-full transition-all duration-300 ${isActive ? 'w-4 bg-ink/80' : 'w-1.5 bg-ink/20'}`}
+      className={`h-1.5 rounded-full transition-all duration-300 ${isActive ? 'w-4 bg-accent' : 'w-1.5 bg-accent/20'}`}
     />
   );
 }
@@ -129,11 +128,13 @@ function PostCard({
   const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const initialMobileMatch = window.matchMedia('(max-width: 767px)').matches;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    setIsMobile(window.matchMedia('(max-width: 767px)').matches);
+    setIsMobile(initialMobileMatch);
     
     const handleResize = () => {
-      setIsMobile(window.matchMedia('(max-width: 767px)').matches);
+      const resizeMatch = window.matchMedia('(max-width: 767px)').matches;
+      setIsMobile(resizeMatch);
     };
     
     window.addEventListener('resize', handleResize);
@@ -160,7 +161,7 @@ function PostCard({
       },
       {
         root: containerRef.current,
-        threshold: 0.6,
+        threshold: 0.5,
       }
     );
 
@@ -168,30 +169,30 @@ function PostCard({
     return () => observer.disconnect();
   }, [isMobile, containerRef]);
 
-  const showHoverState = isMobile ? isFocused : undefined;
+  const showHoverState = Boolean(isMobile && isFocused);
 
   return (
     <motion.div
       ref={cardRef}
       style={isMobile ? { scale } : undefined}
-      className={`group relative min-w-[85vw] snap-center snap-always md:min-w-0 rounded-2xl will-change-transform ${isFocused ? 'mobile-focused' : ''} ${index >= 3 ? "lg:col-span-1 md:col-span-1" : ""}`}
+      className={`group relative min-w-[80vw] snap-center snap-always md:min-w-0 rounded-2xl will-change-transform ${showHoverState ? 'mobile-focused' : ''} ${index >= 3 ? "lg:col-span-1 md:col-span-1" : ""}`}
     >
       <a
         href={post.url}
         target="_blank"
         rel="noopener noreferrer"
-        className={`flex flex-col h-full justify-between p-8 rounded-2xl border border-ink/8 bg-canvas transition-all duration-500 min-h-[320px] ${showHoverState ? 'border-ink/20 shadow-[0_8px_30px_rgba(0,0,0,0.08)]' : 'hover:border-ink/20 hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)]'}`}
+        className={`flex flex-col h-full justify-between p-8 rounded-2xl border bg-canvas transition-all duration-500 min-h-[320px] ${showHoverState ? 'border-ink/20 shadow-[0_8px_30px_rgba(0,0,0,0.08)]' : 'border-ink/8 hover:border-ink/20 hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)]'}`}
       >
         <div>
-          <span className="blueprint text-[10px] text-ink-muted mb-6 block">{post.label}</span>
-          <h3 className={`text-xl md:text-2xl tracking-tight leading-[1.25] mb-4 text-ink transition-colors duration-500 ${showHoverState ? 'text-accent' : 'group-hover:text-accent'}`}>
+          <span className={`blueprint text-[10px] mb-6 block transition-colors duration-500 ${showHoverState ? 'text-ink' : 'text-ink-muted'}`}>{post.label}</span>
+          <h3 className={`text-xl md:text-2xl tracking-tight leading-[1.25] mb-4 transition-colors duration-500 ${showHoverState ? 'text-ink' : 'text-ink group-hover:text-accent'}`}>
             {post.hook}
           </h3>
           <p className="text-sm font-sans text-ink-muted leading-relaxed">
             {post.topic}
           </p>
         </div>
-        <div className={`flex items-center gap-2 mt-8 blueprint text-[11px] text-ink-muted transition-colors duration-500 ${showHoverState ? 'text-accent' : 'group-hover:text-accent'}`}>
+        <div className={`flex items-center gap-2 mt-8 blueprint text-[11px] transition-colors duration-500 ${showHoverState ? 'text-ink' : 'text-ink-muted group-hover:text-accent'}`}>
           <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
           <span>READ ON LINKEDIN</span>
           <ArrowUpRight strokeWidth={1.5} className={`w-3 h-3 ml-auto transition-opacity duration-300 ${showHoverState ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`} />

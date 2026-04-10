@@ -174,7 +174,7 @@ export function Navigation() {
       </nav>
 
       {/* Mobile Navigation Bar */}
-      <nav className="flex md:hidden fixed top-0 left-0 right-0 z-[60] items-center justify-between px-6 py-6 bg-gradient-to-b from-canvas/90 to-transparent backdrop-blur-sm pointer-events-auto">
+      <nav className="flex md:hidden fixed top-0 left-0 right-0 z-[60] items-center justify-between px-6 py-6 bg-canvas/30 backdrop-blur-md border-b border-ink/5 pointer-events-auto">
         <Link href="/" onClick={scrollToTop} className="blueprint text-[10px] tracking-widest uppercase font-bold text-ink">
           Sai Subhash Yeniganti
         </Link>
