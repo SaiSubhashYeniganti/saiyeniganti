@@ -2,6 +2,7 @@
 
 import { useRef, useState, useEffect, RefObject } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
@@ -162,8 +163,10 @@ function BuildCard({
 }) {
   const [isMobile, setIsMobile] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
+  const router = useRouter();
   
   const cardRef = useRef<HTMLDivElement>(null);
+  const touchStartRef = useRef<{ x: number; y: number; time: number } | null>(null);
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -205,12 +208,44 @@ function BuildCard({
     return () => observer.disconnect();
   }, [isMobile, containerRef]);
 
+  useEffect(() => {
+    if (!isMobile) return;
+    const card = cardRef.current;
+    if (!card) return;
+
+    const onTouchStart = (e: TouchEvent) => {
+      const touch = e.touches[0];
+      touchStartRef.current = { x: touch.clientX, y: touch.clientY, time: Date.now() };
+    };
+
+    const onTouchEnd = (e: TouchEvent) => {
+      if (!touchStartRef.current) return;
+      const touch = e.changedTouches[0];
+      const dx = Math.abs(touch.clientX - touchStartRef.current.x);
+      const dy = Math.abs(touch.clientY - touchStartRef.current.y);
+      const dt = Date.now() - touchStartRef.current.time;
+      touchStartRef.current = null;
+
+      if (dx < 10 && dy < 10 && dt < 300) {
+        e.preventDefault();
+        router.push(build.href);
+      }
+    };
+
+    card.addEventListener('touchstart', onTouchStart, { passive: true });
+    card.addEventListener('touchend', onTouchEnd);
+    return () => {
+      card.removeEventListener('touchstart', onTouchStart);
+      card.removeEventListener('touchend', onTouchEnd);
+    };
+  }, [isMobile, build.href, router]);
+
   const showHoverState = isMobile ? isFocused : undefined;
 
   return (
     <motion.div
       ref={cardRef}
-      style={isMobile ? { scale } : undefined}
+      style={isMobile ? { scale, touchAction: 'pan-x' } : undefined}
       className={`group flex flex-col relative min-w-[80vw] snap-center snap-always md:min-w-0 rounded-2xl cursor-pointer will-change-transform ${isFocused ? 'mobile-focused' : ''}`}
     >
       <Link href={build.href} className="flex flex-col gap-5 md:gap-6 cursor-pointer w-full h-full">
