@@ -9,7 +9,7 @@ const revealUp = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 1.2, ease: "easeOut" }
+    transition: { duration: 1.2, ease: "easeOut" as const }
   }
 };
 
@@ -36,7 +36,7 @@ export default function ArthmBuildPage() {
                 ARTHM Foundation
               </h1>
               <p className="text-lg md:text-xl text-ink-muted font-sans leading-[1.6] mb-8">
-                Experiment in proving AI-driven design can be intentional and world-class. Client call to production in a month.
+                Proving AI-driven design can be delightful, not just fast. Client call to production in a month.
               </p>
 
               <div className="flex flex-wrap gap-x-4 gap-y-2 blueprint text-[10px] tracking-widest text-ink-muted border-y border-ink/10 py-5 w-full mb-8">
@@ -59,7 +59,7 @@ export default function ArthmBuildPage() {
                   I built it using AI-first workflows: 3D rendering in React Three Fiber, scroll-linked animations 
                   through GSAP, heavy typographical structures. The whole thing went from first client conversation 
                   to deployed production in under a month. For me, this was the project that proved AI-driven 
-                  design can be intentional, not just fast.
+                  design can be delightful, not just fast.
                 </p>
               </div>
 

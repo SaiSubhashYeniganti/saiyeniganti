@@ -139,7 +139,7 @@ export default function Home() {
             {
               id: "gita-project",
               title: "The Gita Project",
-              desc: "Bhagavad Gita reimagined as a modern consumer app. Can one person build an entire company with AI? App, website, brand, infrastructure. Finding out.",
+              desc: "Bhagavad Gita reimagined as a modern consumer app. 700+ verses processed through AI pipelines. Starting with the text, building toward stories, meditation, yoga. Can one person build an entire company solo?",
               href: "/builds/gita-project",
               type: "FULL PRODUCT",
               status: "IN PROGRESS",
@@ -149,7 +149,7 @@ export default function Home() {
             {
               id: "arthm",
               title: "ARTHM",
-              desc: "India's first mic-less concert hall. Proving AI can produce world-class, intentional design. Client call to production in a month.",
+              desc: "India's first mic-less concert hall. Proving AI-driven design can be delightful, not just fast. Client call to production in a month.",
               href: "/builds/arthm",
               type: "WEBSITE",
               status: "LIVE",
@@ -159,7 +159,7 @@ export default function Home() {
             {
               id: "blockpulse",
               title: "BlockPulse",
-              desc: "Web3 news aggregator. Built an autonomous pipeline that monitors, filters, and pushes to a mobile app. Shipped to Play Store.",
+              desc: "Spotted an AI capability gap at the company. Built a Web3 news aggregator as proof that AI can ship real products. Deployed to Play Store solo.",
               href: "/builds/blockpulse",
               type: "MOBILE APP",
               status: "SHIPPED",
@@ -430,7 +430,7 @@ export default function Home() {
               },
               {
                 id: "post-5",
-                hook: "I built an AI system to find my next job. It found 76 in a month.",
+                hook: "I built an AI system to find my next job. It found 80+ in a month.",
                 topic: "Connected Telegram channels to an LLM, built a classification pipeline, put a dashboard on top. AI doesn't have to be about building the next big thing.",
                 label: "AUTOMATING MY OWN JOB SEARCH",
                 url: "https://linkedin.com/in/subhashyeniganti/recent-activity/all/"

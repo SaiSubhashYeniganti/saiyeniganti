@@ -14,7 +14,7 @@ export const builds: Build[] = [
     slug: "the-gita-project",
     name: "The Gita Project",
     description:
-      "Challenge of building a company solo. App, website, brand, infrastructure.",
+      "Starting with the Gita. Building toward something much bigger.",
     url: "https://www.thegitaproject.world",
     status: "in-progress",
     accent: "#D6723B",
@@ -24,7 +24,7 @@ export const builds: Build[] = [
     slug: "arthm",
     name: "ARTHM",
     description:
-      "Experiment in proving AI-driven design can be intentional and world-class. Client call to production in a month.",
+      "Proving AI-driven design can be delightful, not just fast. Client call to production in a month.",
     url: "https://arthm.org",
     status: "live",
     accent: "#A68D4E",
@@ -54,7 +54,7 @@ export const builds: Build[] = [
     slug: "block-pulse",
     name: "Block Pulse",
     description:
-      "Experiment in automation. Web3 news app, shipped to Play Store.",
+      "Proof of concept that AI can build real products. Built solo, shipped to Play Store.",
     url: "https://getblockpulse.app",
     status: "live",
     accent: "#4A5568",
@@ -64,7 +64,7 @@ export const builds: Build[] = [
     slug: "job-hunter",
     name: "Job Hunter",
     description:
-      "Personal AI system. Telegram channels → LLM classification → dashboard. 76 relevant roles surfaced in a month.",
+      "Built AI to find me a job. It found 80+ relevant roles in a month.",
     status: "live",
     accent: "#7D8C6A",
   },

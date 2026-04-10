@@ -45,7 +45,7 @@ export default function JobHunterBuildPage() {
                 Job Hunter
               </h1>
               <p className="text-lg md:text-xl text-ink-muted font-sans leading-[1.6] mb-8">
-                Personal AI system. Telegram channels to LLM classification to dashboard. 76 relevant roles surfaced in a month.
+                Built AI to find me a job. It found 80+ relevant roles in a month.
               </p>
 
               <div className="flex flex-wrap gap-x-4 gap-y-2 blueprint text-[10px] tracking-widest text-ink-muted border-y border-ink/10 py-5 w-full mb-8">
@@ -60,13 +60,19 @@ export default function JobHunterBuildPage() {
 
               <div className="text-base md:text-lg font-sans text-ink-muted leading-relaxed space-y-5">
                 <p>
-                  The modern hiring landscape is broken. Between fake job postings and endless spam, finding high-signal opportunities requires digging through massive amounts of noise.
+                  The Web3 job market is fragmented. There's no single board that covers it well, and most 
+                  real leads end up scattered across Telegram channels that get hundreds of messages every day. 
+                  Scrolling through all of that manually wasn't working.
                 </p>
                 <p>
-                  Rather than scrolling manually, I engineered an autonomous intelligence pipeline. It continuously scrapes job postings from targeted Telegram channels, runs them through an LLM to classify their exact relevance against my specific background, and pushes the high-signal matches to a clean, custom dashboard.
+                  So I built an automation around it. Connected my Telegram channels to an LLM, built a 
+                  classification pipeline to filter for PM roles, and put a dashboard on top that shows only 
+                  what's relevant to me. It surfaced 80+ relevant roles in the first month. Jobs I would 
+                  have never found scrolling. It's still running. Every morning there's new stuff waiting.
                 </p>
                 <p>
-                  It surfaced 76 highly relevant, hidden roles within the first 30 days—completely automating the opportunity ingestion phase of my career pipeline.
+                  AI doesn't have to be about building the next big thing. Sometimes it's just about fixing 
+                  something broken in your day-to-day.
                 </p>
               </div>
 

@@ -46,7 +46,7 @@ export default function BlockPulseBuildPage() {
                 BlockPulse
               </h1>
               <p className="text-lg md:text-xl text-ink-muted font-sans leading-[1.6] mb-8">
-                Experiment in automation. Web3 news app, shipped to Play Store.
+                Proof of concept that AI can build real products. Built solo, shipped to Play Store.
               </p>
 
               <div className="flex flex-wrap gap-x-4 gap-y-2 blueprint text-[10px] tracking-widest text-ink-muted border-y border-ink/10 py-5 w-full mb-8">
@@ -61,14 +61,15 @@ export default function BlockPulseBuildPage() {
 
               <div className="text-base md:text-lg font-sans text-ink-muted leading-relaxed space-y-5">
                 <p>
-                  While running product strategy at Key Difference, I noticed we were spending hours manually 
-                  tracking Web3 news across dozens of sources. Crypto moves fast and manual curation wasn't 
-                  keeping up. Nobody in the org had the AI capability to fix it.
+                  While running product strategy at Key Difference, I noticed an AI capability gap across 
+                  the org. Nobody was building with AI, and the company's vision needed it. Rather than 
+                  write a proposal, I decided to prove the point by shipping something real.
                 </p>
                 <p>
-                  So I built it. An autonomous pipeline that monitors Web3 sources, uses AI to filter signal 
-                  from noise, and pushes curated content to a Flutter mobile app. Shipped it to the Play Store 
-                  entirely solo.
+                  BlockPulse was the proof of concept. A Web3 news aggregator with an AI pipeline that 
+                  monitors sources, filters signal from noise, and pushes curated content to a Flutter 
+                  mobile app. Built solo, shipped to the Play Store. It became the starting point for an 
+                  AI-first transformation at the company.
                 </p>
               </div>
 

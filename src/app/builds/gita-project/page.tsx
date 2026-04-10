@@ -9,7 +9,7 @@ const revealUp = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 1.2, ease: "easeOut" }
+    transition: { duration: 1.2, ease: "easeOut" as const }
   }
 };
 
@@ -46,7 +46,7 @@ export default function GitaProjectBuildPage() {
                 The Gita Project
               </h1>
               <p className="text-lg md:text-xl text-ink-muted font-sans leading-[1.6] mb-8">
-                Challenge of building a company solo. App, website, brand, infrastructure.
+                Starting with the Gita. Building toward something much bigger.
               </p>
 
               <div className="flex flex-wrap gap-x-4 gap-y-2 blueprint text-[10px] tracking-widest text-ink-muted border-y border-ink/10 py-5 w-full mb-8">
@@ -67,9 +67,14 @@ export default function GitaProjectBuildPage() {
                 </p>
                 <p>
                   The first problem was scale: 700+ verses, each needing structured metadata, categorization, 
-                  and commentary. I built custom AI automation pipelines to process the entire corpus. Then the 
-                  mobile app, the marketing website, the brand. This is the closest thing I have to building a 
-                  company solo from scratch.
+                  and commentary. I built custom AI pipelines to process the entire corpus. Then the mobile app, 
+                  the marketing website, the brand identity.
+                </p>
+                <p>
+                  But the Gita is just the starting point. The long-term vision goes beyond the text itself, 
+                  into the stories around it, practical ways to apply its teachings, meditation, yoga. A 
+                  platform for living the philosophy, not just reading it. This is the closest thing I have 
+                  to building a company solo from scratch.
                 </p>
               </div>
 
