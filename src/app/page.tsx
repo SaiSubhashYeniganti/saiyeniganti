@@ -214,7 +214,7 @@ export default function Home() {
                         sizes="(max-width: 768px) 92vw, (max-width: 1200px) 46vw, 30vw"
                         priority={index < 2}
                         loading={index < 2 ? "eager" : "lazy"}
-                        className="object-cover grayscale opacity-60 contrast-[1.1] transition-[transform,filter,opacity] duration-[1.2s] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-105 group-hover:grayscale-0 group-hover:opacity-100"
+                        className="object-cover grayscale opacity-60 contrast-[1.1] transition-all duration-[1.2s] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-105 group-hover:grayscale-0 group-hover:opacity-100"
                       />
                       
                       {/* Top gradient for text readability */}

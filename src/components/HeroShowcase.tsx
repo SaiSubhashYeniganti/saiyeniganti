@@ -41,10 +41,11 @@ export function HeroShowcase() {
       img.decoding = 'async';
       img.src = image.src;
       img.onload = () => markLoaded(image.src);
+      img.onerror = () => markLoaded(image.src);
       preloadedImages.current.push(img);
     });
     return () => {
-      preloadedImages.current.forEach((img) => { img.onload = null; });
+      preloadedImages.current.forEach((img) => { img.onload = null; img.onerror = null; });
       preloadedImages.current = [];
     };
   }, [markLoaded]);
