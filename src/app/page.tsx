@@ -207,7 +207,6 @@ export default function Home() {
                 <div className="w-full aspect-[16/10] overflow-hidden rounded-2xl bg-ink relative border border-canvas/5 shadow-sm">
                   {build.image ? (
                     <>
-                      {/* Base Image (Full Color, revealed on hover) */}
                       <Image 
                         src={build.image} 
                         alt={build.title} 
@@ -215,18 +214,7 @@ export default function Home() {
                         sizes="(max-width: 768px) 92vw, (max-width: 1200px) 46vw, 30vw"
                         priority={index < 2}
                         loading={index < 2 ? "eager" : "lazy"}
-                        className="object-cover opacity-0 transition-[transform,opacity] duration-[1.2s] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-[1.03] group-hover:opacity-100"
-                      />
-                      
-                      {/* Overlay Image (Grayscale + Darkened, hidden on hover) */}
-                      <Image 
-                        src={build.image} 
-                        alt={`${build.title} BW`} 
-                        fill
-                        sizes="(max-width: 768px) 92vw, (max-width: 1200px) 46vw, 30vw"
-                        priority={index < 2}
-                        loading={index < 2 ? "eager" : "lazy"}
-                        className="object-cover grayscale contrast-[1.15] brightness-[0.85] opacity-[0.65] transition-[transform,opacity] duration-[1.2s] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-[1.03] group-hover:opacity-0"
+                        className="object-cover grayscale opacity-60 contrast-[1.1] transition-[transform,filter,opacity] duration-[1.2s] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-105 group-hover:grayscale-0 group-hover:opacity-100"
                       />
                       
                       {/* Top gradient for text readability */}
