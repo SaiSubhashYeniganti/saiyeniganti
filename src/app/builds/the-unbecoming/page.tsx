@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { IMAGE_BLUR_DATA_URL } from "@/lib/image";
 
 const revealUp = {
   hidden: { opacity: 0, y: 40 },
@@ -85,12 +84,8 @@ export default function TheUnbecomingBuildPage() {
                 height={2325}
                 className="w-full h-auto transition-transform duration-[1.5s] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-[1.02]"
                 sizes="(max-width: 1024px) 100vw, 800px"
-                quality={75}
                 priority
                 loading="eager"
-                fetchPriority="high"
-                placeholder="blur"
-                blurDataURL={IMAGE_BLUR_DATA_URL}
               />
             </motion.div>
 

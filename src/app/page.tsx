@@ -7,7 +7,6 @@ import Image from "next/image";
 import { type MouseEvent } from "react";
 import { HeroShowcase } from "@/components/HeroShowcase";
 import { HeroAtmosphere } from "@/components/HeroAtmosphere";
-import { IMAGE_BLUR_DATA_URL } from "@/lib/image";
 
 // --- ANIMATION VARIANTS ---
 const revealUp = {
@@ -203,17 +202,10 @@ export default function Home() {
                         alt={build.title} 
                         fill
                         sizes="(max-width: 768px) 92vw, (max-width: 1200px) 46vw, 30vw"
-                        quality={75}
                         priority={index < 2}
                         loading={index < 2 ? "eager" : "lazy"}
-                        fetchPriority={index < 2 ? "high" : "auto"}
-                        placeholder="blur"
-                        blurDataURL={IMAGE_BLUR_DATA_URL}
-                        className="object-cover grayscale opacity-60 contrast-[1.1] transition-all duration-[1.2s] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-105 group-hover:grayscale-0 group-hover:opacity-100"
+                        className="object-cover grayscale opacity-60 contrast-[1.1] transition-[transform,filter,opacity] duration-[1.2s] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-105 group-hover:grayscale-0 group-hover:opacity-100"
                       />
-                      {/* Very subtle noise overlay for the editorial feel */}
-                      <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay pointer-events-none bg-[url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E')]"></div>
-                      <div className="absolute inset-0 bg-canvas/5 mix-blend-overlay pointer-events-none group-hover:bg-transparent transition-colors duration-700"></div>
                       
                       {/* Top gradient for text readability */}
                       <div className="absolute inset-x-0 top-0 z-[5] h-28 bg-gradient-to-b from-ink/60 to-transparent pointer-events-none"></div>
@@ -300,12 +292,9 @@ export default function Home() {
                   src="/images/sai-portrait-cropped.webp" 
                   alt="Portrait of Sai Subhash Yeniganti"
                   fill
-                  className="object-cover object-top mix-blend-multiply contrast-[1.05] grayscale-[0.2]"
+                  className="object-cover object-top contrast-[1.05] grayscale-[0.2]"
                   sizes="(max-width: 1024px) 100vw, 40vw"
-                  quality={75}
                   priority
-                  placeholder="blur"
-                  blurDataURL={IMAGE_BLUR_DATA_URL}
                 />
                 <div className="absolute inset-0 rounded-3xl shadow-[inset_0_0_0_1px_rgba(0,0,0,0.05)] pointer-events-none" />
               </div>

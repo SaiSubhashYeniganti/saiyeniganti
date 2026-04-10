@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { IMAGE_BLUR_DATA_URL } from "@/lib/image";
 
 const revealUp = {
   hidden: { opacity: 0, y: 40 },
@@ -103,12 +102,8 @@ export default function BlockPulseBuildPage() {
                     height={983}
                     className="w-full h-auto object-cover"
                     sizes="(max-width: 640px) 100vw, 400px"
-                    quality={75}
                     priority
                     loading="eager"
-                    fetchPriority="high"
-                    placeholder="blur"
-                    blurDataURL={IMAGE_BLUR_DATA_URL}
                   />
                 </motion.div>
 
@@ -126,9 +121,6 @@ export default function BlockPulseBuildPage() {
                     height={965}
                     className="w-full h-auto object-cover"
                     sizes="(max-width: 640px) 100vw, 400px"
-                    quality={75}
-                    placeholder="blur"
-                    blurDataURL={IMAGE_BLUR_DATA_URL}
                   />
                 </motion.div>
 
@@ -146,9 +138,6 @@ export default function BlockPulseBuildPage() {
                     height={1264}
                     className="w-full h-auto object-cover"
                     sizes="(max-width: 640px) 100vw, 400px"
-                    quality={75}
-                    placeholder="blur"
-                    blurDataURL={IMAGE_BLUR_DATA_URL}
                   />
                 </motion.div>
               </div>
@@ -169,9 +158,6 @@ export default function BlockPulseBuildPage() {
                     height={995}
                     className="w-full h-auto object-cover"
                     sizes="(max-width: 640px) 100vw, 400px"
-                    quality={75}
-                    placeholder="blur"
-                    blurDataURL={IMAGE_BLUR_DATA_URL}
                   />
                 </motion.div>
 
@@ -189,9 +175,6 @@ export default function BlockPulseBuildPage() {
                     height={1287}
                     className="w-full h-auto object-cover"
                     sizes="(max-width: 640px) 100vw, 400px"
-                    quality={75}
-                    placeholder="blur"
-                    blurDataURL={IMAGE_BLUR_DATA_URL}
                   />
                 </motion.div>
 
@@ -209,9 +192,6 @@ export default function BlockPulseBuildPage() {
                     height={1268}
                     className="w-full h-auto object-cover"
                     sizes="(max-width: 640px) 100vw, 400px"
-                    quality={75}
-                    placeholder="blur"
-                    blurDataURL={IMAGE_BLUR_DATA_URL}
                   />
                 </motion.div>
               </div>

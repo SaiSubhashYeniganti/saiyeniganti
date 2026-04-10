@@ -3,7 +3,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { IMAGE_BLUR_DATA_URL } from '@/lib/image';
 
 const IMAGES = [
   { src: '/images/hero-showcase/mobile/tgp-1.webp', alt: 'The Gita Project Mobile', type: 'mobile' },
@@ -65,7 +64,7 @@ export function HeroShowcase() {
   return (
     <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] flex items-center justify-center" style={{ perspective: '2000px' }}>
 
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-gradient-to-tr from-accent/10 to-ink/5 rounded-full blur-[100px] pointer-events-none z-0" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-gradient-to-tr from-accent/10 to-ink/5 rounded-full blur-[60px] pointer-events-none z-0" />
 
       <div className="relative z-10 w-full h-full flex items-center justify-center overflow-visible">
         <AnimatePresence initial={false}>
@@ -89,11 +88,7 @@ export function HeroShowcase() {
               className="object-cover object-top"
               priority={displayIndex === 0}
               loading="eager"
-              fetchPriority={displayIndex === 0 ? 'high' : 'auto'}
               sizes={isMobile ? '(max-width: 768px) 60vw, 24vw' : '(max-width: 1024px) 92vw, 46vw'}
-              quality={75}
-              placeholder="blur"
-              blurDataURL={IMAGE_BLUR_DATA_URL}
             />
             <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent pointer-events-none" />
           </motion.div>

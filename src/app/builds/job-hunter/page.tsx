@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { IMAGE_BLUR_DATA_URL } from "@/lib/image";
 
 const revealUp = {
   hidden: { opacity: 0, y: 40 },
@@ -98,12 +97,8 @@ export default function JobHunterBuildPage() {
                 height={455}
                 className="w-full h-auto"
                 sizes="(max-width: 1024px) 100vw, 900px"
-                quality={75}
                 priority
                 loading="eager"
-                fetchPriority="high"
-                placeholder="blur"
-                blurDataURL={IMAGE_BLUR_DATA_URL}
               />
             </motion.div>
 
@@ -123,9 +118,6 @@ export default function JobHunterBuildPage() {
                   height={1385}
                   className="w-full h-auto"
                   sizes="(max-width: 640px) 100vw, 300px"
-                  quality={75}
-                  placeholder="blur"
-                  blurDataURL={IMAGE_BLUR_DATA_URL}
                 />
               </motion.div>
 
@@ -144,9 +136,6 @@ export default function JobHunterBuildPage() {
                   height={685}
                   className="w-full h-auto"
                   sizes="(max-width: 1024px) 100vw, 600px"
-                  quality={75}
-                  placeholder="blur"
-                  blurDataURL={IMAGE_BLUR_DATA_URL}
                 />
               </motion.div>
             </div>

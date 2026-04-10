@@ -116,7 +116,7 @@ export function Navigation() {
   const isLetsTalkActive = pathname === "/" && activeSection === "contact";
 
   return (
-    <nav className="fixed top-12 left-1/2 -translate-x-1/2 z-50 flex items-center gap-6 md:gap-8 bg-canvas/80 backdrop-blur-xl border border-ink/10 px-6 md:px-8 py-4 rounded-full blueprint text-[10px] md:text-xs tracking-widest uppercase shadow-[0_8px_32px_-8px_rgba(0,0,0,0.05)] w-max max-w-[90vw]">
+    <nav className="fixed top-12 left-1/2 -translate-x-1/2 z-50 flex items-center gap-6 md:gap-8 bg-canvas/90 backdrop-blur-md border border-ink/10 px-6 md:px-8 py-4 rounded-full blueprint text-[10px] md:text-xs tracking-widest uppercase shadow-[0_8px_32px_-8px_rgba(0,0,0,0.05)] w-max max-w-[90vw]">
       <Link href="/" onClick={scrollToTop} className="hover:text-accent transition-colors font-bold whitespace-nowrap">
         Sai Subhash Yeniganti
       </Link>
