@@ -95,8 +95,7 @@ export function HeroShowcase() {
                 className="object-cover object-top"
                 priority={displayIndex === 0}
                 sizes={isMobile ? '(max-width: 768px) 60vw, 24vw' : '(max-width: 1024px) 92vw, 46vw'}
-                quality={80}
-                unoptimized
+                quality={100}
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent pointer-events-none" />
             </motion.div>
