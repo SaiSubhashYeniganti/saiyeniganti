@@ -27,7 +27,7 @@ export default function ExperiencePage() {
         <RevealUp>
           <h1 className="text-5xl md:text-8xl tracking-tight leading-[0.9] text-ink mb-16">
             10+ years of<br/>
-            <span className="italic text-ink-muted">building</span> things.
+            <span className="italic text-ink-muted">building</span> products.
           </h1>
         </RevealUp>
 
