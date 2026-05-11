@@ -103,12 +103,12 @@ export default function Home() {
 
         {/* --- MOBILE LAYOUT --- */}
         <div className="flex md:hidden flex-col w-full px-6 pt-10 pb-8 bg-canvas">
-          <div className="w-full aspect-[4/5] max-w-[440px] mx-auto rounded-[2rem] overflow-hidden bg-canvas-alt shadow-sm border border-ink/5 mb-10 relative">
+          <div className="w-full aspect-square max-w-[440px] mx-auto rounded-[2rem] overflow-hidden bg-canvas-alt shadow-sm border border-ink/5 mb-10 relative">
             <Image 
               src="/images/DP.webp" 
               alt="Portrait of Sai Subhash Yeniganti"
               fill
-              className="object-cover object-top contrast-[1.05] grayscale-[0.2]"
+              className="object-cover contrast-[1.05] grayscale-[0.2]"
               sizes="(max-width: 768px) 100vw, 50vw"
               priority
             />
@@ -165,12 +165,12 @@ export default function Home() {
 
             {/* Left: Image (Desktop only) */}
             <RevealUp className="relative">
-              <div className="aspect-[4/5] w-full max-w-[440px] mx-auto lg:ml-auto lg:mr-0 bg-canvas-alt rounded-3xl relative overflow-hidden">
+              <div className="aspect-square w-full max-w-[440px] mx-auto lg:ml-auto lg:mr-0 bg-canvas-alt rounded-3xl relative overflow-hidden">
                 <Image 
                   src="/images/DP.webp" 
                   alt="Portrait of Sai Subhash Yeniganti"
                   fill
-                  className="object-cover object-top contrast-[1.05] grayscale-[0.2]"
+                  className="object-cover contrast-[1.05] grayscale-[0.2]"
                   sizes="(max-width: 1024px) 100vw, 40vw"
                   priority
                 />
