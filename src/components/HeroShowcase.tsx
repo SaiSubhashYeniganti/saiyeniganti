@@ -9,7 +9,6 @@ const IMAGES = [
   FIRST_IMAGE,
   { src: '/images/hero-showcase/desktop/arthm.webp', alt: 'ARTHM Foundation', type: 'desktop' as const },
   { src: '/images/hero-showcase/mobile/arthm.webp', alt: 'ARTHM Foundation Mobile', type: 'mobile' as const },
-  { src: '/images/hero-showcase/desktop/blockpulse.webp', alt: 'BlockPulse Desktop', type: 'desktop' as const },
   { src: '/images/hero-showcase/mobile/bp-1.webp', alt: 'BlockPulse Mobile', type: 'mobile' as const },
   { src: '/images/hero-showcase/desktop/kv.webp', alt: 'KarmaV Desktop', type: 'desktop' as const },
   { src: '/images/hero-showcase/mobile/kv.webp', alt: 'KarmaV Mobile', type: 'mobile' as const },
