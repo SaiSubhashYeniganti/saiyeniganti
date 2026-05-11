@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { type MouseEvent } from 'react';
-import { ArrowUpRight } from 'lucide-react';
 import { HeroShowcase } from '@/components/HeroShowcase';
 import { HeroAtmosphere } from '@/components/HeroAtmosphere';
 import { HeroArtifactsMobile } from '@/components/HeroArtifactsMobile';
@@ -106,7 +105,7 @@ export default function Home() {
         <div className="flex md:hidden flex-col w-full px-6 pt-10 pb-8 bg-canvas">
           <div className="w-full aspect-[4/5] max-w-[440px] mx-auto rounded-[2rem] overflow-hidden bg-canvas-alt shadow-sm border border-ink/5 mb-10 relative">
             <Image 
-              src="/images/sai-portrait-cropped.webp" 
+              src="/images/DP.webp" 
               alt="Portrait of Sai Subhash Yeniganti"
               fill
               className="object-cover object-top contrast-[1.05] grayscale-[0.2]"
@@ -168,7 +167,7 @@ export default function Home() {
             <RevealUp className="relative">
               <div className="aspect-[4/5] w-full max-w-[440px] mx-auto lg:ml-auto lg:mr-0 bg-canvas-alt rounded-3xl relative overflow-hidden">
                 <Image 
-                  src="/images/sai-portrait-cropped.webp" 
+                  src="/images/DP.webp" 
                   alt="Portrait of Sai Subhash Yeniganti"
                   fill
                   className="object-cover object-top contrast-[1.05] grayscale-[0.2]"
