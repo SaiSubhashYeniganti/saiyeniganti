@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/footer";
+import { GoogleAnalytics } from "@/components/google-analytics";
 import { Navigation } from "@/components/navigation";
 
 const blueprint = Geist_Mono({
@@ -34,6 +35,7 @@ export default function RootLayout({
 
         {children}
         <Footer />
+        <GoogleAnalytics />
       </body>
     </html>
   );
