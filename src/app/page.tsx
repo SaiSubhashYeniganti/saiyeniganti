@@ -62,7 +62,7 @@ export default function Home() {
                 <div className="hidden md:block absolute -left-[3px] bottom-0 w-1.5 h-px bg-ink/20" />
                 <p>I&apos;m Sai Subhash Yeniganti.</p>
                 <p>Over the last decade, I built a product division from scratch at a US startup and generated $8M+ in revenue. Then I ran product strategy and GTM for 25+ startups at a Dubai accelerator. Now I build and ship full products solo with AI.</p>
-                <p>This site is where that work lives.</p>
+                <p>This is where that work lives.</p>
               </div>
 
               <Link href="/#builds" onClick={handleSeeWorkClick} className="inline-flex items-center gap-2 group w-full md:w-auto">
