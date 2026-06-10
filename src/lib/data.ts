@@ -34,7 +34,7 @@ export const builds: Build[] = [
     slug: "pragna-skin-clinic",
     name: "Pragna Skin Clinic",
     description:
-      "86 pages, 65,000 words of content. Experiment in design and content at scale. One of the best dermatology websites in India.",
+      "A dermatology site built like a clinical encyclopedia. 86 pages, 65,000 words, 10 unique designs. Built solo at a fraction of the usual cost.",
     url: "https://pragnaskinclinic.com",
     status: "live",
     accent: "#C4785A",
@@ -54,7 +54,7 @@ export const builds: Build[] = [
     slug: "block-pulse",
     name: "Block Pulse",
     description:
-      "Proof of concept that AI can build real products. Built solo, shipped to Play Store.",
+      "An AI news app that turns hundreds of crypto articles a day into 2-minute briefings. Built and shipped to the Play Store, solo.",
     url: "https://getblockpulse.app",
     status: "live",
     accent: "#4A5568",

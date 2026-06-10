@@ -38,7 +38,7 @@ export default function BlockPulseBuildPage() {
               BlockPulse
             </h1>
             <p className="text-[17px] text-ink-muted font-sans leading-[1.6] mb-8">
-              Proof of concept that AI can build real products. Built solo, shipped to Play Store.
+              An AI news app that turns hundreds of crypto articles a day into 2-minute briefings. Built solo, shipped to the Play Store.
             </p>
           </RevealUp>
         </div>
@@ -98,27 +98,14 @@ export default function BlockPulseBuildPage() {
 
         <div className="px-6">
           <RevealUp className="flex flex-col items-start">
-            <div className="flex flex-wrap gap-x-3 gap-y-2 blueprint text-[10px] tracking-widest text-ink-muted border-y border-ink/10 py-4 w-full mb-8">
-              <span>FLUTTER</span>
-              <span className="text-ink/20">•</span>
-              <span>SUPABASE</span>
-              <span className="text-ink/20">•</span>
-              <span>OPENAI API</span>
-              <span className="text-ink/20">•</span>
-              <span>CURSOR</span>
-            </div>
-
             <div className="text-[17px] font-sans text-ink-muted leading-relaxed space-y-5 mb-10">
               <p>
-                While running product strategy at Key Difference, I noticed an AI capability gap across 
-                the org. Nobody was building with AI, and the company&apos;s vision needed it. Rather than 
-                write a proposal, I decided to prove the point by shipping something real.
+                The Web3 news cycle is overwhelming. Hundreds of articles a day, and most of it noise.
+                BlockPulse cuts through it: an <span className="font-medium text-ink/90">AI pipeline</span> that monitors sources, <span className="font-medium text-ink/90">dedupes and consolidates</span> across them, ranks what actually matters, and pushes short briefings to a mobile app.
               </p>
               <p>
-                BlockPulse was the proof of concept. A Web3 news aggregator with an AI pipeline that 
-                monitors sources, filters signal from noise, and pushes curated content to a Flutter 
-                mobile app. Built solo, shipped to the Play Store. It became the starting point for an 
-                AI-first transformation at the company.
+                I built and shipped the whole thing solo, from the ingestion pipeline to the mobile app
+                to the Play Store listing. What would normally take a small team, done by one person.
               </p>
             </div>
 
@@ -127,6 +114,19 @@ export default function BlockPulseBuildPage() {
                 VIEW PLAY STORE ↗
               </span>
             </a>
+
+            <div className="mt-10 pt-6 border-t border-ink/10 w-full">
+              <div className="blueprint text-[10px] tracking-widest text-ink-muted/60 mb-3">BUILT WITH</div>
+              <div className="flex flex-wrap gap-x-3 gap-y-1.5 blueprint text-[10px] tracking-widest text-ink-muted/80">
+                <span>FLUTTER</span>
+                <span className="text-ink/15">•</span>
+                <span>SUPABASE</span>
+                <span className="text-ink/15">•</span>
+                <span>OPENAI API</span>
+                <span className="text-ink/15">•</span>
+                <span>CURSOR</span>
+              </div>
+            </div>
           </RevealUp>
         </div>
       </div>
@@ -146,30 +146,17 @@ export default function BlockPulseBuildPage() {
                 BlockPulse
               </h1>
               <p className="text-lg md:text-xl text-ink-muted font-sans leading-[1.6] mb-8">
-                Proof of concept that AI can build real products. Built solo, shipped to Play Store.
+                An AI news app that turns hundreds of crypto articles a day into 2-minute briefings. Built solo, shipped to the Play Store.
               </p>
-
-              <div className="flex flex-wrap gap-x-4 gap-y-2 blueprint text-[10px] tracking-widest text-ink-muted border-y border-ink/10 py-5 w-full mb-8">
-                <span>FLUTTER</span>
-                <span className="text-ink/20">•</span>
-                <span>SUPABASE</span>
-                <span className="text-ink/20">•</span>
-                <span>OPENAI API</span>
-                <span className="text-ink/20">•</span>
-                <span>CURSOR</span>
-              </div>
 
               <div className="text-base md:text-lg font-sans text-ink-muted leading-relaxed space-y-5">
                 <p>
-                  While running product strategy at Key Difference, I noticed an AI capability gap across 
-                  the org. Nobody was building with AI, and the company&apos;s vision needed it. Rather than 
-                  write a proposal, I decided to prove the point by shipping something real.
+                  The Web3 news cycle is overwhelming. Hundreds of articles a day, and most of it noise.
+                  BlockPulse cuts through it: an <span className="font-medium text-ink/90">AI pipeline</span> that monitors sources, <span className="font-medium text-ink/90">dedupes and consolidates</span> across them, ranks what actually matters, and pushes short briefings to a mobile app.
                 </p>
                 <p>
-                  BlockPulse was the proof of concept. A Web3 news aggregator with an AI pipeline that 
-                  monitors sources, filters signal from noise, and pushes curated content to a Flutter 
-                  mobile app. Built solo, shipped to the Play Store. It became the starting point for an 
-                  AI-first transformation at the company.
+                  I built and shipped the whole thing solo, from the ingestion pipeline to the mobile app
+                  to the Play Store listing. What would normally take a small team, done by one person.
                 </p>
               </div>
 
@@ -178,6 +165,19 @@ export default function BlockPulseBuildPage() {
                   VIEW PLAY STORE ↗
                 </span>
               </a>
+
+              <div className="mt-12 pt-6 border-t border-ink/10 w-full">
+                <div className="blueprint text-[10px] tracking-widest text-ink-muted/60 mb-3">BUILT WITH</div>
+                <div className="flex flex-wrap gap-x-4 gap-y-1.5 blueprint text-[10px] tracking-widest text-ink-muted/80">
+                  <span>FLUTTER</span>
+                  <span className="text-ink/15">•</span>
+                  <span>SUPABASE</span>
+                  <span className="text-ink/15">•</span>
+                  <span>OPENAI API</span>
+                  <span className="text-ink/15">•</span>
+                  <span>CURSOR</span>
+                </div>
+              </div>
             </RevealUp>
           </div>
 

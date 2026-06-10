@@ -37,17 +37,8 @@ export default function JobHunterBuildPage() {
             Job Hunter
           </h1>
           <p className="text-[17px] text-ink-muted font-sans leading-[1.6] mb-6">
-            Built AI to find me a job. It found 80+ relevant roles in a month.
+            Built AI to find me a job. It found 250+ relevant roles in two months.
           </p>
-          <div className="flex flex-wrap gap-x-3 gap-y-2 blueprint text-[10px] tracking-widest text-ink-muted py-2 w-full">
-            <span>PYTHON</span>
-            <span className="text-ink/20">•</span>
-            <span>TELEGRAM API</span>
-            <span className="text-ink/20">•</span>
-            <span>OPENAI API</span>
-            <span className="text-ink/20">•</span>
-            <span>NEXT.JS DASHBOARD</span>
-          </div>
         </RevealUp>
 
         {/* Story Sequence */}
@@ -103,20 +94,33 @@ export default function JobHunterBuildPage() {
         <RevealUp className="flex flex-col items-start border-t border-ink/10 pt-8">
           <div className="text-[17px] font-sans text-ink-muted leading-relaxed space-y-5">
             <p>
-              The Web3 job market is fragmented. There&apos;s no single board that covers it well, and most 
-              real leads end up scattered across Telegram channels that get hundreds of messages every day. 
+              The Web3 job market is fragmented. There&apos;s no single board that covers it well, and most
+              real leads end up scattered across Telegram channels that get hundreds of messages every day.
               Scrolling through all of that manually wasn&apos;t working.
             </p>
             <p>
-              So I built an automation around it. Connected my Telegram channels to an LLM, built a 
-              classification pipeline to filter for PM roles, and put a dashboard on top that shows only 
-              what&apos;s relevant to me. It surfaced 80+ relevant roles in the first month. Jobs I would 
-              have never found scrolling. It&apos;s still running. Every morning there&apos;s new stuff waiting.
+              So I built an automation around it. Connected my Telegram channels to an LLM, built a <span className="font-medium text-ink/90">classification pipeline</span> to filter for PM roles, and put a dashboard on top that shows only
+              what&apos;s relevant to me. It surfaced <span className="font-medium text-ink/90">250+ relevant roles</span> over two months, jobs I would
+              have never found scrolling. Tuning the prompts against real results pushed accuracy from
+              around <span className="font-medium text-ink/90">50% to 90%</span>. It&apos;s still running. Every morning there&apos;s new stuff waiting.
             </p>
             <p>
-              AI doesn&apos;t have to be about building the next big thing. Sometimes it&apos;s just about fixing 
+              AI doesn&apos;t have to be about building the next big thing. Sometimes it&apos;s just about fixing
               something broken in your day-to-day.
             </p>
+          </div>
+
+          <div className="mt-10 pt-6 border-t border-ink/10 w-full">
+            <div className="blueprint text-[10px] tracking-widest text-ink-muted/60 mb-3">BUILT WITH</div>
+            <div className="flex flex-wrap gap-x-3 gap-y-1.5 blueprint text-[10px] tracking-widest text-ink-muted/80">
+              <span>PYTHON</span>
+              <span className="text-ink/15">•</span>
+              <span>TELEGRAM API</span>
+              <span className="text-ink/15">•</span>
+              <span>OPENAI API</span>
+              <span className="text-ink/15">•</span>
+              <span>NEXT.JS DASHBOARD</span>
+            </div>
           </div>
         </RevealUp>
       </div>
@@ -136,35 +140,38 @@ export default function JobHunterBuildPage() {
                 Job Hunter
               </h1>
               <p className="text-lg md:text-xl text-ink-muted font-sans leading-[1.6] mb-8">
-                Built AI to find me a job. It found 80+ relevant roles in a month.
+                Built AI to find me a job. It found 250+ relevant roles in two months.
               </p>
-
-              <div className="flex flex-wrap gap-x-4 gap-y-2 blueprint text-[10px] tracking-widest text-ink-muted border-y border-ink/10 py-5 w-full mb-8">
-                <span>PYTHON</span>
-                <span className="text-ink/20">•</span>
-                <span>TELEGRAM API</span>
-                <span className="text-ink/20">•</span>
-                <span>OPENAI API</span>
-                <span className="text-ink/20">•</span>
-                <span>NEXT.JS DASHBOARD</span>
-              </div>
 
               <div className="text-base md:text-lg font-sans text-ink-muted leading-relaxed space-y-5">
                 <p>
-                  The Web3 job market is fragmented. There&apos;s no single board that covers it well, and most 
-                  real leads end up scattered across Telegram channels that get hundreds of messages every day. 
+                  The Web3 job market is fragmented. There&apos;s no single board that covers it well, and most
+                  real leads end up scattered across Telegram channels that get hundreds of messages every day.
                   Scrolling through all of that manually wasn&apos;t working.
                 </p>
                 <p>
-                  So I built an automation around it. Connected my Telegram channels to an LLM, built a 
-                  classification pipeline to filter for PM roles, and put a dashboard on top that shows only 
-                  what&apos;s relevant to me. It surfaced 80+ relevant roles in the first month. Jobs I would 
-                  have never found scrolling. It&apos;s still running. Every morning there&apos;s new stuff waiting.
+                  So I built an automation around it. Connected my Telegram channels to an LLM, built a <span className="font-medium text-ink/90">classification pipeline</span> to filter for PM roles, and put a dashboard on top that shows only
+                  what&apos;s relevant to me. It surfaced <span className="font-medium text-ink/90">250+ relevant roles</span> over two months, jobs I would
+                  have never found scrolling. Tuning the prompts against real results pushed accuracy from
+                  around <span className="font-medium text-ink/90">50% to 90%</span>. It&apos;s still running. Every morning there&apos;s new stuff waiting.
                 </p>
                 <p>
-                  AI doesn&apos;t have to be about building the next big thing. Sometimes it&apos;s just about fixing 
+                  AI doesn&apos;t have to be about building the next big thing. Sometimes it&apos;s just about fixing
                   something broken in your day-to-day.
                 </p>
+              </div>
+
+              <div className="mt-12 pt-6 border-t border-ink/10 w-full">
+                <div className="blueprint text-[10px] tracking-widest text-ink-muted/60 mb-3">BUILT WITH</div>
+                <div className="flex flex-wrap gap-x-4 gap-y-1.5 blueprint text-[10px] tracking-widest text-ink-muted/80">
+                  <span>PYTHON</span>
+                  <span className="text-ink/15">•</span>
+                  <span>TELEGRAM API</span>
+                  <span className="text-ink/15">•</span>
+                  <span>OPENAI API</span>
+                  <span className="text-ink/15">•</span>
+                  <span>NEXT.JS DASHBOARD</span>
+                </div>
               </div>
 
             </RevealUp>

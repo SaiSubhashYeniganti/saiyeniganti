@@ -90,7 +90,7 @@ export default function Home() {
               <span className="block italic text-canvas/50">End to end.</span>
             </h2>
             <p className="text-canvas/50 font-sans text-base md:text-lg max-w-2xl leading-relaxed">
-              A collection of products, platforms, and experiments built entirely solo. From brand and design to code and deployment, all executed using AI-first workflows.
+              A collection of products and platforms built entirely solo for clients &amp; personal use. From brand and design to code and deployment, all with AI-first workflows.
             </p>
           </RevealUp>
         </div>

@@ -98,16 +98,6 @@ export default function GitaProjectBuildPage() {
 
         <div className="px-6">
           <RevealUp className="flex flex-col items-start">
-            <div className="flex flex-wrap gap-x-3 gap-y-2 blueprint text-[10px] tracking-widest text-ink-muted border-y border-ink/10 py-4 w-full mb-8">
-              <span>FLUTTER</span>
-              <span className="text-ink/20">•</span>
-              <span>RIVERPOD</span>
-              <span className="text-ink/20">•</span>
-              <span>SUPABASE</span>
-              <span className="text-ink/20">•</span>
-              <span>NEXT.JS</span>
-            </div>
-
             <div className="text-[17px] font-sans text-ink-muted leading-relaxed space-y-5 mb-10">
               <p>
                 The Bhagavad Gita is one of the world&apos;s oldest philosophical texts. But every way to access 
@@ -115,8 +105,8 @@ export default function GitaProjectBuildPage() {
                 text the same design and UX treatment as any modern consumer app.
               </p>
               <p>
-                The first problem was scale: 700+ verses, each needing structured metadata, categorization, 
-                and commentary. I built custom AI pipelines to process the entire corpus. Then the mobile app, 
+                The first problem was scale: 700+ verses, each needing structured metadata, categorization,
+                and commentary. I built <span className="font-medium text-ink/90">custom AI pipelines to process the entire corpus</span>. Then the mobile app,
                 the marketing website, the brand identity.
               </p>
               <p>
@@ -132,6 +122,19 @@ export default function GitaProjectBuildPage() {
                 VIEW LIVE SITE ↗
               </span>
             </a>
+
+            <div className="mt-10 pt-6 border-t border-ink/10 w-full">
+              <div className="blueprint text-[10px] tracking-widest text-ink-muted/60 mb-3">BUILT WITH</div>
+              <div className="flex flex-wrap gap-x-3 gap-y-1.5 blueprint text-[10px] tracking-widest text-ink-muted/80">
+                <span>FLUTTER</span>
+                <span className="text-ink/15">•</span>
+                <span>RIVERPOD</span>
+                <span className="text-ink/15">•</span>
+                <span>SUPABASE</span>
+                <span className="text-ink/15">•</span>
+                <span>NEXT.JS</span>
+              </div>
+            </div>
           </RevealUp>
         </div>
       </div>
@@ -154,16 +157,6 @@ export default function GitaProjectBuildPage() {
                 Starting with the Gita. Building toward something much bigger.
               </p>
 
-              <div className="flex flex-wrap gap-x-4 gap-y-2 blueprint text-[10px] tracking-widest text-ink-muted border-y border-ink/10 py-5 w-full mb-8">
-                <span>FLUTTER</span>
-                <span className="text-ink/20">•</span>
-                <span>RIVERPOD</span>
-                <span className="text-ink/20">•</span>
-                <span>SUPABASE</span>
-                <span className="text-ink/20">•</span>
-                <span>NEXT.JS</span>
-              </div>
-
               <div className="text-base md:text-lg font-sans text-ink-muted leading-relaxed space-y-5">
                 <p>
                   The Bhagavad Gita is one of the world&apos;s oldest philosophical texts. But every way to access 
@@ -171,8 +164,8 @@ export default function GitaProjectBuildPage() {
                   text the same design and UX treatment as any modern consumer app.
                 </p>
                 <p>
-                  The first problem was scale: 700+ verses, each needing structured metadata, categorization, 
-                  and commentary. I built custom AI pipelines to process the entire corpus. Then the mobile app, 
+                  The first problem was scale: 700+ verses, each needing structured metadata, categorization,
+                  and commentary. I built <span className="font-medium text-ink/90">custom AI pipelines to process the entire corpus</span>. Then the mobile app,
                   the marketing website, the brand identity.
                 </p>
                 <p>
@@ -188,6 +181,19 @@ export default function GitaProjectBuildPage() {
                   VIEW LIVE SITE ↗
                 </span>
               </a>
+
+              <div className="mt-12 pt-6 border-t border-ink/10 w-full">
+                <div className="blueprint text-[10px] tracking-widest text-ink-muted/60 mb-3">BUILT WITH</div>
+                <div className="flex flex-wrap gap-x-4 gap-y-1.5 blueprint text-[10px] tracking-widest text-ink-muted/80">
+                  <span>FLUTTER</span>
+                  <span className="text-ink/15">•</span>
+                  <span>RIVERPOD</span>
+                  <span className="text-ink/15">•</span>
+                  <span>SUPABASE</span>
+                  <span className="text-ink/15">•</span>
+                  <span>NEXT.JS</span>
+                </div>
+              </div>
             </RevealUp>
           </div>
 

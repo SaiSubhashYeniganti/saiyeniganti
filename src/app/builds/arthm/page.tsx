@@ -49,27 +49,16 @@ export default function ArthmBuildPage() {
             Proving AI-driven design can be delightful, not just fast. Client call to production in a month.
           </p>
 
-          <div className="flex flex-wrap gap-x-3 gap-y-2 blueprint text-[10px] tracking-widest text-ink-muted border-y border-ink/10 py-4 w-full mb-8">
-            <span>NEXT.JS</span>
-            <span className="text-ink/20">•</span>
-            <span>THREE.JS / R3F</span>
-            <span className="text-ink/20">•</span>
-            <span>GSAP & LENIS</span>
-            <span className="text-ink/20">•</span>
-            <span>CURSOR</span>
-          </div>
-
           <div className="text-[17px] font-sans text-ink-muted leading-relaxed space-y-5 mb-10">
             <p>
-              ARTHM is India&apos;s first mic-less concert hall. The client wanted a website that felt like the space itself. 
-              No templates, no generic layouts. The kind of thing where every scroll, every transition, every 
+              ARTHM is India&apos;s first mic-less concert hall. The client wanted a website that felt like the space itself.
+              No templates, no generic layouts. The kind of thing where every scroll, every transition, every
               piece of typography has to feel deliberate.
             </p>
             <p>
-              I built it using AI-first workflows: 3D rendering in React Three Fiber, scroll-linked animations 
-              through GSAP, heavy typographical structures. The whole thing went from first client conversation 
-              to deployed production in under a month. For me, this was the project that proved AI-driven 
-              design can be delightful, not just fast.
+              So I built it to behave like the space: 3D scenes, scroll-linked motion, and heavy typography,
+              every moment choreographed. The whole thing went from first client conversation to deployed
+              production in under a month. This was the project that proved AI-driven design can be delightful, not just fast.
             </p>
           </div>
 
@@ -78,6 +67,19 @@ export default function ArthmBuildPage() {
               VIEW LIVE SITE ↗
             </span>
           </a>
+
+          <div className="mt-10 pt-6 border-t border-ink/10 w-full">
+            <div className="blueprint text-[10px] tracking-widest text-ink-muted/60 mb-3">BUILT WITH</div>
+            <div className="flex flex-wrap gap-x-3 gap-y-1.5 blueprint text-[10px] tracking-widest text-ink-muted/80">
+              <span>NEXT.JS</span>
+              <span className="text-ink/15">•</span>
+              <span>THREE.JS / R3F</span>
+              <span className="text-ink/15">•</span>
+              <span>GSAP & LENIS</span>
+              <span className="text-ink/15">•</span>
+              <span>CURSOR</span>
+            </div>
+          </div>
         </RevealUp>
       </div>
 
@@ -99,27 +101,16 @@ export default function ArthmBuildPage() {
                 Proving AI-driven design can be delightful, not just fast. Client call to production in a month.
               </p>
 
-              <div className="flex flex-wrap gap-x-4 gap-y-2 blueprint text-[10px] tracking-widest text-ink-muted border-y border-ink/10 py-5 w-full mb-8">
-                <span>NEXT.JS</span>
-                <span className="text-ink/20">•</span>
-                <span>THREE.JS / R3F</span>
-                <span className="text-ink/20">•</span>
-                <span>GSAP & LENIS</span>
-                <span className="text-ink/20">•</span>
-                <span>CURSOR</span>
-              </div>
-
               <div className="text-base md:text-lg font-sans text-ink-muted leading-relaxed space-y-5">
                 <p>
-                  ARTHM is India&apos;s first mic-less concert hall. The client wanted a website that felt like the space itself. 
-                  No templates, no generic layouts. The kind of thing where every scroll, every transition, every 
+                  ARTHM is India&apos;s first mic-less concert hall. The client wanted a website that felt like the space itself.
+                  No templates, no generic layouts. The kind of thing where every scroll, every transition, every
                   piece of typography has to feel deliberate.
                 </p>
                 <p>
-                  I built it using AI-first workflows: 3D rendering in React Three Fiber, scroll-linked animations 
-                  through GSAP, heavy typographical structures. The whole thing went from first client conversation 
-                  to deployed production in under a month. For me, this was the project that proved AI-driven 
-                  design can be delightful, not just fast.
+                  So I built it to behave like the space: 3D scenes, scroll-linked motion, and heavy typography,
+                  every moment choreographed. The whole thing went from first client conversation to deployed
+                  production in under a month. This was the project that proved AI-driven design can be delightful, not just fast.
                 </p>
               </div>
 
@@ -128,6 +119,19 @@ export default function ArthmBuildPage() {
                   VIEW LIVE SITE ↗
                 </span>
               </a>
+
+              <div className="mt-12 pt-6 border-t border-ink/10 w-full">
+                <div className="blueprint text-[10px] tracking-widest text-ink-muted/60 mb-3">BUILT WITH</div>
+                <div className="flex flex-wrap gap-x-4 gap-y-1.5 blueprint text-[10px] tracking-widest text-ink-muted/80">
+                  <span>NEXT.JS</span>
+                  <span className="text-ink/15">•</span>
+                  <span>THREE.JS / R3F</span>
+                  <span className="text-ink/15">•</span>
+                  <span>GSAP & LENIS</span>
+                  <span className="text-ink/15">•</span>
+                  <span>CURSOR</span>
+                </div>
+              </div>
             </RevealUp>
           </div>
 

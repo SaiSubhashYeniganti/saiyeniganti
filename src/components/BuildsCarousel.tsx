@@ -29,7 +29,7 @@ const buildsData = [
   {
     id: "pragna",
     title: "Pragna Skin Clinic",
-    desc: "Dermatology clinic. 86 pages, 65,000 words of content, 10 unique designs. Wanted to see how far AI can stretch on a single project. Did brand, content, design, development.",
+    desc: "Client work. India barely has premium clinic websites. So I built one as a product: design-led, patient-focused, 86 pages and 65,000 words deep. Turning local searches into booked appointments.",
     href: "/builds/pragna",
     type: "WEBSITE",
     status: "LIVE",
@@ -59,7 +59,7 @@ const buildsData = [
   {
     id: "blockpulse",
     title: "BlockPulse",
-    desc: "Spotted an AI capability gap at the company. Built a Web3 news aggregator as proof that AI can ship real products. Deployed to Play Store solo.",
+    desc: "An AI news app that turns hundreds of crypto articles a day into 2-minute briefings. The pipeline filters the noise and ranks what matters. Built and shipped to the Play Store, solo.",
     href: "/builds/blockpulse",
     type: "MOBILE APP",
     status: "SHIPPED",
@@ -69,7 +69,7 @@ const buildsData = [
   {
     id: "job-hunter",
     title: "Job Hunter",
-    desc: "Built AI to find me a job. Scans Telegram channels, classifies roles, surfaces matches. 80+ relevant roles in month one.",
+    desc: "Built AI to find me a job. It scans Telegram channels, classifies roles, and surfaces matches. 250+ relevant roles in two months.",
     href: "/builds/job-hunter",
     type: "AI PIPELINE",
     status: "INTERNAL",

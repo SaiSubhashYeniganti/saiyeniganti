@@ -34,6 +34,14 @@ yarn-error.log*
 .env*
 !.env.example
 
+# local analytics credentials
+/.credentials/
+/credentials/
+*service-account*.json
+ga4-reader*.json
+client_secret_*.json
+application_default_credentials.json
+
 # vercel
 .vercel
 

@@ -46,30 +46,20 @@ export default function PragnaBuildPage() {
             Pragna Skin Clinic
           </h1>
           <p className="text-[17px] text-ink-muted font-sans leading-[1.6] mb-6">
-            86 pages, 65,000 words of content. Experiment in design and content at scale. One of the best dermatology websites in India.
+            A dermatologist asked for a website. What I built ran to 86 pages and 65,000 words, design-led and patient-focused, all of it aimed at turning local searches into booked appointments.
           </p>
-
-          <div className="flex flex-wrap gap-x-3 gap-y-2 blueprint text-[10px] tracking-widest text-ink-muted border-y border-ink/10 py-4 w-full mb-8">
-            <span>NEXT.JS</span>
-            <span className="text-ink/20">•</span>
-            <span>TAILWIND CSS</span>
-            <span className="text-ink/20">•</span>
-            <span>CLAUDE / CURSOR</span>
-            <span className="text-ink/20">•</span>
-            <span>VERCEL</span>
-          </div>
 
           <div className="text-[17px] font-sans text-ink-muted leading-relaxed space-y-5 mb-10">
             <p>
-              A dermatologist needed a website. What I ended up building was closer to a clinical 
-              encyclopedia. 86 pages of structured, medically accurate content designed to dominate 
+              A dermatologist needed a website. What I ended up building was closer to a clinical
+              encyclopedia. 86 pages of structured, medically accurate content built to win
               local search. 10 unique page designs across the site. 65,000 words of on-page SEO content.
             </p>
             <p>
-              I did everything on this one. Brand positioning, colors, logo, information architecture, 
-              the patient funnel, all the content, every page design, and the full engineering and 
-              deployment pipeline. The design system was built from scratch to feel warm and clinical 
-              at the same time. This was the project that showed me what AI-first workflows can really do at scale.
+              I did everything on this one: brand, information architecture, the patient funnel,
+              every page design, and the full build and deploy. The hard part was content at that
+              scale without errors, so I built an <span className="font-medium text-ink/90">AI content engine</span> with <span className="font-medium text-ink/90">citation enforcement</span> and a <span className="font-medium text-ink/90">human-in-the-loop review pass</span> to keep every medical claim accurate. The whole thing came
+              together at roughly half the cost and a fraction of the timeline of a traditional agency build.
             </p>
           </div>
 
@@ -78,6 +68,19 @@ export default function PragnaBuildPage() {
               VIEW LIVE SITE ↗
             </span>
           </a>
+
+          <div className="mt-10 pt-6 border-t border-ink/10 w-full">
+            <div className="blueprint text-[10px] tracking-widest text-ink-muted/60 mb-3">BUILT WITH</div>
+            <div className="flex flex-wrap gap-x-3 gap-y-1.5 blueprint text-[10px] tracking-widest text-ink-muted/80">
+              <span>NEXT.JS</span>
+              <span className="text-ink/15">•</span>
+              <span>TAILWIND CSS</span>
+              <span className="text-ink/15">•</span>
+              <span>CLAUDE / CURSOR</span>
+              <span className="text-ink/15">•</span>
+              <span>VERCEL</span>
+            </div>
+          </div>
         </RevealUp>
       </div>
 
@@ -96,30 +99,20 @@ export default function PragnaBuildPage() {
                 Pragna Skin Clinic
               </h1>
               <p className="text-lg md:text-xl text-ink-muted font-sans leading-[1.6] mb-8">
-                86 pages, 65,000 words of content. Experiment in design and content at scale. One of the best dermatology websites in India.
+                A dermatologist asked for a website. What I built ran to 86 pages and 65,000 words, design-led and patient-focused, all of it aimed at turning local searches into booked appointments.
               </p>
-
-              <div className="flex flex-wrap gap-x-4 gap-y-2 blueprint text-[10px] tracking-widest text-ink-muted border-y border-ink/10 py-5 w-full mb-8">
-                <span>NEXT.JS</span>
-                <span className="text-ink/20">•</span>
-                <span>TAILWIND CSS</span>
-                <span className="text-ink/20">•</span>
-                <span>CLAUDE / CURSOR</span>
-                <span className="text-ink/20">•</span>
-                <span>VERCEL</span>
-              </div>
 
               <div className="text-base md:text-lg font-sans text-ink-muted leading-relaxed space-y-5">
                 <p>
-                  A dermatologist needed a website. What I ended up building was closer to a clinical 
-                  encyclopedia. 86 pages of structured, medically accurate content designed to dominate 
+                  A dermatologist needed a website. What I ended up building was closer to a clinical
+                  encyclopedia. 86 pages of structured, medically accurate content built to win
                   local search. 10 unique page designs across the site. 65,000 words of on-page SEO content.
                 </p>
                 <p>
-                  I did everything on this one. Brand positioning, colors, logo, information architecture, 
-                  the patient funnel, all the content, every page design, and the full engineering and 
-                  deployment pipeline. The design system was built from scratch to feel warm and clinical 
-                  at the same time. This was the project that showed me what AI-first workflows can really do at scale.
+                  I did everything on this one: brand, information architecture, the patient funnel,
+                  every page design, and the full build and deploy. The hard part was content at that
+                  scale without errors, so I built an <span className="font-medium text-ink/90">AI content engine</span> with <span className="font-medium text-ink/90">citation enforcement</span> and a <span className="font-medium text-ink/90">human-in-the-loop review pass</span> to keep every medical claim accurate. The whole thing came
+                  together at roughly half the cost and a fraction of the timeline of a traditional agency build.
                 </p>
               </div>
 
@@ -128,6 +121,19 @@ export default function PragnaBuildPage() {
                   VIEW LIVE SITE ↗
                 </span>
               </a>
+
+              <div className="mt-12 pt-6 border-t border-ink/10 w-full">
+                <div className="blueprint text-[10px] tracking-widest text-ink-muted/60 mb-3">BUILT WITH</div>
+                <div className="flex flex-wrap gap-x-4 gap-y-1.5 blueprint text-[10px] tracking-widest text-ink-muted/80">
+                  <span>NEXT.JS</span>
+                  <span className="text-ink/15">•</span>
+                  <span>TAILWIND CSS</span>
+                  <span className="text-ink/15">•</span>
+                  <span>CLAUDE / CURSOR</span>
+                  <span className="text-ink/15">•</span>
+                  <span>VERCEL</span>
+                </div>
+              </div>
             </RevealUp>
           </div>
 

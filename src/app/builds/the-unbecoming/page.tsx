@@ -49,22 +49,12 @@ export default function TheUnbecomingBuildPage() {
             Client work. Author&apos;s website for a book on ego dissolution. Shipped.
           </p>
 
-          <div className="flex flex-wrap gap-x-3 gap-y-2 blueprint text-[10px] tracking-widest text-ink-muted border-y border-ink/10 py-4 w-full mb-8">
-            <span>NEXT.JS</span>
-            <span className="text-ink/20">•</span>
-            <span>TAILWIND CSS</span>
-            <span className="text-ink/20">•</span>
-            <span>FRAMER MOTION</span>
-            <span className="text-ink/20">•</span>
-            <span>CURSOR</span>
-          </div>
-
           <div className="text-[17px] font-sans text-ink-muted leading-relaxed space-y-5 mb-10">
             <p>
-              This was a specialized client build for an author promoting a deeply philosophical book on ego dissolution. The mandate was to create a digital presence that mirrored the atmospheric, introspective tone of the writing.
+              An author needed a home for his book on ego dissolution. The brief was all about tone: the site had to feel as quiet and introspective as the writing itself.
             </p>
             <p>
-              I utilized AI-first development workflows to handle the entire project lifecycle—from wireframing the abstract layout to implementing subtle, high-end scroll physics with Framer Motion. The result is a highly polished, production-ready editorial website delivered in a fraction of traditional agency timelines.
+              I built it end to end, from the layout to the slow, deliberate scroll motion that sets the mood. The result is a calm, editorial site that matches the book, delivered in a fraction of the time an agency would take.
             </p>
           </div>
 
@@ -73,6 +63,19 @@ export default function TheUnbecomingBuildPage() {
               VIEW LIVE SITE ↗
             </span>
           </a>
+
+          <div className="mt-10 pt-6 border-t border-ink/10 w-full">
+            <div className="blueprint text-[10px] tracking-widest text-ink-muted/60 mb-3">BUILT WITH</div>
+            <div className="flex flex-wrap gap-x-3 gap-y-1.5 blueprint text-[10px] tracking-widest text-ink-muted/80">
+              <span>NEXT.JS</span>
+              <span className="text-ink/15">•</span>
+              <span>TAILWIND CSS</span>
+              <span className="text-ink/15">•</span>
+              <span>FRAMER MOTION</span>
+              <span className="text-ink/15">•</span>
+              <span>CURSOR</span>
+            </div>
+          </div>
         </RevealUp>
       </div>
 
@@ -94,22 +97,12 @@ export default function TheUnbecomingBuildPage() {
                 Client work. Author&apos;s website for a book on ego dissolution. Shipped.
               </p>
 
-              <div className="flex flex-wrap gap-x-4 gap-y-2 blueprint text-[10px] tracking-widest text-ink-muted border-y border-ink/10 py-5 w-full mb-8">
-                <span>NEXT.JS</span>
-                <span className="text-ink/20">•</span>
-                <span>TAILWIND CSS</span>
-                <span className="text-ink/20">•</span>
-                <span>FRAMER MOTION</span>
-                <span className="text-ink/20">•</span>
-                <span>CURSOR</span>
-              </div>
-
               <div className="text-base md:text-lg font-sans text-ink-muted leading-relaxed space-y-5">
                 <p>
-                  This was a specialized client build for an author promoting a deeply philosophical book on ego dissolution. The mandate was to create a digital presence that mirrored the atmospheric, introspective tone of the writing.
+                  An author needed a home for his book on ego dissolution. The brief was all about tone: the site had to feel as quiet and introspective as the writing itself.
                 </p>
                 <p>
-                  I utilized AI-first development workflows to handle the entire project lifecycle—from wireframing the abstract layout to implementing subtle, high-end scroll physics with Framer Motion. The result is a highly polished, production-ready editorial website delivered in a fraction of traditional agency timelines.
+                  I built it end to end, from the layout to the slow, deliberate scroll motion that sets the mood. The result is a calm, editorial site that matches the book, delivered in a fraction of the time an agency would take.
                 </p>
               </div>
 
@@ -118,6 +111,19 @@ export default function TheUnbecomingBuildPage() {
                   VIEW LIVE SITE ↗
                 </span>
               </a>
+
+              <div className="mt-12 pt-6 border-t border-ink/10 w-full">
+                <div className="blueprint text-[10px] tracking-widest text-ink-muted/60 mb-3">BUILT WITH</div>
+                <div className="flex flex-wrap gap-x-4 gap-y-1.5 blueprint text-[10px] tracking-widest text-ink-muted/80">
+                  <span>NEXT.JS</span>
+                  <span className="text-ink/15">•</span>
+                  <span>TAILWIND CSS</span>
+                  <span className="text-ink/15">•</span>
+                  <span>FRAMER MOTION</span>
+                  <span className="text-ink/15">•</span>
+                  <span>CURSOR</span>
+                </div>
+              </div>
             </RevealUp>
           </div>
 
