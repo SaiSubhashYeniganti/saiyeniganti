@@ -106,4 +106,5 @@ These appear on the site in the "How I think" section:
 
 - **Email:** saisubhash.yeniganti@gmail.com
 - **LinkedIn:** linkedin.com/in/subhashyeniganti
+- **X / Twitter:** x.com/saiyeniganti
 - **Location:** Hyderabad / Global

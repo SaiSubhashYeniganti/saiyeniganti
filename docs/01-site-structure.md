@@ -63,7 +63,7 @@
 - Dark background, full height
 - "AVAILABLE FOR: HEAD OF PRODUCT / DIRECTOR OF PRODUCT / SENIOR PM"
 - "Let's Talk." headline + email link
-- LinkedIn link, copyright, location
+- LinkedIn and X/Twitter links, copyright, location
 
 ---
 
@@ -110,6 +110,6 @@ Fixed "dynamic island" nav bar at top center:
 
 - All build page media sections are placeholders (no screenshots yet)
 - Portrait placeholder in "The Mind" section needs a real photo
-- Social links: only LinkedIn is real. No X/Twitter profile linked.
+- Social links: LinkedIn and X/Twitter are linked in the global footer.
 - Pre-existing TypeScript error: framer-motion `ease: number[]` type mismatch in page.tsx animation variants. Does not affect dev server, only strict build.
 - The Gita Project status is "in-progress" in data.ts

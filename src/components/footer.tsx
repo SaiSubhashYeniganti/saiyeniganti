@@ -22,6 +22,10 @@ export function Footer() {
           <a href="https://linkedin.com/in/subhashyeniganti" target="_blank" rel="noopener noreferrer" className="text-xl md:text-xl font-sans text-canvas/60 hover:text-accent transition-colors">
             LinkedIn
           </a>
+          <span className="hidden md:inline text-canvas/20">•</span>
+          <a href="https://x.com/saiyeniganti" target="_blank" rel="noopener noreferrer" className="text-xl md:text-xl font-sans text-canvas/60 hover:text-accent transition-colors">
+            X / Twitter
+          </a>
         </div>
       </div>
 
